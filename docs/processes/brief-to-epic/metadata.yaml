@@ -3,5 +3,7 @@ name: Generacion de epica desde brief
 owner: Product Owner
 status: draft
 diagram:
-  source: process.puml
+  model: process.yaml
+  layout: layout.yaml
+  intermediate: process.puml
   output: process.svg

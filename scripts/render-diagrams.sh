@@ -10,15 +10,24 @@ PLANTUML_SERVER_URL="${PLANTUML_SERVER_URL:-https://www.plantuml.com/plantuml}"
 
 cd "$ROOT_DIR"
 
-diagrams=()
-while IFS= read -r diagram; do
-  diagrams+=("$diagram")
-done < <(find docs/processes -name process.puml -type f | sort)
+models=()
+while IFS= read -r model; do
+  models+=("$model")
+done < <(find docs/processes -name process.yaml -type f | sort)
 
-if [[ ${#diagrams[@]} -eq 0 ]]; then
-  echo "No process.puml files found under docs/processes"
+if [[ ${#models[@]} -eq 0 ]]; then
+  echo "No process.yaml files found under docs/processes"
   exit 0
 fi
+
+diagrams=()
+for model in "${models[@]}"; do
+  process_dir="$(dirname "$model")"
+  layout="$process_dir/layout.yaml"
+  diagram="$process_dir/process.puml"
+  ruby scripts/process-model.rb render-puml "$model" "$layout" "$diagram"
+  diagrams+=("$diagram")
+done
 
 render_with_plantuml() {
   plantuml -tsvg "${diagrams[@]}"

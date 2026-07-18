@@ -1,42 +1,76 @@
-@startuml
-title Generacion de epica desde brief
+' Generated from process.yaml. Do not edit manually.
+@startdot
+digraph brief_to_epic {
+  graph [
+    label="Generacion de epica desde brief",
+    labelloc=t,
+    fontsize=18,
+    fontname="Arial",
+    rankdir=LR,
+    splines=polyline,
+    nodesep=0.55,
+    ranksep=0.9,
+    compound=true,
+    bgcolor="white"
+  ];
 
-skinparam backgroundColor #ffffff
-skinparam activity {
-  BackgroundColor #f7f8fa
-  BorderColor #4f5b67
-  FontColor #1f2933
+  node [shape=rect, style="rounded,filled", fillcolor="#f7f8fa", color="#4f5b67", fontcolor="#1f2933", fontname="Arial", fontsize=11, margin="0.12,0.08"];
+  edge [color="#4f5b67", fontname="Arial", fontsize=10, arrowsize=0.7];
+
+  subgraph cluster_requester {
+    label="Solicitante";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    create_brief [label="Crear brief", shape="rect"];
+    send_brief [label="Enviar brief", shape="rect"];
+    update_brief [label="Actualizar brief", shape="rect"];
+  }
+
+  subgraph cluster_product_owner {
+    label="Product Owner";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    review_brief [label="Revisar brief", shape="rect"];
+    brief_complete [label="Brief completo", shape="diamond", width="1.45", height="0.55"];
+    request_updates [label="Solicitar ajustes", shape="rect"];
+    prioritize_initiative [label="Priorizar iniciativa", shape="rect"];
+    create_epic [label="Crear epica", shape="rect"];
+    publish_epic [label="Publicar epica", shape="rect"];
+  }
+
+  subgraph cluster_technical_team {
+    label="Equipo Tecnico";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    estimate_scope [label="Estimar alcance", shape="rect"];
+  }
+
+  start [label="", shape="circle", width="0.18", height="0.18", fillcolor="#222222", color="#222222"];
+  end [label="", shape="doublecircle", width="0.18", height="0.18", fillcolor="#222222", color="#222222"];
+
+  start -> create_brief;
+  create_brief -> send_brief;
+  send_brief -> review_brief;
+  review_brief -> brief_complete;
+  brief_complete -> request_updates [xlabel="No"];
+  request_updates -> update_brief;
+  update_brief -> review_brief;
+  brief_complete -> prioritize_initiative [xlabel="Si"];
+  prioritize_initiative -> estimate_scope;
+  estimate_scope -> create_epic;
+  create_epic -> publish_epic;
+  publish_epic -> end;
 }
-skinparam partition {
-  BackgroundColor #eef4ff
-  BorderColor #7a8da8
-  FontColor #1f2933
-}
-skinparam ArrowColor #4f5b67
-
-|Solicitante|
-start
-:Crear brief;
-:Enviar brief;
-
-|Product Owner|
-:Revisar brief;
-
-while (¿Brief completo?) is (No)
-  :Solicitar ajustes;
-  |Solicitante|
-  :Actualizar brief;
-  |Product Owner|
-  :Revisar brief;
-endwhile (Sí)
-
-:Priorizar iniciativa;
-
-|Equipo Tecnico|
-:Estimar alcance;
-
-|Product Owner|
-:Crear epica;
-:Publicar epica;
-stop
-@enduml
+@enddot

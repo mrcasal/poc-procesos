@@ -100,6 +100,13 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 ![Diagrama del proceso de Gestion de la Agenda Unica Luckia](process.svg)
 
+## Artefactos del modelo
+
+- Modelo fuente: `process.yaml`
+- Preferencias de layout: `layout.yaml`
+- PlantUML generado: `process.puml`
+- SVG renderizado: `process.svg`
+
 ## Caminos alternativos
 
 - Brief incompleto: el Product Owner solicita ajustes y el promotor actualiza el brief antes de continuar.

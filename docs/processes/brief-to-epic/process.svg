@@ -1,1 +1,168 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" data-diagram-type="ACTIVITY" style="width:494px;height:781px;background:#FFFFFF;" width="494px" height="781px" viewBox="0 0 494 781" zoomAndPan="magnify" preserveAspectRatio="none" contentStyleType="text/css"><?plantuml 1.2026.7beta8?><defs/><g font-family="sans-serif" lengthAdjust="spacing"><g class="title" data-source-line="1"><text x="118.796" y="32.995" fill="#000" font-size="14" textLength="255.233" font-weight="700">Generacion de epica desde brief</text></g><rect x="20" y="55.042" width="447.825" height="20.953" fill="none" style="stroke:none;"/><ellipse cx="81.516" cy="90.995" rx="10" ry="10" fill="#222" style="stroke:#222;stroke-width:1;"/><rect x="39.371" y="120.995" width="84.289" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="49.371" y="142.134" fill="#1F2933" font-size="12" textLength="64.289">Crear brief</text><rect x="36.907" y="174.964" width="89.217" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="46.907" y="196.103" fill="#1F2933" font-size="12" textLength="69.217">Enviar brief</text><rect x="26" y="392.581" width="111.031" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="36" y="413.719" fill="#1F2933" font-size="12" textLength="91.031">Actualizar brief</text><line x1="20" y1="55.042" x2="20" y2="760.393" style="stroke:#000;stroke-width:1.5;"/><rect x="182.171" y="228.933" width="96.002" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="192.171" y="250.071" fill="#1F2933" font-size="12" textLength="76.002">Revisar brief</text><rect x="172.547" y="338.612" width="115.25" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="182.547" y="359.75" fill="#1F2933" font-size="12" textLength="95.25">Solicitar ajustes</text><rect x="182.171" y="446.549" width="96.002" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="192.171" y="467.688" fill="#1F2933" font-size="12" textLength="76.002">Revisar brief</text><polygon points="184.031,282.901,276.312,282.901,288.312,294.901,276.312,306.901,184.031,306.901,172.031,294.901,184.031,282.901" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;stroke-linejoin:miter;stroke-miterlimit:10;"/><text x="234.172" y="317.112" fill="#000" font-size="11" textLength="14.958">No</text><text x="184.031" y="298.709" fill="#1F2933" font-size="11" textLength="92.281">¿Brief completo?</text><text x="161.993" y="292.307" fill="#000" font-size="11" textLength="10.039">Sí</text><rect x="166.388" y="522.518" width="127.566" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="176.388" y="543.657" fill="#1F2933" font-size="12" textLength="107.566">Priorizar iniciativa</text><rect x="185.631" y="630.456" width="89.082" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="195.631" y="651.594" fill="#1F2933" font-size="12" textLength="69.082">Crear epica</text><rect x="178.116" y="684.424" width="104.111" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="188.116" y="705.563" fill="#1F2933" font-size="12" textLength="84.111">Publicar epica</text><ellipse cx="230.172" cy="749.393" rx="11" ry="11" fill="none" style="stroke:#222;stroke-width:1;"/><ellipse cx="230.172" cy="749.393" rx="6" ry="6" fill="#222" style="stroke:#222;stroke-width:1;"/><line x1="141.031" y1="55.042" x2="141.031" y2="760.393" style="stroke:#000;stroke-width:1.5;"/><rect x="335.694" y="576.487" width="115.889" height="33.969" fill="#F7F8FA" style="stroke:#4F5B67;stroke-width:0.5;" rx="12.5" ry="12.5"/><text x="345.694" y="597.625" fill="#1F2933" font-size="12" textLength="95.889">Estimar alcance</text><line x1="319.312" y1="55.042" x2="319.312" y2="760.393" style="stroke:#000;stroke-width:1.5;"/><line x1="465.964" y1="55.042" x2="465.964" y2="760.393" style="stroke:#000;stroke-width:1.5;"/><line x1="81.516" y1="100.995" x2="81.516" y2="120.995" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="77.516,110.995,81.516,120.995,85.516,110.995,81.516,114.995" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="81.516" y1="154.964" x2="81.516" y2="174.964" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="77.516,164.964,81.516,174.964,85.516,164.964,81.516,168.964" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="306.901" x2="230.172" y2="338.612" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,328.612,230.172,338.612,234.172,328.612,230.172,332.612" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="480.518" x2="230.172" y2="490.518" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="490.518" x2="300.312" y2="490.518" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="296.312,401.163,300.312,391.163,304.312,401.163,300.312,397.163" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="300.312" y1="294.901" x2="300.312" y2="490.518" style="stroke:#4F5B67;stroke-width:1;"/><line x1="300.312" y1="294.901" x2="288.312" y2="294.901" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="298.312,290.901,288.312,294.901,298.312,298.901,294.312,294.901" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="172.031" y1="294.901" x2="160.031" y2="294.901" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="156.031,387.163,160.031,397.163,164.031,387.163,160.031,391.163" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="160.031" y1="294.901" x2="160.031" y2="502.518" style="stroke:#4F5B67;stroke-width:1;"/><line x1="160.031" y1="502.518" x2="230.172" y2="502.518" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="502.518" x2="230.172" y2="522.518" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,512.518,230.172,522.518,234.172,512.518,230.172,516.518" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="262.901" x2="230.172" y2="282.901" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,272.901,230.172,282.901,234.172,272.901,230.172,276.901" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="664.424" x2="230.172" y2="684.424" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,674.424,230.172,684.424,234.172,674.424,230.172,678.424" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="718.393" x2="230.172" y2="738.393" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,728.393,230.172,738.393,234.172,728.393,230.172,732.393" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="81.516" y1="208.933" x2="81.516" y2="213.933" style="stroke:#4F5B67;stroke-width:1;"/><line x1="81.516" y1="213.933" x2="230.172" y2="213.933" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="213.933" x2="230.172" y2="228.933" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,218.933,230.172,228.933,234.172,218.933,230.172,222.933" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="372.581" x2="230.172" y2="377.581" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="377.581" x2="81.516" y2="377.581" style="stroke:#4F5B67;stroke-width:1;"/><line x1="81.516" y1="377.581" x2="81.516" y2="392.581" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="77.516,382.581,81.516,392.581,85.516,382.581,81.516,386.581" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="81.516" y1="426.549" x2="81.516" y2="431.549" style="stroke:#4F5B67;stroke-width:1;"/><line x1="81.516" y1="431.549" x2="230.172" y2="431.549" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="431.549" x2="230.172" y2="446.549" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,436.549,230.172,446.549,234.172,436.549,230.172,440.549" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="230.172" y1="556.487" x2="230.172" y2="561.487" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="561.487" x2="393.638" y2="561.487" style="stroke:#4F5B67;stroke-width:1;"/><line x1="393.638" y1="561.487" x2="393.638" y2="576.487" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="389.638,566.487,393.638,576.487,397.638,566.487,393.638,570.487" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><line x1="393.638" y1="610.456" x2="393.638" y2="615.456" style="stroke:#4F5B67;stroke-width:1;"/><line x1="393.638" y1="615.456" x2="230.172" y2="615.456" style="stroke:#4F5B67;stroke-width:1;"/><line x1="230.172" y1="615.456" x2="230.172" y2="630.456" style="stroke:#4F5B67;stroke-width:1;"/><polygon points="226.172,620.456,230.172,630.456,234.172,620.456,230.172,624.456" fill="#4F5B67" style="stroke:#4F5B67;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;"/><text x="33.033" y="71.75" fill="#000" font-size="18" textLength="94.966">Solicitante</text><text x="163.397" y="71.75" fill="#000" font-size="18" textLength="133.55">Product Owner</text><text x="324.312" y="71.75" fill="#000" font-size="18" textLength="136.652">Equipo Tecnico</text><?plantuml-src XPBTJi9048NlzoasyGOk5HGi5qO8UgT4V85XEzMHibDtfn2rFfBFOA8lvXGm_4XYBvhjwScPRquh93dQQ_GOm15xcwB5WXpe8Ufv4WWpO-AKV041PdO2RleGkFJfW7CEzYXRNbiES49paXVxPgpj_x5ticu6zHiEAOQrsivE9sSTLQ_OorexpaxEMotplXMjTo6fCGzc8sPjHTdBxa0tXUw_sPSXy68NnrHZpicHW1UiJ1GTRv91G0YhOdec6VevRHvDDGgSbaxixK8hhKnoXtEAMuR58sdXZQ_FVYrOnxCYH-6BfgLe6pVSLD3aTsomy5H6mTXJTHT6NPTEIiZfTPEkfhtvQjiZG9-k6SRV7qrZab4W3iiKyfeF-lMWtcJuN5B1zXwTogoh3AFGh6RA7NY7XxPTTRFyWRIRKJbHueqGXOiV?></g></svg>
+<svg width="945pt" height="374pt"
+ viewBox="0.00 0.00 945.18 373.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 369.6)">
+<title>brief_to_epic</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-369.6 941.18,-369.6 941.18,4 -4,4"/>
+<text text-anchor="middle" x="468.59" y="-344.5" font-family="Arial" font-size="18.00">Generacion de epica desde brief</text>
+<g id="clust1" class="cluster">
+<title>cluster_requester</title>
+<path fill="#eef4ff" stroke="#7a8da8" d="M81.96,-176C81.96,-176 322.52,-176 322.52,-176 328.52,-176 334.52,-182 334.52,-188 334.52,-188 334.52,-316 334.52,-316 334.52,-322 328.52,-328 322.52,-328 322.52,-328 81.96,-328 81.96,-328 75.96,-328 69.96,-322 69.96,-316 69.96,-316 69.96,-188 69.96,-188 69.96,-182 75.96,-176 81.96,-176"/>
+<text text-anchor="middle" x="202.24" y="-311.65" font-family="Arial" font-size="13.00">Solicitante</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_product_owner</title>
+<path fill="#eef4ff" stroke="#7a8da8" d="M247.24,-12C247.24,-12 746.9,-12 746.9,-12 752.9,-12 758.9,-18 758.9,-24 758.9,-24 758.9,-156 758.9,-156 758.9,-162 752.9,-168 746.9,-168 746.9,-168 247.24,-168 247.24,-168 241.24,-168 235.24,-162 235.24,-156 235.24,-156 235.24,-24 235.24,-24 235.24,-18 241.24,-12 247.24,-12"/>
+<text text-anchor="middle" x="497.07" y="-151.65" font-family="Arial" font-size="13.00">Product Owner</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_technical_team</title>
+<path fill="#eef4ff" stroke="#7a8da8" d="M819.9,-160C819.9,-160 917.18,-160 917.18,-160 923.18,-160 929.18,-166 929.18,-172 929.18,-172 929.18,-224 929.18,-224 929.18,-230 923.18,-236 917.18,-236 917.18,-236 819.9,-236 819.9,-236 813.9,-236 807.9,-230 807.9,-224 807.9,-224 807.9,-172 807.9,-172 807.9,-166 813.9,-160 819.9,-160"/>
+<text text-anchor="middle" x="868.54" y="-219.65" font-family="Arial" font-size="13.00">Equipo Tecnico</text>
+</g>
+<!-- create_brief -->
+<g id="node1" class="node">
+<title>create_brief</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M153.74,-296C153.74,-296 102.46,-296 102.46,-296 96.46,-296 90.46,-290 90.46,-284 90.46,-284 90.46,-272 90.46,-272 90.46,-266 96.46,-260 102.46,-260 102.46,-260 153.74,-260 153.74,-260 159.74,-260 165.74,-266 165.74,-272 165.74,-272 165.74,-284 165.74,-284 165.74,-290 159.74,-296 153.74,-296"/>
+<text text-anchor="middle" x="128.1" y="-274.15" font-family="Arial" font-size="11.00" fill="#1f2933">Crear brief</text>
+</g>
+<!-- send_brief -->
+<g id="node2" class="node">
+<title>send_brief</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M314.52,-258C314.52,-258 258.24,-258 258.24,-258 252.24,-258 246.24,-252 246.24,-246 246.24,-246 246.24,-234 246.24,-234 246.24,-228 252.24,-222 258.24,-222 258.24,-222 314.52,-222 314.52,-222 320.52,-222 326.52,-228 326.52,-234 326.52,-234 326.52,-246 326.52,-246 326.52,-252 320.52,-258 314.52,-258"/>
+<text text-anchor="middle" x="286.38" y="-236.15" font-family="Arial" font-size="11.00" fill="#1f2933">Enviar brief</text>
+</g>
+<!-- create_brief&#45;&gt;send_brief -->
+<g id="edge2" class="edge">
+<title>create_brief&#45;&gt;send_brief</title>
+<path fill="none" stroke="#4f5b67" d="M166.14,-268.99C187.52,-263.8 214.64,-257.2 237.62,-251.61"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="238.18,-254 244.41,-249.96 237.03,-249.24 238.18,-254"/>
+</g>
+<!-- review_brief -->
+<g id="node4" class="node">
+<title>review_brief</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M317.52,-60C317.52,-60 255.24,-60 255.24,-60 249.24,-60 243.24,-54 243.24,-48 243.24,-48 243.24,-36 243.24,-36 243.24,-30 249.24,-24 255.24,-24 255.24,-24 317.52,-24 317.52,-24 323.52,-24 329.52,-30 329.52,-36 329.52,-36 329.52,-48 329.52,-48 329.52,-54 323.52,-60 317.52,-60"/>
+<text text-anchor="middle" x="286.38" y="-38.15" font-family="Arial" font-size="11.00" fill="#1f2933">Revisar brief</text>
+</g>
+<!-- send_brief&#45;&gt;review_brief -->
+<g id="edge3" class="edge">
+<title>send_brief&#45;&gt;review_brief</title>
+<path fill="none" stroke="#4f5b67" d="M268.71,-221.8C245.24,-197.64 206.74,-158 206.74,-158 206.74,-158 206.74,-100 206.74,-100 206.74,-100 232.29,-81.39 254.45,-65.26"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="255.74,-67.34 259.96,-61.24 252.86,-63.38 255.74,-67.34"/>
+</g>
+<!-- update_brief -->
+<g id="node3" class="node">
+<title>update_brief</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M166.24,-220C166.24,-220 89.96,-220 89.96,-220 83.96,-220 77.96,-214 77.96,-208 77.96,-208 77.96,-196 77.96,-196 77.96,-190 83.96,-184 89.96,-184 89.96,-184 166.24,-184 166.24,-184 172.24,-184 178.24,-190 178.24,-196 178.24,-196 178.24,-208 178.24,-208 178.24,-214 172.24,-220 166.24,-220"/>
+<text text-anchor="middle" x="128.1" y="-198.15" font-family="Arial" font-size="11.00" fill="#1f2933">Actualizar brief</text>
+</g>
+<!-- update_brief&#45;&gt;review_brief -->
+<g id="edge7" class="edge">
+<title>update_brief&#45;&gt;review_brief</title>
+<path fill="none" stroke="#4f5b67" d="M144.99,-183.74C174.6,-149.7 235.24,-80 235.24,-80 235.24,-80 244.24,-73.18 254.62,-65.31"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="255.89,-67.43 259.98,-61.25 252.93,-63.52 255.89,-67.43"/>
+</g>
+<!-- brief_complete -->
+<g id="node5" class="node">
+<title>brief_complete</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M470.86,-57.17C470.86,-57.17 406.23,-42.63 406.23,-42.63 400.37,-41.32 400.37,-38.68 406.23,-37.37 406.23,-37.37 470.86,-22.83 470.86,-22.83 476.72,-21.52 488.42,-21.52 494.28,-22.83 494.28,-22.83 558.91,-37.37 558.91,-37.37 564.77,-38.68 564.77,-41.32 558.91,-42.63 558.91,-42.63 494.28,-57.17 494.28,-57.17 488.42,-58.48 476.72,-58.48 470.86,-57.17"/>
+<text text-anchor="middle" x="482.57" y="-36.15" font-family="Arial" font-size="11.00" fill="#1f2933">Brief completo</text>
+</g>
+<!-- review_brief&#45;&gt;brief_complete -->
+<g id="edge4" class="edge">
+<title>review_brief&#45;&gt;brief_complete</title>
+<path fill="none" stroke="#4f5b67" d="M330,-41.56C347.17,-41.38 367.7,-41.17 388.03,-40.96"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="387.92,-43.41 394.89,-40.89 387.87,-38.52 387.92,-43.41"/>
+</g>
+<!-- request_updates -->
+<g id="node6" class="node">
+<title>request_updates</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M733.4,-57C733.4,-57 653.12,-57 653.12,-57 647.12,-57 641.12,-51 641.12,-45 641.12,-45 641.12,-33 641.12,-33 641.12,-27 647.12,-21 653.12,-21 653.12,-21 733.4,-21 733.4,-21 739.4,-21 745.4,-27 745.4,-33 745.4,-33 745.4,-45 745.4,-45 745.4,-51 739.4,-57 733.4,-57"/>
+<text text-anchor="middle" x="693.26" y="-35.15" font-family="Arial" font-size="11.00" fill="#1f2933">Solicitar ajustes</text>
+</g>
+<!-- brief_complete&#45;&gt;request_updates -->
+<g id="edge5" class="edge">
+<title>brief_complete&#45;&gt;request_updates</title>
+<path fill="none" stroke="#4f5b67" d="M570.86,-39.58C591.59,-39.48 613.23,-39.38 632.41,-39.29"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="632.25,-41.74 639.24,-39.25 632.23,-36.84 632.25,-41.74"/>
+<text text-anchor="middle" x="595.14" y="-29.93" font-family="Arial" font-size="10.00">No</text>
+</g>
+<!-- prioritize_initiative -->
+<g id="node7" class="node">
+<title>prioritize_initiative</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M738.9,-134C738.9,-134 647.62,-134 647.62,-134 641.62,-134 635.62,-128 635.62,-122 635.62,-122 635.62,-110 635.62,-110 635.62,-104 641.62,-98 647.62,-98 647.62,-98 738.9,-98 738.9,-98 744.9,-98 750.9,-104 750.9,-110 750.9,-110 750.9,-122 750.9,-122 750.9,-128 744.9,-134 738.9,-134"/>
+<text text-anchor="middle" x="693.26" y="-112.15" font-family="Arial" font-size="11.00" fill="#1f2933">Priorizar iniciativa</text>
+</g>
+<!-- brief_complete&#45;&gt;prioritize_initiative -->
+<g id="edge8" class="edge">
+<title>brief_complete&#45;&gt;prioritize_initiative</title>
+<path fill="none" stroke="#4f5b67" d="M517.56,-52.38C548.94,-63.81 596.21,-81.02 633.66,-94.66"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="632.66,-96.9 640.08,-97 634.34,-92.3 632.66,-96.9"/>
+<text text-anchor="middle" x="571.11" y="-64.02" font-family="Arial" font-size="10.00">Si</text>
+</g>
+<!-- request_updates&#45;&gt;update_brief -->
+<g id="edge6" class="edge">
+<title>request_updates&#45;&gt;update_brief</title>
+<path fill="none" stroke="#4f5b67" d="M640.67,-22.46C607.52,-11.83 570.62,0 570.62,0 570.62,0 394.52,0 394.52,0 394.52,0 235.24,-4 235.24,-4 235.24,-4 171.59,-122.74 142.87,-176.32"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="140.76,-175.07 139.61,-182.39 145.08,-177.38 140.76,-175.07"/>
+</g>
+<!-- estimate_scope -->
+<g id="node10" class="node">
+<title>estimate_scope</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M909.18,-204C909.18,-204 827.9,-204 827.9,-204 821.9,-204 815.9,-198 815.9,-192 815.9,-192 815.9,-180 815.9,-180 815.9,-174 821.9,-168 827.9,-168 827.9,-168 909.18,-168 909.18,-168 915.18,-168 921.18,-174 921.18,-180 921.18,-180 921.18,-192 921.18,-192 921.18,-198 915.18,-204 909.18,-204"/>
+<text text-anchor="middle" x="868.54" y="-182.15" font-family="Arial" font-size="11.00" fill="#1f2933">Estimar alcance</text>
+</g>
+<!-- prioritize_initiative&#45;&gt;estimate_scope -->
+<g id="edge9" class="edge">
+<title>prioritize_initiative&#45;&gt;estimate_scope</title>
+<path fill="none" stroke="#4f5b67" d="M739.79,-134.39C762.68,-143.64 790.56,-154.9 814.42,-164.54"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="813.2,-166.69 820.61,-167.04 815.04,-162.15 813.2,-166.69"/>
+</g>
+<!-- create_epic -->
+<g id="node8" class="node">
+<title>create_epic</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M314.52,-136C314.52,-136 258.24,-136 258.24,-136 252.24,-136 246.24,-130 246.24,-124 246.24,-124 246.24,-112 246.24,-112 246.24,-106 252.24,-100 258.24,-100 258.24,-100 314.52,-100 314.52,-100 320.52,-100 326.52,-106 326.52,-112 326.52,-112 326.52,-124 326.52,-124 326.52,-130 320.52,-136 314.52,-136"/>
+<text text-anchor="middle" x="286.38" y="-114.15" font-family="Arial" font-size="11.00" fill="#1f2933">Crear epica</text>
+</g>
+<!-- publish_epic -->
+<g id="node9" class="node">
+<title>publish_epic</title>
+<path fill="#f7f8fa" stroke="#4f5b67" d="M517.71,-136C517.71,-136 447.43,-136 447.43,-136 441.43,-136 435.43,-130 435.43,-124 435.43,-124 435.43,-112 435.43,-112 435.43,-106 441.43,-100 447.43,-100 447.43,-100 517.71,-100 517.71,-100 523.71,-100 529.71,-106 529.71,-112 529.71,-112 529.71,-124 529.71,-124 529.71,-130 523.71,-136 517.71,-136"/>
+<text text-anchor="middle" x="482.57" y="-114.15" font-family="Arial" font-size="11.00" fill="#1f2933">Publicar epica</text>
+</g>
+<!-- create_epic&#45;&gt;publish_epic -->
+<g id="edge11" class="edge">
+<title>create_epic&#45;&gt;publish_epic</title>
+<path fill="none" stroke="#4f5b67" d="M326.68,-118C355.47,-118 394.92,-118 426.8,-118"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="426.64,-120.45 433.64,-118 426.64,-115.55 426.64,-120.45"/>
+</g>
+<!-- end -->
+<g id="node12" class="node">
+<title>end</title>
+<ellipse fill="#222222" stroke="#222222" cx="693.26" cy="-186" rx="6.48" ry="6.48"/>
+<ellipse fill="none" stroke="#222222" cx="693.26" cy="-186" rx="10.48" ry="10.48"/>
+</g>
+<!-- publish_epic&#45;&gt;end -->
+<g id="edge12" class="edge">
+<title>publish_epic&#45;&gt;end</title>
+<path fill="none" stroke="#4f5b67" d="M530.02,-134.5C574.73,-150.38 635.62,-172 635.62,-172 635.62,-172 658.01,-177.53 674.63,-181.64"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="673.8,-183.96 681.18,-183.26 674.97,-179.2 673.8,-183.96"/>
+</g>
+<!-- estimate_scope&#45;&gt;create_epic -->
+<g id="edge10" class="edge">
+<title>estimate_scope&#45;&gt;create_epic</title>
+<path fill="none" stroke="#4f5b67" d="M815.45,-200.38C787.57,-208.08 758.9,-216 758.9,-216 758.9,-216 635.62,-216 635.62,-216 635.62,-216 394.52,-156 394.52,-156 394.52,-156 363.58,-145.03 334.96,-134.87"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="335.81,-132.58 328.4,-132.55 334.18,-137.2 335.81,-132.58"/>
+</g>
+<!-- start -->
+<g id="node11" class="node">
+<title>start</title>
+<ellipse fill="#222222" stroke="#222222" cx="6.48" cy="-278" rx="6.48" ry="6.48"/>
+</g>
+<!-- start&#45;&gt;create_brief -->
+<g id="edge1" class="edge">
+<title>start&#45;&gt;create_brief</title>
+<path fill="none" stroke="#4f5b67" d="M13.25,-278C25.63,-278 55.75,-278 81.9,-278"/>
+<polygon fill="#4f5b67" stroke="#4f5b67" points="81.71,-280.45 88.71,-278 81.71,-275.55 81.71,-280.45"/>
+</g>
+</g>
+</svg>

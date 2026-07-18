@@ -12,15 +12,28 @@ PLANTUML_SERVER_URL="${PLANTUML_SERVER_URL:-https://www.plantuml.com/plantuml}"
 
 cd "$ROOT_DIR"
 
-diagrams=()
-while IFS= read -r diagram; do
-  diagrams+=("$diagram")
-done < <(find docs/processes -name process.puml -type f | sort)
+models=()
+while IFS= read -r model; do
+  models+=("$model")
+done < <(find docs/processes -name process.yaml -type f | sort)
 
-if [[ ${#diagrams[@]} -eq 0 ]]; then
-  echo "No process.puml files found under docs/processes"
+if [[ ${#models[@]} -eq 0 ]]; then
+  echo "No process.yaml files found under docs/processes"
   exit 0
 fi
+
+diagrams=()
+for model in "${models[@]}"; do
+  process_dir="$(dirname "$model")"
+  layout="$process_dir/layout.yaml"
+  diagram="$process_dir/process.puml"
+  ruby scripts/process-model.rb validate "$model" "$layout"
+  diagrams+=("$diagram")
+  if [[ ! -f "$diagram" ]]; then
+    echo "Missing generated PlantUML for $model: $diagram"
+    exit 1
+  fi
+done
 
 for source in "${diagrams[@]}"; do
   svg="${source%.puml}.svg"
@@ -35,10 +48,14 @@ cp -R docs "$TMP_DIR/docs"
 
 temp_diagrams=()
 docker_temp_diagrams=()
-while IFS= read -r diagram; do
+while IFS= read -r model; do
+  process_dir="$(dirname "$model")"
+  layout="$process_dir/layout.yaml"
+  diagram="$process_dir/process.puml"
+  ruby scripts/process-model.rb render-puml "$model" "$layout" "$diagram"
   temp_diagrams+=("$diagram")
   docker_temp_diagrams+=("${diagram#$TMP_DIR/}")
-done < <(find "$TMP_DIR/docs/processes" -name process.puml -type f | sort)
+done < <(find "$TMP_DIR/docs/processes" -name process.yaml -type f | sort)
 
 java_available() {
   command -v java >/dev/null 2>&1 && java -version >/dev/null 2>&1
@@ -127,6 +144,11 @@ done
 
 changed=0
 for source in "${diagrams[@]}"; do
+  if ! cmp --silent "$source" "$TMP_DIR/$source"; then
+    echo "Outdated generated PlantUML: $source"
+    changed=1
+  fi
+
   svg="${source%.puml}.svg"
   if ! cmp --silent "$svg" "$TMP_DIR/$svg"; then
     echo "Outdated SVG: $svg"
@@ -135,8 +157,8 @@ for source in "${diagrams[@]}"; do
 done
 
 if [[ "$changed" -ne 0 ]]; then
-  echo "Run make diagrams and commit the updated SVG files."
+  echo "Run make diagrams and commit the updated generated files."
   exit 1
 fi
 
-echo "All process SVG files are up to date."
+echo "All process diagrams are valid and up to date."

@@ -1,3 +1,4 @@
+' Generated from process.yaml. Do not edit manually.
 @startdot
 digraph agenda_unica_luckia {
   graph [
@@ -13,36 +14,10 @@ digraph agenda_unica_luckia {
     bgcolor="white"
   ];
 
-  node [
-    shape=rect,
-    style="rounded,filled",
-    fillcolor="#f7f8fa",
-    color="#4f5b67",
-    fontcolor="#1f2933",
-    fontname="Arial",
-    fontsize=11,
-    margin="0.12,0.08"
-  ];
+  node [shape=rect, style="rounded,filled", fillcolor="#f7f8fa", color="#4f5b67", fontcolor="#1f2933", fontname="Arial", fontsize=11, margin="0.12,0.08"];
+  edge [color="#4f5b67", fontname="Arial", fontsize=10, arrowsize=0.7];
 
-  edge [
-    color="#4f5b67",
-    fontname="Arial",
-    fontsize=10,
-    arrowsize=0.7
-  ];
-
-  start [label="", shape=circle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
-  end_reject [label="", shape=doublecircle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
-  end_close [label="", shape=doublecircle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
-
-  brief_ok [label="¿Brief completo?", shape=diamond, width=1.35, height=0.55];
-  approved [label="¿Iniciativa aprobada?", shape=diamond, width=1.65, height=0.55];
-  capacity_ok [label="¿Rango operativo?", shape=diamond, width=1.45, height=0.55];
-  deps_ok [label="¿Dependencias resueltas?", shape=diamond, width=1.85, height=0.55];
-  features_ok [label="¿Features cerradas?", shape=diamond, width=1.55, height=0.55];
-  validation_ok [label="¿Validacion correcta?", shape=diamond, width=1.65, height=0.55];
-
-  subgraph cluster_promotor {
+  subgraph cluster_promoter {
     label="Promotor";
     style="rounded,filled";
     color="#7a8da8";
@@ -50,10 +25,9 @@ digraph agenda_unica_luckia {
     fontname="Arial";
     fontsize=13;
 
-    start;
-    formalize_brief [label="Formalizar brief"];
-    send_initiative [label="Enviar iniciativa"];
-    update_brief [label="Actualizar brief"];
+    formalize_brief [label="Formalizar brief", shape="rect"];
+    send_initiative [label="Enviar iniciativa", shape="rect"];
+    update_brief [label="Actualizar brief", shape="rect"];
   }
 
   subgraph cluster_product_owner {
@@ -64,26 +38,23 @@ digraph agenda_unica_luckia {
     fontname="Arial";
     fontsize=13;
 
-    review_brief [label="Revisar brief"];
-    brief_ok;
-    request_updates [label="Solicitar ajustes"];
-    estimate_effort [label="Estimar effort"];
-    create_epic [label="Crear epica"];
-    reject_epic [label="Comunicar rechazo"];
-    close_active [label="Cerrar trabajo activo"];
-    define_features [label="Definir features"];
-    estimate_features [label="Estimar features"];
-    assign_features [label="Asignar features"];
-    verify_deps [label="Verificar dependencias"];
-    deps_ok;
-    block_epic [label="Marcar bloqueada"];
-    reactivate_epic [label="Reactivar epica"];
-    validate_scope [label="Validar alcance"];
-    validation_ok;
-    validate_scope_again [label="Validar alcance"];
-    close_epic [label="Cerrar epica"];
-    end_reject;
-    end_close;
+    review_brief [label="Revisar brief", shape="rect"];
+    brief_complete [label="Brief completo", shape="diamond", width="1.45", height="0.55"];
+    request_updates [label="Solicitar ajustes", shape="rect"];
+    estimate_effort [label="Estimar effort", shape="rect"];
+    create_epic [label="Crear epica", shape="rect"];
+    reject_epic [label="Comunicar rechazo", shape="rect"];
+    close_active_work [label="Cerrar trabajo activo", shape="rect"];
+    define_features [label="Definir features", shape="rect"];
+    estimate_features [label="Estimar features", shape="rect"];
+    assign_features [label="Asignar features", shape="rect"];
+    verify_dependencies [label="Verificar dependencias", shape="rect"];
+    dependencies_ok [label="Dependencias resueltas", shape="diamond", width="1.45", height="0.55"];
+    block_epic [label="Marcar bloqueada", shape="rect"];
+    reactivate_epic [label="Reactivar epica", shape="rect"];
+    validate_scope [label="Validar alcance", shape="rect"];
+    validation_ok [label="Validacion correcta", shape="diamond", width="1.45", height="0.55"];
+    close_epic [label="Cerrar epica", shape="rect"];
   }
 
   subgraph cluster_committee {
@@ -94,9 +65,9 @@ digraph agenda_unica_luckia {
     fontname="Arial";
     fontsize=13;
 
-    evaluate_initiative [label="Evaluar iniciativa"];
-    approved;
-    prioritize_epic [label="Priorizar epica"];
+    evaluate_initiative [label="Evaluar iniciativa", shape="rect"];
+    approved [label="Iniciativa aprobada", shape="diamond", width="1.45", height="0.55"];
+    prioritize_epic [label="Priorizar epica", shape="rect"];
   }
 
   subgraph cluster_pmo {
@@ -107,13 +78,12 @@ digraph agenda_unica_luckia {
     fontname="Arial";
     fontsize=13;
 
-    review_capacity [label="Revisar capacidad"];
-    capacity_ok;
-    freeze_intake [label="Congelar intake"];
-    review_capacity_again [label="Revisar capacidad"];
+    review_capacity [label="Revisar capacidad", shape="rect"];
+    capacity_ok [label="Rango operativo", shape="diamond", width="1.45", height="0.55"];
+    freeze_intake [label="Congelar intake", shape="rect"];
   }
 
-  subgraph cluster_tech_team {
+  subgraph cluster_technical_team {
     label="Equipo Tecnico";
     style="rounded,filled";
     color="#7a8da8";
@@ -121,48 +91,63 @@ digraph agenda_unica_luckia {
     fontname="Arial";
     fontsize=13;
 
-    agree_contract [label="Acordar contrato"];
-    commit_delivery [label="Comprometer entrega"];
-    refine_stories [label="Refinar historias"];
-    build_stories [label="Construir historias"];
-    validate_features [label="Validar features"];
-    features_ok;
-    fix_stories [label="Corregir historias"];
-    validate_features_again [label="Validar features"];
-    fix_scope [label="Corregir alcance"];
-    deploy_prod [label="Desplegar produccion"];
-    close_features [label="Cerrar features"];
+    agree_contract [label="Acordar contrato", shape="rect"];
+    commit_delivery [label="Comprometer entrega", shape="rect"];
+    refine_stories [label="Refinar historias", shape="rect"];
+    build_stories [label="Construir historias", shape="rect"];
+    validate_features [label="Validar features", shape="rect"];
+    features_closed [label="Features cerradas", shape="diamond", width="1.45", height="0.55"];
+    fix_stories [label="Corregir historias", shape="rect"];
+    fix_scope [label="Corregir alcance", shape="rect"];
+    deploy_production [label="Desplegar produccion", shape="rect"];
+    close_features [label="Cerrar features", shape="rect"];
   }
 
-  start -> formalize_brief -> send_initiative -> review_brief -> brief_ok;
-  brief_ok -> request_updates [xlabel="No"];
-  request_updates -> update_brief -> review_brief;
-  brief_ok -> estimate_effort [xlabel="Si"];
-  estimate_effort -> create_epic -> evaluate_initiative -> approved;
+  start [label="", shape="circle", width="0.18", height="0.18", fillcolor="#222222", color="#222222"];
+  end [label="", shape="doublecircle", width="0.18", height="0.18", fillcolor="#222222", color="#222222"];
 
+  start -> formalize_brief;
+  formalize_brief -> send_initiative;
+  send_initiative -> review_brief;
+  review_brief -> brief_complete;
+  brief_complete -> request_updates [xlabel="No"];
+  request_updates -> update_brief;
+  update_brief -> review_brief;
+  brief_complete -> estimate_effort [xlabel="Si"];
+  estimate_effort -> create_epic;
+  create_epic -> evaluate_initiative;
+  evaluate_initiative -> approved;
   approved -> reject_epic [xlabel="No"];
-  reject_epic -> end_reject;
+  reject_epic -> end;
   approved -> prioritize_epic [xlabel="Si"];
-  prioritize_epic -> review_capacity -> capacity_ok;
-
+  prioritize_epic -> review_capacity;
+  review_capacity -> capacity_ok;
   capacity_ok -> freeze_intake [xlabel="No"];
-  freeze_intake -> close_active -> review_capacity_again -> capacity_ok;
+  freeze_intake -> close_active_work;
+  close_active_work -> review_capacity;
   capacity_ok -> define_features [xlabel="Si"];
-  define_features -> estimate_features -> assign_features -> verify_deps -> deps_ok;
-
-  deps_ok -> block_epic [xlabel="No"];
-  block_epic -> agree_contract -> commit_delivery -> reactivate_epic -> deps_ok;
-  deps_ok -> refine_stories [xlabel="Si"];
-  refine_stories -> build_stories -> validate_features -> features_ok;
-
-  features_ok -> fix_stories [xlabel="No"];
-  fix_stories -> validate_features_again -> features_ok;
-  features_ok -> validate_scope [xlabel="Si"];
+  define_features -> estimate_features;
+  estimate_features -> assign_features;
+  assign_features -> verify_dependencies;
+  verify_dependencies -> dependencies_ok;
+  dependencies_ok -> block_epic [xlabel="No"];
+  block_epic -> agree_contract;
+  agree_contract -> commit_delivery;
+  commit_delivery -> reactivate_epic;
+  reactivate_epic -> dependencies_ok;
+  dependencies_ok -> refine_stories [xlabel="Si"];
+  refine_stories -> build_stories;
+  build_stories -> validate_features;
+  validate_features -> features_closed;
+  features_closed -> fix_stories [xlabel="No"];
+  fix_stories -> validate_features;
+  features_closed -> validate_scope [xlabel="Si"];
   validate_scope -> validation_ok;
-
   validation_ok -> fix_scope [xlabel="No"];
-  fix_scope -> validate_scope_again -> validation_ok;
-  validation_ok -> deploy_prod [xlabel="Si"];
-  deploy_prod -> close_features -> close_epic -> end_close;
+  fix_scope -> validate_scope;
+  validation_ok -> deploy_production [xlabel="Si"];
+  deploy_production -> close_features;
+  close_features -> close_epic;
+  close_epic -> end;
 }
 @enddot

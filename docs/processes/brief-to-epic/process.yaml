@@ -1,0 +1,107 @@
+process:
+  id: brief-to-epic
+  name: Generacion de epica desde brief
+
+actors:
+  - id: requester
+    name: Solicitante
+  - id: product_owner
+    name: Product Owner
+  - id: technical_team
+    name: Equipo Tecnico
+
+nodes:
+  - id: start
+    type: start
+
+  - id: create_brief
+    actor: requester
+    type: activity
+    label: Crear brief
+
+  - id: send_brief
+    actor: requester
+    type: activity
+    label: Enviar brief
+
+  - id: review_brief
+    actor: product_owner
+    type: activity
+    label: Revisar brief
+
+  - id: brief_complete
+    actor: product_owner
+    type: decision
+    label: Brief completo
+
+  - id: request_updates
+    actor: product_owner
+    type: activity
+    label: Solicitar ajustes
+
+  - id: update_brief
+    actor: requester
+    type: activity
+    label: Actualizar brief
+
+  - id: prioritize_initiative
+    actor: product_owner
+    type: activity
+    label: Priorizar iniciativa
+
+  - id: estimate_scope
+    actor: technical_team
+    type: activity
+    label: Estimar alcance
+
+  - id: create_epic
+    actor: product_owner
+    type: activity
+    label: Crear epica
+
+  - id: publish_epic
+    actor: product_owner
+    type: activity
+    label: Publicar epica
+
+  - id: end
+    type: end
+
+flows:
+  - from: start
+    to: create_brief
+
+  - from: create_brief
+    to: send_brief
+
+  - from: send_brief
+    to: review_brief
+
+  - from: review_brief
+    to: brief_complete
+
+  - from: brief_complete
+    to: request_updates
+    label: "No"
+
+  - from: request_updates
+    to: update_brief
+
+  - from: update_brief
+    to: review_brief
+
+  - from: brief_complete
+    to: prioritize_initiative
+    label: Si
+
+  - from: prioritize_initiative
+    to: estimate_scope
+
+  - from: estimate_scope
+    to: create_epic
+
+  - from: create_epic
+    to: publish_epic
+
+  - from: publish_epic
+    to: end

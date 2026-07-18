@@ -1,0 +1,6 @@
+direction: LR
+lane-order:
+  - requester
+  - product_owner
+  - technical_team
+spacing: normal

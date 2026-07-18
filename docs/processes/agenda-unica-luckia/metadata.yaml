@@ -6,5 +6,7 @@ source:
   type: docx
   file: Proceso de Gestion de la Agenda Unica v2.docx
 diagram:
-  source: process.puml
+  model: process.yaml
+  layout: layout.yaml
+  intermediate: process.puml
   output: process.svg

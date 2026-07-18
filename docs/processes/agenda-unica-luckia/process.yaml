@@ -1,0 +1,344 @@
+process:
+  id: agenda-unica-luckia
+  name: Gestion de la Agenda Unica Luckia
+
+actors:
+  - id: promoter
+    name: Promotor
+  - id: product_owner
+    name: Product Owner
+  - id: committee
+    name: Comite Transformacion
+  - id: pmo
+    name: PMO
+  - id: technical_team
+    name: Equipo Tecnico
+
+nodes:
+  - id: start
+    type: start
+
+  - id: formalize_brief
+    actor: promoter
+    type: activity
+    label: Formalizar brief
+
+  - id: send_initiative
+    actor: promoter
+    type: activity
+    label: Enviar iniciativa
+
+  - id: review_brief
+    actor: product_owner
+    type: activity
+    label: Revisar brief
+
+  - id: brief_complete
+    actor: product_owner
+    type: decision
+    label: Brief completo
+
+  - id: request_updates
+    actor: product_owner
+    type: activity
+    label: Solicitar ajustes
+
+  - id: update_brief
+    actor: promoter
+    type: activity
+    label: Actualizar brief
+
+  - id: estimate_effort
+    actor: product_owner
+    type: activity
+    label: Estimar effort
+
+  - id: create_epic
+    actor: product_owner
+    type: activity
+    label: Crear epica
+
+  - id: evaluate_initiative
+    actor: committee
+    type: activity
+    label: Evaluar iniciativa
+
+  - id: approved
+    actor: committee
+    type: decision
+    label: Iniciativa aprobada
+
+  - id: reject_epic
+    actor: product_owner
+    type: activity
+    label: Comunicar rechazo
+
+  - id: prioritize_epic
+    actor: committee
+    type: activity
+    label: Priorizar epica
+
+  - id: review_capacity
+    actor: pmo
+    type: activity
+    label: Revisar capacidad
+
+  - id: capacity_ok
+    actor: pmo
+    type: decision
+    label: Rango operativo
+
+  - id: freeze_intake
+    actor: pmo
+    type: activity
+    label: Congelar intake
+
+  - id: close_active_work
+    actor: product_owner
+    type: activity
+    label: Cerrar trabajo activo
+
+  - id: define_features
+    actor: product_owner
+    type: activity
+    label: Definir features
+
+  - id: estimate_features
+    actor: product_owner
+    type: activity
+    label: Estimar features
+
+  - id: assign_features
+    actor: product_owner
+    type: activity
+    label: Asignar features
+
+  - id: verify_dependencies
+    actor: product_owner
+    type: activity
+    label: Verificar dependencias
+
+  - id: dependencies_ok
+    actor: product_owner
+    type: decision
+    label: Dependencias resueltas
+
+  - id: block_epic
+    actor: product_owner
+    type: activity
+    label: Marcar bloqueada
+
+  - id: agree_contract
+    actor: technical_team
+    type: activity
+    label: Acordar contrato
+
+  - id: commit_delivery
+    actor: technical_team
+    type: activity
+    label: Comprometer entrega
+
+  - id: reactivate_epic
+    actor: product_owner
+    type: activity
+    label: Reactivar epica
+
+  - id: refine_stories
+    actor: technical_team
+    type: activity
+    label: Refinar historias
+
+  - id: build_stories
+    actor: technical_team
+    type: activity
+    label: Construir historias
+
+  - id: validate_features
+    actor: technical_team
+    type: activity
+    label: Validar features
+
+  - id: features_closed
+    actor: technical_team
+    type: decision
+    label: Features cerradas
+
+  - id: fix_stories
+    actor: technical_team
+    type: activity
+    label: Corregir historias
+
+  - id: validate_scope
+    actor: product_owner
+    type: activity
+    label: Validar alcance
+
+  - id: validation_ok
+    actor: product_owner
+    type: decision
+    label: Validacion correcta
+
+  - id: fix_scope
+    actor: technical_team
+    type: activity
+    label: Corregir alcance
+
+  - id: deploy_production
+    actor: technical_team
+    type: activity
+    label: Desplegar produccion
+
+  - id: close_features
+    actor: technical_team
+    type: activity
+    label: Cerrar features
+
+  - id: close_epic
+    actor: product_owner
+    type: activity
+    label: Cerrar epica
+
+  - id: end
+    type: end
+
+flows:
+  - from: start
+    to: formalize_brief
+
+  - from: formalize_brief
+    to: send_initiative
+
+  - from: send_initiative
+    to: review_brief
+
+  - from: review_brief
+    to: brief_complete
+
+  - from: brief_complete
+    to: request_updates
+    label: "No"
+
+  - from: request_updates
+    to: update_brief
+
+  - from: update_brief
+    to: review_brief
+
+  - from: brief_complete
+    to: estimate_effort
+    label: Si
+
+  - from: estimate_effort
+    to: create_epic
+
+  - from: create_epic
+    to: evaluate_initiative
+
+  - from: evaluate_initiative
+    to: approved
+
+  - from: approved
+    to: reject_epic
+    label: "No"
+
+  - from: reject_epic
+    to: end
+
+  - from: approved
+    to: prioritize_epic
+    label: Si
+
+  - from: prioritize_epic
+    to: review_capacity
+
+  - from: review_capacity
+    to: capacity_ok
+
+  - from: capacity_ok
+    to: freeze_intake
+    label: "No"
+
+  - from: freeze_intake
+    to: close_active_work
+
+  - from: close_active_work
+    to: review_capacity
+
+  - from: capacity_ok
+    to: define_features
+    label: Si
+
+  - from: define_features
+    to: estimate_features
+
+  - from: estimate_features
+    to: assign_features
+
+  - from: assign_features
+    to: verify_dependencies
+
+  - from: verify_dependencies
+    to: dependencies_ok
+
+  - from: dependencies_ok
+    to: block_epic
+    label: "No"
+
+  - from: block_epic
+    to: agree_contract
+
+  - from: agree_contract
+    to: commit_delivery
+
+  - from: commit_delivery
+    to: reactivate_epic
+
+  - from: reactivate_epic
+    to: dependencies_ok
+
+  - from: dependencies_ok
+    to: refine_stories
+    label: Si
+
+  - from: refine_stories
+    to: build_stories
+
+  - from: build_stories
+    to: validate_features
+
+  - from: validate_features
+    to: features_closed
+
+  - from: features_closed
+    to: fix_stories
+    label: "No"
+
+  - from: fix_stories
+    to: validate_features
+
+  - from: features_closed
+    to: validate_scope
+    label: Si
+
+  - from: validate_scope
+    to: validation_ok
+
+  - from: validation_ok
+    to: fix_scope
+    label: "No"
+
+  - from: fix_scope
+    to: validate_scope
+
+  - from: validation_ok
+    to: deploy_production
+    label: Si
+
+  - from: deploy_production
+    to: close_features
+
+  - from: close_features
+    to: close_epic
+
+  - from: close_epic
+    to: end
