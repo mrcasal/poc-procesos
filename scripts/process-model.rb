@@ -179,7 +179,7 @@ def render_svg(model, layout)
   flows = Array(model["flows"])
   node_lookup = nodes_by_id(model)
   lane_order = Array(layout["lane-order"])
-  ordered_actor_ids = (lane_order + actor_lookup.keys).uniq
+  ordered_actor_ids = (lane_order.select { |actor| actor_lookup.key?(actor) } + actor_lookup.keys).uniq
 
   incoming = Hash.new { |hash, key| hash[key] = [] }
   outgoing = Hash.new { |hash, key| hash[key] = [] }
@@ -349,8 +349,123 @@ def render_svg(model, layout)
   lines.join("\n")
 end
 
+def view_phases(layout)
+  Array(layout.dig("views", "phases"))
+end
+
+def views_enabled?(layout)
+  !view_phases(layout).empty?
+end
+
+def render_output_path(process_dir, name)
+  File.join(process_dir, name)
+end
+
+def render_view_outputs(layout)
+  return [] unless views_enabled?(layout)
+
+  outputs = ["process-overview.svg"]
+  outputs.concat(view_phases(layout).map { |phase| "process-#{phase.fetch("id")}.svg" })
+  outputs
+end
+
+def overview_model(model, layout)
+  phases = view_phases(layout)
+  actors = [{ "id" => "process", "name" => "Proceso" }]
+  nodes = [{ "id" => "start", "type" => "start" }]
+  nodes.concat(phases.map do |phase|
+    {
+      "id" => phase.fetch("id"),
+      "actor" => "process",
+      "type" => "subprocess",
+      "label" => phase.fetch("label")
+    }
+  end)
+  nodes << { "id" => "end", "type" => "end" }
+
+  flow_nodes = nodes.map { |node| node.fetch("id") }
+  flows = flow_nodes.each_cons(2).map { |from, to| { "from" => from, "to" => to } }
+
+  {
+    "process" => {
+      "id" => "#{model.fetch("process").fetch("id")}-overview",
+      "name" => "#{model.fetch("process").fetch("name")} - vista general"
+    },
+    "actors" => actors,
+    "nodes" => nodes,
+    "flows" => flows
+  }
+end
+
+def phase_model(model, phase)
+  node_lookup = nodes_by_id(model)
+  selected_ids = Array(phase.fetch("nodes")).map(&:to_s)
+  selected = selected_ids.map { |id| node_lookup.fetch(id) }
+  selected_set = selected_ids.to_set
+
+  internal_flows = Array(model["flows"]).select do |flow|
+    selected_set.include?(flow.fetch("from")) && selected_set.include?(flow.fetch("to"))
+  end
+
+  incoming_internal = Hash.new { |hash, key| hash[key] = [] }
+  outgoing_internal = Hash.new { |hash, key| hash[key] = [] }
+  internal_flows.each do |flow|
+    outgoing_internal[flow.fetch("from")] << flow
+    incoming_internal[flow.fetch("to")] << flow
+  end
+
+  entry_ids = selected_ids.select { |id| incoming_internal[id].empty? }
+  exit_ids = selected_ids.select { |id| outgoing_internal[id].empty? }
+  entry_ids = [selected_ids.first] if entry_ids.empty?
+  exit_ids = [selected_ids.last] if exit_ids.empty?
+
+  flows = entry_ids.map { |id| { "from" => "start", "to" => id } }
+  flows.concat(internal_flows)
+  flows.concat(exit_ids.map { |id| { "from" => id, "to" => "end" } })
+
+  actors = Array(model["actors"]).select do |actor|
+    actor_id_value = actor_id(actor)
+    selected.any? { |node| node["actor"] == actor_id_value }
+  end
+
+  {
+    "process" => {
+      "id" => "#{model.fetch("process").fetch("id")}-#{phase.fetch("id")}",
+      "name" => phase.fetch("label")
+    },
+    "actors" => actors,
+    "nodes" => [{ "id" => "start", "type" => "start" }] + selected + [{ "id" => "end", "type" => "end" }],
+    "flows" => flows
+  }
+end
+
+def render_document_views(model, layout, output_dir)
+  return unless views_enabled?(layout)
+
+  overview_layout = layout.merge(
+    "lane-order" => ["process"],
+    "lane-height" => layout.fetch("overview-lane-height", 150),
+    "column-width" => layout.fetch("overview-column-width", 240)
+  )
+  File.write(
+    render_output_path(output_dir, "process-overview.svg"),
+    render_svg(overview_model(model, layout), overview_layout)
+  )
+
+  view_phases(layout).each do |phase|
+    phase_layout = layout.merge(
+      "lane-height" => layout.fetch("phase-lane-height", 144),
+      "column-width" => layout.fetch("phase-column-width", 178)
+    )
+    File.write(
+      render_output_path(output_dir, "process-#{phase.fetch("id")}.svg"),
+      render_svg(phase_model(model, phase), phase_layout)
+    )
+  end
+end
+
 command, process_path, layout_path, output_path = ARGV
-usage! unless %w[validate render-svg].include?(command) && process_path
+usage! unless %w[validate render-svg render-document-views list-document-views].include?(command) && process_path
 
 model = load_yaml(process_path)
 layout = layout_path && File.exist?(layout_path) ? load_yaml(layout_path) : {}
@@ -362,4 +477,9 @@ when "validate"
 when "render-svg"
   usage! unless output_path
   File.write(output_path, render_svg(model, layout))
+when "render-document-views"
+  usage! unless output_path
+  render_document_views(model, layout, output_path)
+when "list-document-views"
+  puts render_view_outputs(layout)
 end

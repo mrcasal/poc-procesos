@@ -20,4 +20,5 @@ for model in "${models[@]}"; do
   layout="$process_dir/layout.yaml"
   svg="$process_dir/process.svg"
   ruby scripts/process-model.rb render-svg "$model" "$layout" "$svg"
+  ruby scripts/process-model.rb render-document-views "$model" "$layout" "$process_dir"
 done

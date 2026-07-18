@@ -98,13 +98,37 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 ## Diagrama de proceso
 
-![Diagrama del proceso de Gestion de la Agenda Unica Luckia](process.svg)
+### Vista general
+
+![Vista general del proceso de Gestion de la Agenda Unica Luckia](process-overview.svg)
+
+### Fase 0: Recepcion y evaluacion inicial
+
+![Diagrama de la fase 0 del proceso de Gestion de la Agenda Unica Luckia](process-fase-0-recepcion-evaluacion.svg)
+
+### Fase 1: Definicion funcional y descomposicion
+
+![Diagrama de la fase 1 del proceso de Gestion de la Agenda Unica Luckia](process-fase-1-definicion-funcional.svg)
+
+### Fase 2: Construccion y validacion funcional
+
+![Diagrama de la fase 2 del proceso de Gestion de la Agenda Unica Luckia](process-fase-2-construccion-validacion.svg)
+
+### Fase 3: Validacion integrada y despliegue
+
+![Diagrama de la fase 3 del proceso de Gestion de la Agenda Unica Luckia](process-fase-3-validacion-despliegue.svg)
+
+### Vista completa
+
+[Abrir diagrama completo](process.svg)
 
 ## Artefactos del modelo
 
 - Modelo fuente: `process.yaml`
 - Preferencias de layout: `layout.yaml`
 - SVG renderizado: `process.svg`
+- SVG de vista general: `process-overview.svg`
+- SVG por fase: `process-fase-*.svg`
 
 ## Caminos alternativos
 

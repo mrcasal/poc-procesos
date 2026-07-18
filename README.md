@@ -13,9 +13,18 @@ process.svg
 metadata.yaml
 ```
 
+Los procesos largos pueden generar tambien vistas derivadas para lectura en
+documento:
+
+```text
+process-overview.svg
+process-<fase>.svg
+```
+
 La fuente de verdad del proceso es siempre `process.yaml`. El fichero `layout.yaml`
-contiene solo preferencias de presentacion. `process.svg` es un artefacto derivado
-y se regenera con:
+contiene solo preferencias de presentacion. Tambien puede declarar fases visuales
+para producir una vista general y diagramas parciales sin dividir el modelo fuente.
+`process.svg` y las vistas derivadas son artefactos generados y se regeneran con:
 
 ```bash
 make diagrams
@@ -81,6 +90,12 @@ direction: LR
 lane-order:
   - requester
 spacing: normal
+views:
+  phases:
+    - id: fase-0-recepcion
+      label: "Fase 0: Recepcion"
+      nodes:
+        - create_brief
 ```
 
 ## Normas de diagramado
