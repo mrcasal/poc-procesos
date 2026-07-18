@@ -1,6 +1,6 @@
 process:
-  id: agenda-unica-luckia
-  name: Gestion de la Agenda Unica Luckia
+  id: gestion-demanda-tecnologica
+  name: Gestion de Demanda Tecnologica
 
 actors:
   - id: promoter

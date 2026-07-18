@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="7310" height="684" viewBox="0 0 7310 684" role="img" aria-labelledby="title desc">
-  <title id="title">Gestion de la Agenda Unica Luckia</title>
+  <title id="title">Gestion de Demanda Tecnologica</title>
   <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -8,7 +8,7 @@
     </marker>
   </defs>
   <rect x="24" y="24" width="7262" height="636" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3655.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Gestion de la Agenda Unica Luckia</text>
+  <text x="3655.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Gestion de Demanda Tecnologica</text>
   <rect x="24" y="80" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
   <rect x="24" y="80" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
   <text x="62.0" y="138.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 138.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Promotor</text>

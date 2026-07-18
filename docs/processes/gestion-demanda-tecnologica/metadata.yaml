@@ -1,10 +1,10 @@
-id: agenda-unica-luckia
-name: Gestion de la Agenda Unica Luckia
+id: gestion-demanda-tecnologica
+name: Gestion de Demanda Tecnologica
 owner: Product Owner
 status: draft
 source:
   type: docx
-  file: Proceso de Gestion de la Agenda Unica v2.docx
+  file: Proceso de Gestion de Demanda Tecnologica v2.docx
 diagram:
   model: process.yaml
   layout: layout.yaml

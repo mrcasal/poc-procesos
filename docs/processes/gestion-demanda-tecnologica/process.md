@@ -1,4 +1,4 @@
-# Gestion de la Agenda Unica Luckia
+# Gestion de Demanda Tecnologica
 
 ## Metadata
 
@@ -12,7 +12,7 @@
 
 ## Objetivo
 
-Establecer un proceso unico y centralizado, la Agenda Unica Luckia, como canal exclusivo para trasladar, evaluar y gestionar todas las iniciativas tecnologicas y funcionales de la compania.
+Establecer un proceso unico y centralizado como canal exclusivo para trasladar, evaluar y gestionar todas las iniciativas tecnologicas y funcionales de la organizacion.
 
 El proceso garantiza trazabilidad, control de capacidad y visibilidad transversal, alineando las decisiones del Comite de Transformacion con la ejecucion real de los equipos de desarrollo.
 
@@ -41,7 +41,7 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 ## Reglas
 
-- Todas las iniciativas que impliquen desarrollo por parte de Tecnologia pasan por la Agenda Unica.
+- Todas las iniciativas que impliquen desarrollo por parte de Tecnologia pasan por el canal unico de demanda tecnologica.
 - No existe doble flujo para Portfolio y Mejora.
 - Cada iniciativa debe formalizarse mediante un Brief de Proyecto.
 - Toda la demanda planificada se registra en Azure DevOps.
@@ -100,23 +100,23 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 ### Vista general
 
-![Vista general del proceso de Gestion de la Agenda Unica Luckia](process-overview.svg)
+![Vista general del proceso de Gestion de Demanda Tecnologica](process-overview.svg)
 
 ### Fase 0: Recepcion y evaluacion inicial
 
-![Diagrama de la fase 0 del proceso de Gestion de la Agenda Unica Luckia](process-fase-0-recepcion-evaluacion.svg)
+![Diagrama de la fase 0 del proceso de Gestion de Demanda Tecnologica](process-fase-0-recepcion-evaluacion.svg)
 
 ### Fase 1: Definicion funcional y descomposicion
 
-![Diagrama de la fase 1 del proceso de Gestion de la Agenda Unica Luckia](process-fase-1-definicion-funcional.svg)
+![Diagrama de la fase 1 del proceso de Gestion de Demanda Tecnologica](process-fase-1-definicion-funcional.svg)
 
 ### Fase 2: Construccion y validacion funcional
 
-![Diagrama de la fase 2 del proceso de Gestion de la Agenda Unica Luckia](process-fase-2-construccion-validacion.svg)
+![Diagrama de la fase 2 del proceso de Gestion de Demanda Tecnologica](process-fase-2-construccion-validacion.svg)
 
 ### Fase 3: Validacion integrada y despliegue
 
-![Diagrama de la fase 3 del proceso de Gestion de la Agenda Unica Luckia](process-fase-3-validacion-despliegue.svg)
+![Diagrama de la fase 3 del proceso de Gestion de Demanda Tecnologica](process-fase-3-validacion-despliegue.svg)
 
 ### Vista completa
 
