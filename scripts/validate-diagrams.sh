@@ -79,6 +79,22 @@ print(encode64(compressed))
 PY
 }
 
+normalize_svg() {
+  python3 - "$@" <<'PY'
+from pathlib import Path
+import sys
+
+for raw_path in sys.argv[1:]:
+    path = Path(raw_path)
+    text = path.read_text(encoding="utf-8")
+    start = text.find("<svg")
+    if start == -1:
+        raise SystemExit(f"SVG root not found in {path}")
+    if start > 0:
+        path.write_text(text[start:], encoding="utf-8")
+PY
+}
+
 if command -v plantuml >/dev/null 2>&1; then
   plantuml -tsvg "${temp_diagrams[@]}" >/dev/null
 elif java_available && command -v curl >/dev/null 2>&1; then
@@ -104,6 +120,10 @@ else
   echo "PlantUML renderer not available. Install plantuml, provide Java + curl, Docker, or python3 + curl for server rendering." >&2
   exit 1
 fi
+
+for source in "${temp_diagrams[@]}"; do
+  normalize_svg "${source%.puml}.svg"
+done
 
 changed=0
 for source in "${diagrams[@]}"; do

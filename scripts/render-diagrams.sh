@@ -90,6 +90,22 @@ java_available() {
   command -v java >/dev/null 2>&1 && java -version >/dev/null 2>&1
 }
 
+normalize_svg() {
+  python3 - "$@" <<'PY'
+from pathlib import Path
+import sys
+
+for raw_path in sys.argv[1:]:
+    path = Path(raw_path)
+    text = path.read_text(encoding="utf-8")
+    start = text.find("<svg")
+    if start == -1:
+        raise SystemExit(f"SVG root not found in {path}")
+    if start > 0:
+        path.write_text(text[start:], encoding="utf-8")
+PY
+}
+
 if command -v plantuml >/dev/null 2>&1; then
   render_with_plantuml
 elif java_available && command -v curl >/dev/null 2>&1; then
@@ -109,4 +125,5 @@ for source in "${diagrams[@]}"; do
     echo "Expected SVG was not generated: $svg" >&2
     exit 1
   fi
+  normalize_svg "$svg"
 done

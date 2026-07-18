@@ -6,7 +6,7 @@ digraph agenda_unica_luckia {
     fontsize=18,
     fontname="Arial",
     rankdir=LR,
-    splines=ortho,
+    splines=polyline,
     nodesep=0.55,
     ranksep=0.9,
     compound=true,
@@ -135,34 +135,34 @@ digraph agenda_unica_luckia {
   }
 
   start -> formalize_brief -> send_initiative -> review_brief -> brief_ok;
-  brief_ok -> request_updates [label="No"];
+  brief_ok -> request_updates [xlabel="No"];
   request_updates -> update_brief -> review_brief;
-  brief_ok -> estimate_effort [label="Si"];
+  brief_ok -> estimate_effort [xlabel="Si"];
   estimate_effort -> create_epic -> evaluate_initiative -> approved;
 
-  approved -> reject_epic [label="No"];
+  approved -> reject_epic [xlabel="No"];
   reject_epic -> end_reject;
-  approved -> prioritize_epic [label="Si"];
+  approved -> prioritize_epic [xlabel="Si"];
   prioritize_epic -> review_capacity -> capacity_ok;
 
-  capacity_ok -> freeze_intake [label="No"];
+  capacity_ok -> freeze_intake [xlabel="No"];
   freeze_intake -> close_active -> review_capacity_again -> capacity_ok;
-  capacity_ok -> define_features [label="Si"];
+  capacity_ok -> define_features [xlabel="Si"];
   define_features -> estimate_features -> assign_features -> verify_deps -> deps_ok;
 
-  deps_ok -> block_epic [label="No"];
+  deps_ok -> block_epic [xlabel="No"];
   block_epic -> agree_contract -> commit_delivery -> reactivate_epic -> deps_ok;
-  deps_ok -> refine_stories [label="Si"];
+  deps_ok -> refine_stories [xlabel="Si"];
   refine_stories -> build_stories -> validate_features -> features_ok;
 
-  features_ok -> fix_stories [label="No"];
+  features_ok -> fix_stories [xlabel="No"];
   fix_stories -> validate_features_again -> features_ok;
-  features_ok -> validate_scope [label="Si"];
+  features_ok -> validate_scope [xlabel="Si"];
   validate_scope -> validation_ok;
 
-  validation_ok -> fix_scope [label="No"];
+  validation_ok -> fix_scope [xlabel="No"];
   fix_scope -> validate_scope_again -> validation_ok;
-  validation_ok -> deploy_prod [label="Si"];
+  validation_ok -> deploy_prod [xlabel="Si"];
   deploy_prod -> close_features -> close_epic -> end_close;
 }
 @enddot
