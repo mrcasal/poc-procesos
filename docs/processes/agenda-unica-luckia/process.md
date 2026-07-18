@@ -104,7 +104,6 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 - Modelo fuente: `process.yaml`
 - Preferencias de layout: `layout.yaml`
-- PlantUML generado: `process.puml`
 - SVG renderizado: `process.svg`
 
 ## Caminos alternativos

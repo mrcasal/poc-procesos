@@ -9,14 +9,13 @@ Cada proceso se documenta con estos artefactos:
 process.md
 process.yaml
 layout.yaml
-process.puml
 process.svg
 metadata.yaml
 ```
 
 La fuente de verdad del proceso es siempre `process.yaml`. El fichero `layout.yaml`
-contiene solo preferencias de presentacion. `process.puml` y `process.svg` son
-artefactos derivados y se regeneran con:
+contiene solo preferencias de presentacion. `process.svg` es un artefacto derivado
+y se regenera con:
 
 ```bash
 make diagrams
@@ -84,6 +83,19 @@ lane-order:
 spacing: normal
 ```
 
+## Normas de diagramado
+
+El SVG oficial se genera directamente desde `process.yaml` y aplica siempre la
+misma plantilla visual:
+
+- una caja exterior recoge todo el proceso
+- el proceso se divide en lanes horizontales, una por actor
+- el nombre del actor aparece en la parte izquierda de su lane
+- el nombre del actor se rota en vertical, de abajo hacia arriba, para ahorrar ancho
+- el proceso comienza a la izquierda y avanza hacia la derecha
+- inicio, fin, actividades y decisiones mantienen tamanos fijos
+- las flechas usan conectores ortogonales con tramos rectos y giros de 90 grados
+
 La validacion comprueba, entre otras reglas:
 
 - actores y nodos referenciados por los flujos
@@ -105,7 +117,6 @@ docs/processes/
     process.md
     process.yaml
     layout.yaml
-    process.puml
     process.svg
 scripts/
   process-model.rb
@@ -118,17 +129,11 @@ scripts/
 - Modificar `process.yaml` cuando cambie la logica del proceso.
 - Modificar `layout.yaml` solo cuando cambie la presentacion.
 - Ejecutar `make diagrams` despues de cada cambio.
-- Incluir en el commit `process.yaml`, `layout.yaml` y los derivados actualizados.
-- No editar manualmente `process.puml` ni ficheros SVG.
+- Incluir en el commit `process.yaml`, `layout.yaml` y el SVG actualizado.
+- No editar manualmente ficheros SVG.
 
 ## Renderizado
 
-El script oficial genera primero PlantUML/DOT desde YAML y despues intenta
-renderizar el SVG con estas opciones:
-
-1. `plantuml`, si esta instalado.
-2. JAR de PlantUML cacheado en `.cache/plantuml`, si hay Java runtime.
-3. Servidor PlantUML via `PLANTUML_SERVER_URL`, si hay `python3` y `curl`.
-4. Docker, si esta disponible.
-
-La carpeta `.cache/` queda fuera de git.
+El script oficial genera `process.svg` directamente desde YAML usando
+`scripts/process-model.rb`. No usa renderizadores externos ni formatos
+intermedios.

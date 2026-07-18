@@ -1,530 +1,180 @@
-<svg width="2120pt" height="1299pt"
- viewBox="0.00 0.00 2120.22 1298.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1294.6)">
-<title>agenda_unica_luckia</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-1294.6 2116.22,-1294.6 2116.22,4 -4,4"/>
-<text text-anchor="middle" x="1056.11" y="-1269.5" font-family="Arial" font-size="18.00">Gestion de la Agenda Unica Luckia</text>
-<g id="clust1" class="cluster">
-<title>cluster_promoter</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M261.32,-1101C261.32,-1101 598.92,-1101 598.92,-1101 604.92,-1101 610.92,-1107 610.92,-1113 610.92,-1113 610.92,-1241 610.92,-1241 610.92,-1247 604.92,-1253 598.92,-1253 598.92,-1253 261.32,-1253 261.32,-1253 255.32,-1253 249.32,-1247 249.32,-1241 249.32,-1241 249.32,-1113 249.32,-1113 249.32,-1107 255.32,-1101 261.32,-1101"/>
-<text text-anchor="middle" x="430.12" y="-1236.65" font-family="Arial" font-size="13.00">Promotor</text>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_product_owner</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M488.64,-406C488.64,-406 1868.74,-406 1868.74,-406 1874.74,-406 1880.74,-412 1880.74,-418 1880.74,-418 1880.74,-850 1880.74,-850 1880.74,-856 1874.74,-862 1868.74,-862 1868.74,-862 488.64,-862 488.64,-862 482.64,-862 476.64,-856 476.64,-850 476.64,-850 476.64,-418 476.64,-418 476.64,-412 482.64,-406 488.64,-406"/>
-<text text-anchor="middle" x="1178.69" y="-845.65" font-family="Arial" font-size="13.00">Product Owner</text>
-</g>
-<g id="clust3" class="cluster">
-<title>cluster_committee</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M23,-870C23,-870 593.92,-870 593.92,-870 599.92,-870 605.92,-876 605.92,-882 605.92,-882 605.92,-937 605.92,-937 605.92,-943 599.92,-949 593.92,-949 593.92,-949 23,-949 23,-949 17,-949 11,-943 11,-937 11,-937 11,-882 11,-882 11,-876 17,-870 23,-870"/>
-<text text-anchor="middle" x="308.46" y="-932.65" font-family="Arial" font-size="13.00">Comite Transformacion</text>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_pmo</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M20,-319C20,-319 597.92,-319 597.92,-319 603.92,-319 609.92,-325 609.92,-331 609.92,-331 609.92,-386 609.92,-386 609.92,-392 603.92,-398 597.92,-398 597.92,-398 20,-398 20,-398 14,-398 8,-392 8,-386 8,-386 8,-331 8,-331 8,-325 14,-319 20,-319"/>
-<text text-anchor="middle" x="308.96" y="-381.65" font-family="Arial" font-size="13.00">PMO</text>
-</g>
-<g id="clust5" class="cluster">
-<title>cluster_technical_team</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M969.46,-94C969.46,-94 2092.22,-94 2092.22,-94 2098.22,-94 2104.22,-100 2104.22,-106 2104.22,-106 2104.22,-386 2104.22,-386 2104.22,-392 2098.22,-398 2092.22,-398 2092.22,-398 969.46,-398 969.46,-398 963.46,-398 957.46,-392 957.46,-386 957.46,-386 957.46,-106 957.46,-106 957.46,-100 963.46,-94 969.46,-94"/>
-<text text-anchor="middle" x="1530.84" y="-381.65" font-family="Arial" font-size="13.00">Equipo Tecnico</text>
-</g>
-<!-- formalize_brief -->
-<g id="node1" class="node">
-<title>formalize_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M348.6,-1221C348.6,-1221 269.32,-1221 269.32,-1221 263.32,-1221 257.32,-1215 257.32,-1209 257.32,-1209 257.32,-1197 257.32,-1197 257.32,-1191 263.32,-1185 269.32,-1185 269.32,-1185 348.6,-1185 348.6,-1185 354.6,-1185 360.6,-1191 360.6,-1197 360.6,-1197 360.6,-1209 360.6,-1209 360.6,-1215 354.6,-1221 348.6,-1221"/>
-<text text-anchor="middle" x="308.96" y="-1199.15" font-family="Arial" font-size="11.00" fill="#1f2933">Formalizar brief</text>
-</g>
-<!-- send_initiative -->
-<g id="node2" class="node">
-<title>send_initiative</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M590.92,-1189C590.92,-1189 509.64,-1189 509.64,-1189 503.64,-1189 497.64,-1183 497.64,-1177 497.64,-1177 497.64,-1165 497.64,-1165 497.64,-1159 503.64,-1153 509.64,-1153 509.64,-1153 590.92,-1153 590.92,-1153 596.92,-1153 602.92,-1159 602.92,-1165 602.92,-1165 602.92,-1177 602.92,-1177 602.92,-1183 596.92,-1189 590.92,-1189"/>
-<text text-anchor="middle" x="550.28" y="-1167.15" font-family="Arial" font-size="11.00" fill="#1f2933">Enviar iniciativa</text>
-</g>
-<!-- formalize_brief&#45;&gt;send_initiative -->
-<g id="edge2" class="edge">
-<title>formalize_brief&#45;&gt;send_initiative</title>
-<path fill="none" stroke="#4f5b67" d="M361,-1196.17C398.55,-1191.15 449.72,-1184.31 489.24,-1179.03"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="489.37,-1181.48 495.98,-1178.13 488.72,-1176.63 489.37,-1181.48"/>
-</g>
-<!-- review_brief -->
-<g id="node4" class="node">
-<title>review_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M581.42,-830C581.42,-830 519.14,-830 519.14,-830 513.14,-830 507.14,-824 507.14,-818 507.14,-818 507.14,-806 507.14,-806 507.14,-800 513.14,-794 519.14,-794 519.14,-794 581.42,-794 581.42,-794 587.42,-794 593.42,-800 593.42,-806 593.42,-806 593.42,-818 593.42,-818 593.42,-824 587.42,-830 581.42,-830"/>
-<text text-anchor="middle" x="550.28" y="-808.15" font-family="Arial" font-size="11.00" fill="#1f2933">Revisar brief</text>
-</g>
-<!-- send_initiative&#45;&gt;review_brief -->
-<g id="edge3" class="edge">
-<title>send_initiative&#45;&gt;review_brief</title>
-<path fill="none" stroke="#4f5b67" d="M531.54,-1152.66C502.05,-1123.79 448.14,-1071 448.14,-1071 448.14,-1071 448.14,-880 448.14,-880 448.14,-880 476.64,-860 476.64,-860 476.64,-860 496.16,-847.27 515.1,-834.93"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="516.22,-837.12 520.75,-831.25 513.55,-833.02 516.22,-837.12"/>
-</g>
-<!-- update_brief -->
-<g id="node3" class="node">
-<title>update_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M347.1,-1145C347.1,-1145 270.82,-1145 270.82,-1145 264.82,-1145 258.82,-1139 258.82,-1133 258.82,-1133 258.82,-1121 258.82,-1121 258.82,-1115 264.82,-1109 270.82,-1109 270.82,-1109 347.1,-1109 347.1,-1109 353.1,-1109 359.1,-1115 359.1,-1121 359.1,-1121 359.1,-1133 359.1,-1133 359.1,-1139 353.1,-1145 347.1,-1145"/>
-<text text-anchor="middle" x="308.96" y="-1123.15" font-family="Arial" font-size="11.00" fill="#1f2933">Actualizar brief</text>
-</g>
-<!-- update_brief&#45;&gt;review_brief -->
-<g id="edge7" class="edge">
-<title>update_brief&#45;&gt;review_brief</title>
-<path fill="none" stroke="#4f5b67" d="M321.9,-1108.7C350.33,-1065.16 419.64,-959 419.64,-959 419.64,-959 476.64,-860 476.64,-860 476.64,-860 495.89,-847.27 514.58,-834.93"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="515.65,-837.16 520.14,-831.26 512.95,-833.07 515.65,-837.16"/>
-</g>
-<!-- brief_complete -->
-<g id="node5" class="node">
-<title>brief_complete</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M778.98,-828.17C778.98,-828.17 714.35,-813.63 714.35,-813.63 708.49,-812.32 708.49,-809.68 714.35,-808.37 714.35,-808.37 778.98,-793.83 778.98,-793.83 784.83,-792.52 796.54,-792.52 802.4,-793.83 802.4,-793.83 867.03,-808.37 867.03,-808.37 872.88,-809.68 872.88,-812.32 867.03,-813.63 867.03,-813.63 802.4,-828.17 802.4,-828.17 796.54,-829.48 784.83,-829.48 778.98,-828.17"/>
-<text text-anchor="middle" x="790.69" y="-807.15" font-family="Arial" font-size="11.00" fill="#1f2933">Brief completo</text>
-</g>
-<!-- review_brief&#45;&gt;brief_complete -->
-<g id="edge4" class="edge">
-<title>review_brief&#45;&gt;brief_complete</title>
-<path fill="none" stroke="#4f5b67" d="M593.9,-811.82C621.67,-811.7 659.07,-811.55 693.73,-811.4"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="693.51,-813.85 700.5,-811.37 693.49,-808.95 693.51,-813.85"/>
-</g>
-<!-- request_updates -->
-<g id="node6" class="node">
-<title>request_updates</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1074.24,-830C1074.24,-830 993.96,-830 993.96,-830 987.96,-830 981.96,-824 981.96,-818 981.96,-818 981.96,-806 981.96,-806 981.96,-800 987.96,-794 993.96,-794 993.96,-794 1074.24,-794 1074.24,-794 1080.24,-794 1086.24,-800 1086.24,-806 1086.24,-806 1086.24,-818 1086.24,-818 1086.24,-824 1080.24,-830 1074.24,-830"/>
-<text text-anchor="middle" x="1034.1" y="-808.15" font-family="Arial" font-size="11.00" fill="#1f2933">Solicitar ajustes</text>
-</g>
-<!-- brief_complete&#45;&gt;request_updates -->
-<g id="edge5" class="edge">
-<title>brief_complete&#45;&gt;request_updates</title>
-<path fill="none" stroke="#4f5b67" d="M879.19,-811.36C910.5,-811.49 945.06,-811.64 973.47,-811.75"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="973.18,-814.2 980.19,-811.78 973.2,-809.3 973.18,-814.2"/>
-<text text-anchor="middle" x="919.83" y="-802.06" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- estimate_effort -->
-<g id="node7" class="node">
-<title>estimate_effort</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1068.24,-754C1068.24,-754 999.96,-754 999.96,-754 993.96,-754 987.96,-748 987.96,-742 987.96,-742 987.96,-730 987.96,-730 987.96,-724 993.96,-718 999.96,-718 999.96,-718 1068.24,-718 1068.24,-718 1074.24,-718 1080.24,-724 1080.24,-730 1080.24,-730 1080.24,-742 1080.24,-742 1080.24,-748 1074.24,-754 1068.24,-754"/>
-<text text-anchor="middle" x="1034.1" y="-732.15" font-family="Arial" font-size="11.00" fill="#1f2933">Estimar effort</text>
-</g>
-<!-- brief_complete&#45;&gt;estimate_effort -->
-<g id="edge8" class="edge">
-<title>brief_complete&#45;&gt;estimate_effort</title>
-<path fill="none" stroke="#4f5b67" d="M829.14,-799.36C869.5,-786.83 934.06,-766.77 979.72,-752.58"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="980.33,-754.96 986.29,-750.54 978.87,-750.28 980.33,-754.96"/>
-<text text-anchor="middle" x="899.93" y="-766.47" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- request_updates&#45;&gt;update_brief -->
-<g id="edge6" class="edge">
-<title>request_updates&#45;&gt;update_brief</title>
-<path fill="none" stroke="#4f5b67" d="M991.03,-830.33C865.69,-884.92 495.18,-1046.32 360.02,-1105.19"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="359.05,-1102.94 353.62,-1107.98 361.01,-1107.43 359.05,-1102.94"/>
-</g>
-<!-- create_epic -->
-<g id="node8" class="node">
-<title>create_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1267.02,-792C1267.02,-792 1210.74,-792 1210.74,-792 1204.74,-792 1198.74,-786 1198.74,-780 1198.74,-780 1198.74,-768 1198.74,-768 1198.74,-762 1204.74,-756 1210.74,-756 1210.74,-756 1267.02,-756 1267.02,-756 1273.02,-756 1279.02,-762 1279.02,-768 1279.02,-768 1279.02,-780 1279.02,-780 1279.02,-786 1273.02,-792 1267.02,-792"/>
-<text text-anchor="middle" x="1238.88" y="-770.15" font-family="Arial" font-size="11.00" fill="#1f2933">Crear epica</text>
-</g>
-<!-- estimate_effort&#45;&gt;create_epic -->
-<g id="edge9" class="edge">
-<title>estimate_effort&#45;&gt;create_epic</title>
-<path fill="none" stroke="#4f5b67" d="M1080.61,-744.53C1113.23,-750.64 1157.06,-758.86 1190.17,-765.06"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1189.53,-767.43 1196.86,-766.31 1190.43,-762.61 1189.53,-767.43"/>
-</g>
-<!-- evaluate_initiative -->
-<g id="node21" class="node">
-<title>evaluate_initiative</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M118.28,-916C118.28,-916 31,-916 31,-916 25,-916 19,-910 19,-904 19,-904 19,-892 19,-892 19,-886 25,-880 31,-880 31,-880 118.28,-880 118.28,-880 124.28,-880 130.28,-886 130.28,-892 130.28,-892 130.28,-904 130.28,-904 130.28,-910 124.28,-916 118.28,-916"/>
-<text text-anchor="middle" x="74.64" y="-894.15" font-family="Arial" font-size="11.00" fill="#1f2933">Evaluar iniciativa</text>
-</g>
-<!-- create_epic&#45;&gt;evaluate_initiative -->
-<g id="edge10" class="edge">
-<title>create_epic&#45;&gt;evaluate_initiative</title>
-<path fill="none" stroke="#4f5b67" d="M1205.17,-792.4C1165.17,-814.89 1102.74,-850 1102.74,-850 1102.74,-850 615.92,-935 615.92,-935 615.92,-935 419.64,-938 419.64,-938 419.64,-938 198.28,-938 198.28,-938 198.28,-938 168.68,-928.35 138.57,-918.52"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="139.36,-916.2 131.94,-916.36 137.84,-920.86 139.36,-916.2"/>
-</g>
-<!-- reject_epic -->
-<g id="node9" class="node">
-<title>reject_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M599.92,-602C599.92,-602 500.64,-602 500.64,-602 494.64,-602 488.64,-596 488.64,-590 488.64,-590 488.64,-578 488.64,-578 488.64,-572 494.64,-566 500.64,-566 500.64,-566 599.92,-566 599.92,-566 605.92,-566 611.92,-572 611.92,-578 611.92,-578 611.92,-590 611.92,-590 611.92,-596 605.92,-602 599.92,-602"/>
-<text text-anchor="middle" x="550.28" y="-580.15" font-family="Arial" font-size="11.00" fill="#1f2933">Comunicar rechazo</text>
-</g>
-<!-- end -->
-<g id="node38" class="node">
-<title>end</title>
-<ellipse fill="#222222" stroke="#222222" cx="790.69" cy="-30" rx="6.48" ry="6.48"/>
-<ellipse fill="none" stroke="#222222" cx="790.69" cy="-30" rx="10.48" ry="10.48"/>
-</g>
-<!-- reject_epic&#45;&gt;end -->
-<g id="edge13" class="edge">
-<title>reject_epic&#45;&gt;end</title>
-<path fill="none" stroke="#4f5b67" d="M582.46,-565.67C598.99,-555.95 615.92,-546 615.92,-546 615.92,-546 680.92,-70 680.92,-70 680.92,-70 742.07,-47.51 772.67,-36.26"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="773.27,-38.65 778.99,-33.93 771.58,-34.05 773.27,-38.65"/>
-</g>
-<!-- close_active_work -->
-<g id="node10" class="node">
-<title>close_active_work</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M603.92,-526C603.92,-526 496.64,-526 496.64,-526 490.64,-526 484.64,-520 484.64,-514 484.64,-514 484.64,-502 484.64,-502 484.64,-496 490.64,-490 496.64,-490 496.64,-490 603.92,-490 603.92,-490 609.92,-490 615.92,-496 615.92,-502 615.92,-502 615.92,-514 615.92,-514 615.92,-520 609.92,-526 603.92,-526"/>
-<text text-anchor="middle" x="550.28" y="-504.15" font-family="Arial" font-size="11.00" fill="#1f2933">Cerrar trabajo activo</text>
-</g>
-<!-- review_capacity -->
-<g id="node24" class="node">
-<title>review_capacity</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M121.28,-366C121.28,-366 28,-366 28,-366 22,-366 16,-360 16,-354 16,-354 16,-342 16,-342 16,-336 22,-330 28,-330 28,-330 121.28,-330 121.28,-330 127.28,-330 133.28,-336 133.28,-342 133.28,-342 133.28,-354 133.28,-354 133.28,-360 127.28,-366 121.28,-366"/>
-<text text-anchor="middle" x="74.64" y="-344.15" font-family="Arial" font-size="11.00" fill="#1f2933">Revisar capacidad</text>
-</g>
-<!-- close_active_work&#45;&gt;review_capacity -->
-<g id="edge19" class="edge">
-<title>close_active_work&#45;&gt;review_capacity</title>
-<path fill="none" stroke="#4f5b67" d="M494.85,-489.61C406.25,-459.68 231.36,-400.6 137.93,-369.04"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="138.82,-366.76 131.41,-366.84 137.25,-371.4 138.82,-366.76"/>
-</g>
-<!-- define_features -->
-<g id="node11" class="node">
-<title>define_features</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M589.42,-754C589.42,-754 511.14,-754 511.14,-754 505.14,-754 499.14,-748 499.14,-742 499.14,-742 499.14,-730 499.14,-730 499.14,-724 505.14,-718 511.14,-718 511.14,-718 589.42,-718 589.42,-718 595.42,-718 601.42,-724 601.42,-730 601.42,-730 601.42,-742 601.42,-742 601.42,-748 595.42,-754 589.42,-754"/>
-<text text-anchor="middle" x="550.28" y="-732.15" font-family="Arial" font-size="11.00" fill="#1f2933">Definir features</text>
-</g>
-<!-- estimate_features -->
-<g id="node12" class="node">
-<title>estimate_features</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M832.83,-641C832.83,-641 748.55,-641 748.55,-641 742.55,-641 736.55,-635 736.55,-629 736.55,-629 736.55,-617 736.55,-617 736.55,-611 742.55,-605 748.55,-605 748.55,-605 832.83,-605 832.83,-605 838.83,-605 844.83,-611 844.83,-617 844.83,-617 844.83,-629 844.83,-629 844.83,-635 838.83,-641 832.83,-641"/>
-<text text-anchor="middle" x="790.69" y="-619.15" font-family="Arial" font-size="11.00" fill="#1f2933">Estimar features</text>
-</g>
-<!-- define_features&#45;&gt;estimate_features -->
-<g id="edge21" class="edge">
-<title>define_features&#45;&gt;estimate_features</title>
-<path fill="none" stroke="#4f5b67" d="M590.11,-717.59C632.02,-697.73 698.74,-666.11 743.36,-644.96"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="744.23,-647.26 749.5,-642.05 742.13,-642.83 744.23,-647.26"/>
-</g>
-<!-- assign_features -->
-<g id="node13" class="node">
-<title>assign_features</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1075.74,-614C1075.74,-614 992.46,-614 992.46,-614 986.46,-614 980.46,-608 980.46,-602 980.46,-602 980.46,-590 980.46,-590 980.46,-584 986.46,-578 992.46,-578 992.46,-578 1075.74,-578 1075.74,-578 1081.74,-578 1087.74,-584 1087.74,-590 1087.74,-590 1087.74,-602 1087.74,-602 1087.74,-608 1081.74,-614 1075.74,-614"/>
-<text text-anchor="middle" x="1034.1" y="-592.15" font-family="Arial" font-size="11.00" fill="#1f2933">Asignar features</text>
-</g>
-<!-- estimate_features&#45;&gt;assign_features -->
-<g id="edge22" class="edge">
-<title>estimate_features&#45;&gt;assign_features</title>
-<path fill="none" stroke="#4f5b67" d="M845.27,-617.01C882.75,-612.82 932.89,-607.21 971.93,-602.84"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="971.9,-605.31 978.59,-602.1 971.36,-600.44 971.9,-605.31"/>
-</g>
-<!-- verify_dependencies -->
-<g id="node14" class="node">
-<title>verify_dependencies</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1298.02,-587C1298.02,-587 1179.74,-587 1179.74,-587 1173.74,-587 1167.74,-581 1167.74,-575 1167.74,-575 1167.74,-563 1167.74,-563 1167.74,-557 1173.74,-551 1179.74,-551 1179.74,-551 1298.02,-551 1298.02,-551 1304.02,-551 1310.02,-557 1310.02,-563 1310.02,-563 1310.02,-575 1310.02,-575 1310.02,-581 1304.02,-587 1298.02,-587"/>
-<text text-anchor="middle" x="1238.88" y="-565.15" font-family="Arial" font-size="11.00" fill="#1f2933">Verificar dependencias</text>
-</g>
-<!-- assign_features&#45;&gt;verify_dependencies -->
-<g id="edge23" class="edge">
-<title>assign_features&#45;&gt;verify_dependencies</title>
-<path fill="none" stroke="#4f5b67" d="M1088.11,-588.94C1109.74,-586.06 1135.2,-582.67 1158.93,-579.51"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1159.13,-581.96 1165.74,-578.61 1158.48,-577.1 1159.13,-581.96"/>
-</g>
-<!-- dependencies_ok -->
-<g id="node15" class="node">
-<title>dependencies_ok</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1498.26,-548.06C1498.26,-548.06 1386.89,-531.74 1386.89,-531.74 1380.96,-530.87 1380.96,-529.13 1386.89,-528.26 1386.89,-528.26 1498.26,-511.94 1498.26,-511.94 1504.2,-511.07 1516.07,-511.07 1522.01,-511.94 1522.01,-511.94 1633.38,-528.26 1633.38,-528.26 1639.32,-529.13 1639.32,-530.87 1633.38,-531.74 1633.38,-531.74 1522.01,-548.06 1522.01,-548.06 1516.07,-548.93 1504.2,-548.93 1498.26,-548.06"/>
-<text text-anchor="middle" x="1510.14" y="-526.15" font-family="Arial" font-size="11.00" fill="#1f2933">Dependencias resueltas</text>
-</g>
-<!-- verify_dependencies&#45;&gt;dependencies_ok -->
-<g id="edge24" class="edge">
-<title>verify_dependencies&#45;&gt;dependencies_ok</title>
-<path fill="none" stroke="#4f5b67" d="M1310.27,-558.8C1347.66,-553.39 1393.68,-546.72 1432.03,-541.17"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1432.01,-543.65 1438.59,-540.22 1431.31,-538.8 1432.01,-543.65"/>
-</g>
-<!-- block_epic -->
-<g id="node16" class="node">
-<title>block_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1860.74,-490C1860.74,-490 1768.46,-490 1768.46,-490 1762.46,-490 1756.46,-484 1756.46,-478 1756.46,-478 1756.46,-466 1756.46,-466 1756.46,-460 1762.46,-454 1768.46,-454 1768.46,-454 1860.74,-454 1860.74,-454 1866.74,-454 1872.74,-460 1872.74,-466 1872.74,-466 1872.74,-478 1872.74,-478 1872.74,-484 1866.74,-490 1860.74,-490"/>
-<text text-anchor="middle" x="1814.6" y="-468.15" font-family="Arial" font-size="11.00" fill="#1f2933">Marcar bloqueada</text>
-</g>
-<!-- dependencies_ok&#45;&gt;block_epic -->
-<g id="edge25" class="edge">
-<title>dependencies_ok&#45;&gt;block_epic</title>
-<path fill="none" stroke="#4f5b67" d="M1570.53,-518.61C1621.56,-508.82 1695.05,-494.73 1747.84,-484.61"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1748.23,-487.03 1754.65,-483.3 1747.31,-482.22 1748.23,-487.03"/>
-<text text-anchor="middle" x="1652.69" y="-492.11" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- refine_stories -->
-<g id="node29" class="node">
-<title>refine_stories</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1075.24,-366C1075.24,-366 992.96,-366 992.96,-366 986.96,-366 980.96,-360 980.96,-354 980.96,-354 980.96,-342 980.96,-342 980.96,-336 986.96,-330 992.96,-330 992.96,-330 1075.24,-330 1075.24,-330 1081.24,-330 1087.24,-336 1087.24,-342 1087.24,-342 1087.24,-354 1087.24,-354 1087.24,-360 1081.24,-366 1075.24,-366"/>
-<text text-anchor="middle" x="1034.1" y="-344.15" font-family="Arial" font-size="11.00" fill="#1f2933">Refinar historias</text>
-</g>
-<!-- dependencies_ok&#45;&gt;refine_stories -->
-<g id="edge30" class="edge">
-<title>dependencies_ok&#45;&gt;refine_stories</title>
-<path fill="none" stroke="#4f5b67" d="M1460.59,-517.06C1366.33,-491.94 1167.74,-439 1167.74,-439 1167.74,-439 1107.83,-397.9 1068.54,-370.94"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1070.35,-369.21 1063.19,-367.27 1067.58,-373.25 1070.35,-369.21"/>
-<text text-anchor="middle" x="1251.54" y="-453.04" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- agree_contract -->
-<g id="node27" class="node">
-<title>agree_contract</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1076.74,-290C1076.74,-290 991.46,-290 991.46,-290 985.46,-290 979.46,-284 979.46,-278 979.46,-278 979.46,-266 979.46,-266 979.46,-260 985.46,-254 991.46,-254 991.46,-254 1076.74,-254 1076.74,-254 1082.74,-254 1088.74,-260 1088.74,-266 1088.74,-266 1088.74,-278 1088.74,-278 1088.74,-284 1082.74,-290 1076.74,-290"/>
-<text text-anchor="middle" x="1034.1" y="-268.15" font-family="Arial" font-size="11.00" fill="#1f2933">Acordar contrato</text>
-</g>
-<!-- block_epic&#45;&gt;agree_contract -->
-<g id="edge26" class="edge">
-<title>block_epic&#45;&gt;agree_contract</title>
-<path fill="none" stroke="#4f5b67" d="M1756,-462.64C1597.7,-436.9 1167.74,-367 1167.74,-367 1167.74,-367 1102.74,-310 1102.74,-310 1102.74,-310 1089.66,-302.65 1075,-294.42"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1076.36,-292.37 1069.05,-291.07 1073.96,-296.64 1076.36,-292.37"/>
-</g>
-<!-- reactivate_epic -->
-<g id="node17" class="node">
-<title>reactivate_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1277.52,-663C1277.52,-663 1200.24,-663 1200.24,-663 1194.24,-663 1188.24,-657 1188.24,-651 1188.24,-651 1188.24,-639 1188.24,-639 1188.24,-633 1194.24,-627 1200.24,-627 1200.24,-627 1277.52,-627 1277.52,-627 1283.52,-627 1289.52,-633 1289.52,-639 1289.52,-639 1289.52,-651 1289.52,-651 1289.52,-657 1283.52,-663 1277.52,-663"/>
-<text text-anchor="middle" x="1238.88" y="-641.15" font-family="Arial" font-size="11.00" fill="#1f2933">Reactivar epica</text>
-</g>
-<!-- reactivate_epic&#45;&gt;dependencies_ok -->
-<g id="edge29" class="edge">
-<title>reactivate_epic&#45;&gt;dependencies_ok</title>
-<path fill="none" stroke="#4f5b67" d="M1283.14,-626.52C1333.52,-605.01 1416.21,-569.69 1466.37,-548.27"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1467.27,-550.55 1472.74,-545.54 1465.34,-546.04 1467.27,-550.55"/>
-</g>
-<!-- validate_scope -->
-<g id="node18" class="node">
-<title>validate_scope</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M588.42,-678C588.42,-678 512.14,-678 512.14,-678 506.14,-678 500.14,-672 500.14,-666 500.14,-666 500.14,-654 500.14,-654 500.14,-648 506.14,-642 512.14,-642 512.14,-642 588.42,-642 588.42,-642 594.42,-642 600.42,-648 600.42,-654 600.42,-654 600.42,-666 600.42,-666 600.42,-672 594.42,-678 588.42,-678"/>
-<text text-anchor="middle" x="550.28" y="-656.15" font-family="Arial" font-size="11.00" fill="#1f2933">Validar alcance</text>
-</g>
-<!-- validation_ok -->
-<g id="node19" class="node">
-<title>validation_ok</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M778.88,-451.67C778.88,-451.67 692.73,-436.13 692.73,-436.13 686.82,-435.07 686.82,-432.93 692.73,-431.87 692.73,-431.87 778.88,-416.33 778.88,-416.33 784.78,-415.27 796.59,-415.27 802.5,-416.33 802.5,-416.33 888.65,-431.87 888.65,-431.87 894.56,-432.93 894.56,-435.07 888.65,-436.13 888.65,-436.13 802.5,-451.67 802.5,-451.67 796.59,-452.73 784.78,-452.73 778.88,-451.67"/>
-<text text-anchor="middle" x="790.69" y="-430.15" font-family="Arial" font-size="11.00" fill="#1f2933">Validacion correcta</text>
-</g>
-<!-- validate_scope&#45;&gt;validation_ok -->
-<g id="edge37" class="edge">
-<title>validate_scope&#45;&gt;validation_ok</title>
-<path fill="none" stroke="#4f5b67" d="M582.46,-641.67C598.99,-631.95 615.92,-622 615.92,-622 615.92,-622 721.92,-507.31 768.34,-457.09"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="769.98,-458.93 772.93,-452.13 766.38,-455.6 769.98,-458.93"/>
-</g>
-<!-- fix_scope -->
-<g id="node34" class="node">
-<title>fix_scope</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1075.74,-138C1075.74,-138 992.46,-138 992.46,-138 986.46,-138 980.46,-132 980.46,-126 980.46,-126 980.46,-114 980.46,-114 980.46,-108 986.46,-102 992.46,-102 992.46,-102 1075.74,-102 1075.74,-102 1081.74,-102 1087.74,-108 1087.74,-114 1087.74,-114 1087.74,-126 1087.74,-126 1087.74,-132 1081.74,-138 1075.74,-138"/>
-<text text-anchor="middle" x="1034.1" y="-116.15" font-family="Arial" font-size="11.00" fill="#1f2933">Corregir alcance</text>
-</g>
-<!-- validation_ok&#45;&gt;fix_scope -->
-<g id="edge38" class="edge">
-<title>validation_ok&#45;&gt;fix_scope</title>
-<path fill="none" stroke="#4f5b67" d="M805.69,-416.63C835.06,-380.17 900.46,-299 900.46,-299 900.46,-299 957.46,-158 957.46,-158 957.46,-158 972.63,-150.38 989.38,-141.97"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="990.1,-144.34 995.26,-139.01 987.9,-139.96 990.1,-144.34"/>
-<text text-anchor="middle" x="900.85" y="-272.47" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- deploy_production -->
-<g id="node35" class="node">
-<title>deploy_production</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1090.74,-214C1090.74,-214 977.46,-214 977.46,-214 971.46,-214 965.46,-208 965.46,-202 965.46,-202 965.46,-190 965.46,-190 965.46,-184 971.46,-178 977.46,-178 977.46,-178 1090.74,-178 1090.74,-178 1096.74,-178 1102.74,-184 1102.74,-190 1102.74,-190 1102.74,-202 1102.74,-202 1102.74,-208 1096.74,-214 1090.74,-214"/>
-<text text-anchor="middle" x="1034.1" y="-192.15" font-family="Arial" font-size="11.00" fill="#1f2933">Desplegar produccion</text>
-</g>
-<!-- validation_ok&#45;&gt;deploy_production -->
-<g id="edge40" class="edge">
-<title>validation_ok&#45;&gt;deploy_production</title>
-<path fill="none" stroke="#4f5b67" d="M806.11,-416.6C846.44,-367.94 957.46,-234 957.46,-234 957.46,-234 972.63,-226.38 989.38,-217.97"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="990.1,-220.34 995.26,-215.01 987.9,-215.96 990.1,-220.34"/>
-<text text-anchor="middle" x="888.68" y="-302.05" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- close_epic -->
-<g id="node20" class="node">
-<title>close_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M580.42,-450C580.42,-450 520.14,-450 520.14,-450 514.14,-450 508.14,-444 508.14,-438 508.14,-438 508.14,-426 508.14,-426 508.14,-420 514.14,-414 520.14,-414 520.14,-414 580.42,-414 580.42,-414 586.42,-414 592.42,-420 592.42,-426 592.42,-426 592.42,-438 592.42,-438 592.42,-444 586.42,-450 580.42,-450"/>
-<text text-anchor="middle" x="550.28" y="-428.15" font-family="Arial" font-size="11.00" fill="#1f2933">Cerrar epica</text>
-</g>
-<!-- close_epic&#45;&gt;end -->
-<g id="edge43" class="edge">
-<title>close_epic&#45;&gt;end</title>
-<path fill="none" stroke="#4f5b67" d="M592.58,-416.66C605.25,-411.96 615.92,-408 615.92,-408 615.92,-408 680.92,-70 680.92,-70 680.92,-70 742.07,-47.51 772.67,-36.26"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="773.27,-38.65 778.99,-33.93 771.58,-34.05 773.27,-38.65"/>
-</g>
-<!-- approved -->
-<g id="node22" class="node">
-<title>approved</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M297.15,-915.69C297.15,-915.69 210.09,-900.11 210.09,-900.11 204.19,-899.06 204.19,-896.94 210.09,-895.89 210.09,-895.89 297.15,-880.31 297.15,-880.31 303.05,-879.26 314.86,-879.26 320.77,-880.31 320.77,-880.31 407.82,-895.89 407.82,-895.89 413.73,-896.94 413.73,-899.06 407.82,-900.11 407.82,-900.11 320.77,-915.69 320.77,-915.69 314.86,-916.74 303.05,-916.74 297.15,-915.69"/>
-<text text-anchor="middle" x="308.96" y="-894.15" font-family="Arial" font-size="11.00" fill="#1f2933">Iniciativa aprobada</text>
-</g>
-<!-- evaluate_initiative&#45;&gt;approved -->
-<g id="edge11" class="edge">
-<title>evaluate_initiative&#45;&gt;approved</title>
-<path fill="none" stroke="#4f5b67" d="M130.7,-898C147.84,-898 167.46,-898 187.26,-898"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="187.24,-900.45 194.24,-898 187.24,-895.55 187.24,-900.45"/>
-</g>
-<!-- approved&#45;&gt;reject_epic -->
-<g id="edge12" class="edge">
-<title>approved&#45;&gt;reject_epic</title>
-<path fill="none" stroke="#4f5b67" d="M320.89,-879.89C357.98,-818.49 476.64,-622 476.64,-622 476.64,-622 490.94,-614.52 506.85,-606.19"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="507.82,-608.45 512.89,-603.03 505.55,-604.11 507.82,-608.45"/>
-<text text-anchor="middle" x="401.08" y="-726.85" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- prioritize_epic -->
-<g id="node23" class="node">
-<title>prioritize_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M585.92,-915C585.92,-915 514.64,-915 514.64,-915 508.64,-915 502.64,-909 502.64,-903 502.64,-903 502.64,-891 502.64,-891 502.64,-885 508.64,-879 514.64,-879 514.64,-879 585.92,-879 585.92,-879 591.92,-879 597.92,-885 597.92,-891 597.92,-891 597.92,-903 597.92,-903 597.92,-909 591.92,-915 585.92,-915"/>
-<text text-anchor="middle" x="550.28" y="-893.15" font-family="Arial" font-size="11.00" fill="#1f2933">Priorizar epica</text>
-</g>
-<!-- approved&#45;&gt;prioritize_epic -->
-<g id="edge14" class="edge">
-<title>approved&#45;&gt;prioritize_epic</title>
-<path fill="none" stroke="#4f5b67" d="M419.81,-897.54C445.52,-897.43 471.85,-897.32 493.98,-897.23"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="493.75,-899.68 500.74,-897.2 493.73,-894.78 493.75,-899.68"/>
-<text text-anchor="middle" x="452.4" y="-887.89" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- prioritize_epic&#45;&gt;review_capacity -->
-<g id="edge15" class="edge">
-<title>prioritize_epic&#45;&gt;review_capacity</title>
-<path fill="none" stroke="#4f5b67" d="M502.45,-880.88C488.39,-876.05 476.64,-872 476.64,-872 476.64,-872 174.69,-477.43 94.82,-373.07"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="96.8,-371.61 90.6,-367.54 92.9,-374.59 96.8,-371.61"/>
-</g>
-<!-- capacity_ok -->
-<g id="node25" class="node">
-<title>capacity_ok</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M297.2,-364.4C297.2,-364.4 223.61,-349.4 223.61,-349.4 217.74,-348.2 217.74,-345.8 223.61,-344.6 223.61,-344.6 297.2,-329.6 297.2,-329.6 303.08,-328.4 314.84,-328.4 320.72,-329.6 320.72,-329.6 394.3,-344.6 394.3,-344.6 400.18,-345.8 400.18,-348.2 394.3,-349.4 394.3,-349.4 320.72,-364.4 320.72,-364.4 314.84,-365.6 303.08,-365.6 297.2,-364.4"/>
-<text text-anchor="middle" x="308.96" y="-343.15" font-family="Arial" font-size="11.00" fill="#1f2933">Rango operativo</text>
-</g>
-<!-- review_capacity&#45;&gt;capacity_ok -->
-<g id="edge16" class="edge">
-<title>review_capacity&#45;&gt;capacity_ok</title>
-<path fill="none" stroke="#4f5b67" d="M133.66,-347.75C154.7,-347.66 179.17,-347.55 203,-347.45"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="202.9,-349.9 209.89,-347.42 202.87,-345 202.9,-349.9"/>
-</g>
-<!-- capacity_ok&#45;&gt;define_features -->
-<g id="edge20" class="edge">
-<title>capacity_ok&#45;&gt;define_features</title>
-<path fill="none" stroke="#4f5b67" d="M318.45,-364.89C352.42,-436.42 476.64,-698 476.64,-698 476.64,-698 490.94,-705.48 506.85,-713.81"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="505.55,-715.89 512.89,-716.97 507.82,-711.55 505.55,-715.89"/>
-<text text-anchor="middle" x="400.36" y="-537.35" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- freeze_intake -->
-<g id="node26" class="node">
-<title>freeze_intake</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M589.92,-365C589.92,-365 510.64,-365 510.64,-365 504.64,-365 498.64,-359 498.64,-353 498.64,-353 498.64,-341 498.64,-341 498.64,-335 504.64,-329 510.64,-329 510.64,-329 589.92,-329 589.92,-329 595.92,-329 601.92,-335 601.92,-341 601.92,-341 601.92,-353 601.92,-353 601.92,-359 595.92,-365 589.92,-365"/>
-<text text-anchor="middle" x="550.28" y="-343.15" font-family="Arial" font-size="11.00" fill="#1f2933">Congelar intake</text>
-</g>
-<!-- capacity_ok&#45;&gt;freeze_intake -->
-<g id="edge17" class="edge">
-<title>capacity_ok&#45;&gt;freeze_intake</title>
-<path fill="none" stroke="#4f5b67" d="M408.33,-347C436.01,-347 465.26,-347 489.89,-347"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="489.89,-349.45 496.89,-347 489.89,-344.55 489.89,-349.45"/>
-<text text-anchor="middle" x="442.61" y="-337.5" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- freeze_intake&#45;&gt;close_active_work -->
-<g id="edge18" class="edge">
-<title>freeze_intake&#45;&gt;close_active_work</title>
-<path fill="none" stroke="#4f5b67" d="M522.86,-365.25C501.92,-379.18 476.64,-396 476.64,-396 476.64,-396 448.14,-416 448.14,-416 448.14,-416 448.14,-450 448.14,-450 448.14,-450 476.64,-470 476.64,-470 476.64,-470 491.14,-477.48 507.27,-485.81"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="506.06,-487.94 513.41,-488.97 508.31,-483.59 506.06,-487.94"/>
-</g>
-<!-- commit_delivery -->
-<g id="node28" class="node">
-<title>commit_delivery</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1296.52,-271C1296.52,-271 1181.24,-271 1181.24,-271 1175.24,-271 1169.24,-265 1169.24,-259 1169.24,-259 1169.24,-247 1169.24,-247 1169.24,-241 1175.24,-235 1181.24,-235 1181.24,-235 1296.52,-235 1296.52,-235 1302.52,-235 1308.52,-241 1308.52,-247 1308.52,-247 1308.52,-259 1308.52,-259 1308.52,-265 1302.52,-271 1296.52,-271"/>
-<text text-anchor="middle" x="1238.88" y="-249.15" font-family="Arial" font-size="11.00" fill="#1f2933">Comprometer entrega</text>
-</g>
-<!-- agree_contract&#45;&gt;commit_delivery -->
-<g id="edge27" class="edge">
-<title>agree_contract&#45;&gt;commit_delivery</title>
-<path fill="none" stroke="#4f5b67" d="M1089.18,-266.93C1111.11,-264.88 1136.85,-262.47 1160.7,-260.23"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1160.8,-262.68 1167.54,-259.59 1160.34,-257.8 1160.8,-262.68"/>
-</g>
-<!-- commit_delivery&#45;&gt;reactivate_epic -->
-<g id="edge28" class="edge">
-<title>commit_delivery&#45;&gt;reactivate_epic</title>
-<path fill="none" stroke="#4f5b67" d="M1204.56,-271.33C1186.37,-281.05 1167.74,-291 1167.74,-291 1167.74,-291 1135.24,-311 1135.24,-311 1135.24,-311 1135.24,-587 1135.24,-587 1135.24,-587 1167.74,-607 1167.74,-607 1167.74,-607 1181.75,-614.48 1197.34,-622.81"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1195.9,-624.82 1203.23,-625.95 1198.21,-620.5 1195.9,-624.82"/>
-</g>
-<!-- build_stories -->
-<g id="node30" class="node">
-<title>build_stories</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1286.02,-347C1286.02,-347 1191.74,-347 1191.74,-347 1185.74,-347 1179.74,-341 1179.74,-335 1179.74,-335 1179.74,-323 1179.74,-323 1179.74,-317 1185.74,-311 1191.74,-311 1191.74,-311 1286.02,-311 1286.02,-311 1292.02,-311 1298.02,-317 1298.02,-323 1298.02,-323 1298.02,-335 1298.02,-335 1298.02,-341 1292.02,-347 1286.02,-347"/>
-<text text-anchor="middle" x="1238.88" y="-325.15" font-family="Arial" font-size="11.00" fill="#1f2933">Construir historias</text>
-</g>
-<!-- refine_stories&#45;&gt;build_stories -->
-<g id="edge31" class="edge">
-<title>refine_stories&#45;&gt;build_stories</title>
-<path fill="none" stroke="#4f5b67" d="M1087.59,-343.08C1113.11,-340.69 1144.07,-337.79 1171.24,-335.24"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1171.3,-337.7 1178.04,-334.61 1170.84,-332.82 1171.3,-337.7"/>
-</g>
-<!-- validate_features -->
-<g id="node31" class="node">
-<title>validate_features</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1549.78,-245C1549.78,-245 1470.5,-245 1470.5,-245 1464.5,-245 1458.5,-239 1458.5,-233 1458.5,-233 1458.5,-221 1458.5,-221 1458.5,-215 1464.5,-209 1470.5,-209 1470.5,-209 1549.78,-209 1549.78,-209 1555.78,-209 1561.78,-215 1561.78,-221 1561.78,-221 1561.78,-233 1561.78,-233 1561.78,-239 1555.78,-245 1549.78,-245"/>
-<text text-anchor="middle" x="1510.14" y="-223.15" font-family="Arial" font-size="11.00" fill="#1f2933">Validar features</text>
-</g>
-<!-- build_stories&#45;&gt;validate_features -->
-<g id="edge32" class="edge">
-<title>build_stories&#45;&gt;validate_features</title>
-<path fill="none" stroke="#4f5b67" d="M1288.64,-310.53C1334.87,-293.02 1404.27,-266.73 1452.83,-248.33"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1453.65,-250.64 1459.32,-245.87 1451.91,-246.06 1453.65,-250.64"/>
-</g>
-<!-- features_closed -->
-<g id="node32" class="node">
-<title>features_closed</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1802.81,-183.56C1802.81,-183.56 1722.04,-168.24 1722.04,-168.24 1716.15,-167.12 1716.15,-164.88 1722.04,-163.76 1722.04,-163.76 1802.81,-148.44 1802.81,-148.44 1808.7,-147.32 1820.49,-147.32 1826.39,-148.44 1826.39,-148.44 1907.15,-163.76 1907.15,-163.76 1913.04,-164.88 1913.04,-167.12 1907.15,-168.24 1907.15,-168.24 1826.39,-183.56 1826.39,-183.56 1820.49,-184.68 1808.7,-184.68 1802.81,-183.56"/>
-<text text-anchor="middle" x="1814.6" y="-162.15" font-family="Arial" font-size="11.00" fill="#1f2933">Features cerradas</text>
-</g>
-<!-- validate_features&#45;&gt;features_closed -->
-<g id="edge33" class="edge">
-<title>validate_features&#45;&gt;features_closed</title>
-<path fill="none" stroke="#4f5b67" d="M1562.1,-216.72C1615.22,-206.01 1698.36,-189.24 1754.36,-177.95"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1754.56,-180.41 1760.94,-176.62 1753.59,-175.6 1754.56,-180.41"/>
-</g>
-<!-- features_closed&#45;&gt;validate_scope -->
-<g id="edge36" class="edge">
-<title>features_closed&#45;&gt;validate_scope</title>
-<path fill="none" stroke="#4f5b67" d="M1748.31,-158.29C1572.58,-137.52 1102.74,-82 1102.74,-82 1102.74,-82 957.46,-82 957.46,-82 957.46,-82 680.92,-198 680.92,-198 680.92,-198 615.92,-622 615.92,-622 615.92,-622 603.64,-629.22 589.79,-637.36"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="588.56,-635.24 583.76,-640.9 591.04,-639.47 588.56,-635.24"/>
-<text text-anchor="middle" x="971.06" y="-72.5" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- fix_stories -->
-<g id="node33" class="node">
-<title>fix_stories</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M2084.22,-214C2084.22,-214 1995.94,-214 1995.94,-214 1989.94,-214 1983.94,-208 1983.94,-202 1983.94,-202 1983.94,-190 1983.94,-190 1983.94,-184 1989.94,-178 1995.94,-178 1995.94,-178 2084.22,-178 2084.22,-178 2090.22,-178 2096.22,-184 2096.22,-190 2096.22,-190 2096.22,-202 2096.22,-202 2096.22,-208 2090.22,-214 2084.22,-214"/>
-<text text-anchor="middle" x="2040.08" y="-192.15" font-family="Arial" font-size="11.00" fill="#1f2933">Corregir historias</text>
-</g>
-<!-- features_closed&#45;&gt;fix_stories -->
-<g id="edge34" class="edge">
-<title>features_closed&#45;&gt;fix_stories</title>
-<path fill="none" stroke="#4f5b67" d="M1877.55,-174.32C1908.03,-178.41 1944.71,-183.33 1975.41,-187.45"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1974.73,-189.83 1981.99,-188.34 1975.38,-184.98 1974.73,-189.83"/>
-<text text-anchor="middle" x="1932.98" y="-171.39" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- fix_stories&#45;&gt;validate_features -->
-<g id="edge35" class="edge">
-<title>fix_stories&#45;&gt;validate_features</title>
-<path fill="none" stroke="#4f5b67" d="M1983.58,-200.62C1952.1,-203.24 1918.94,-206 1918.94,-206 1918.94,-206 1683.22,-218.14 1570.21,-223.96"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1570.34,-221.5 1563.47,-224.3 1570.59,-226.39 1570.34,-221.5"/>
-</g>
-<!-- fix_scope&#45;&gt;validate_scope -->
-<g id="edge39" class="edge">
-<title>fix_scope&#45;&gt;validate_scope</title>
-<path fill="none" stroke="#4f5b67" d="M996.61,-138.33C977.27,-148.05 957.46,-158 957.46,-158 957.46,-158 680.92,-394 680.92,-394 680.92,-394 615.92,-622 615.92,-622 615.92,-622 603.64,-629.22 589.79,-637.36"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="588.56,-635.24 583.76,-640.9 591.04,-639.47 588.56,-635.24"/>
-</g>
-<!-- close_features -->
-<g id="node36" class="node">
-<title>close_features</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M1277.02,-176C1277.02,-176 1200.74,-176 1200.74,-176 1194.74,-176 1188.74,-170 1188.74,-164 1188.74,-164 1188.74,-152 1188.74,-152 1188.74,-146 1194.74,-140 1200.74,-140 1200.74,-140 1277.02,-140 1277.02,-140 1283.02,-140 1289.02,-146 1289.02,-152 1289.02,-152 1289.02,-164 1289.02,-164 1289.02,-170 1283.02,-176 1277.02,-176"/>
-<text text-anchor="middle" x="1238.88" y="-154.15" font-family="Arial" font-size="11.00" fill="#1f2933">Cerrar features</text>
-</g>
-<!-- deploy_production&#45;&gt;close_features -->
-<g id="edge41" class="edge">
-<title>deploy_production&#45;&gt;close_features</title>
-<path fill="none" stroke="#4f5b67" d="M1103.19,-183.24C1128.1,-178.57 1156.02,-173.34 1179.96,-168.85"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="1180.33,-171.28 1186.76,-167.58 1179.43,-166.46 1180.33,-171.28"/>
-</g>
-<!-- close_features&#45;&gt;close_epic -->
-<g id="edge42" class="edge">
-<title>close_features&#45;&gt;close_epic</title>
-<path fill="none" stroke="#4f5b67" d="M1205.17,-139.6C1165.17,-117.11 1102.74,-82 1102.74,-82 1102.74,-82 900.46,0 900.46,0 900.46,0 680.92,0 680.92,0 680.92,0 615.92,-408 615.92,-408 615.92,-408 609.4,-410.42 600.52,-413.72"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="599.71,-411.4 594,-416.14 601.41,-416 599.71,-411.4"/>
-</g>
-<!-- start -->
-<g id="node37" class="node">
-<title>start</title>
-<ellipse fill="#222222" stroke="#222222" cx="74.64" cy="-1203" rx="6.48" ry="6.48"/>
-</g>
-<!-- start&#45;&gt;formalize_brief -->
-<g id="edge1" class="edge">
-<title>start&#45;&gt;formalize_brief</title>
-<path fill="none" stroke="#4f5b67" d="M81.38,-1203C104.14,-1203 189.62,-1203 248.82,-1203"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="248.48,-1205.45 255.48,-1203 248.48,-1200.55 248.48,-1205.45"/>
-</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7310" height="684" viewBox="0 0 7310 684" role="img" aria-labelledby="title desc">
+  <title id="title">Gestion de la Agenda Unica Luckia</title>
+  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>
+    </marker>
+  </defs>
+  <rect x="24" y="24" width="7262" height="636" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3655.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Gestion de la Agenda Unica Luckia</text>
+  <rect x="24" y="80" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="80" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="138.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 138.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Promotor</text>
+  <rect x="24" y="196" width="7262" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="196" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="254.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 254.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Product Owner</text>
+  <rect x="24" y="312" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="312" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="370.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 370.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Comite Transformacion</text>
+  <rect x="24" y="428" width="7262" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="428" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="486.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 486.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">PMO</text>
+  <rect x="24" y="544" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="544" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="602.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 602.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Equipo Tecnico</text>
+  <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">
+    <polyline points="159.0,138.0 210.0,138.0 261.0,138.0"/>
+    <polyline points="403.0,138.0 426.0,138.0 449.0,138.0"/>
+    <polyline points="591.0,138.0 614.0,138.0 614.0,254.0 637.0,254.0"/>
+    <polyline points="779.0,254.0 806.5,254.0 834.0,254.0"/>
+    <polyline points="958.0,254.0 985.5,254.0 1013.0,254.0"/>
+    <polyline points="1155.0,254.0 1178.0,254.0 1178.0,138.0 1201.0,138.0"/>
+    <polyline points="1201.0,138.0 743.0,138.0 743.0,254.0 779.0,254.0"/>
+    <polyline points="958.0,254.0 1173.5,254.0 1389.0,254.0"/>
+    <polyline points="1531.0,254.0 1554.0,254.0 1577.0,254.0"/>
+    <polyline points="1719.0,254.0 1742.0,254.0 1742.0,370.0 1765.0,370.0"/>
+    <polyline points="1907.0,370.0 1934.5,370.0 1962.0,370.0"/>
+    <polyline points="2086.0,370.0 2113.5,370.0 2113.5,254.0 2141.0,254.0"/>
+    <polyline points="2283.0,254.0 4684.0,254.0 7085.0,254.0"/>
+    <polyline points="2086.0,370.0 2207.5,370.0 2329.0,370.0"/>
+    <polyline points="2471.0,370.0 2494.0,370.0 2494.0,486.0 2517.0,486.0"/>
+    <polyline points="2659.0,486.0 2686.5,486.0 2714.0,486.0"/>
+    <polyline points="2838.0,486.0 2865.5,486.0 2893.0,486.0"/>
+    <polyline points="3035.0,486.0 3058.0,486.0 3058.0,254.0 3081.0,254.0"/>
+    <polyline points="3081.0,254.0 2623.0,254.0 2623.0,486.0 2659.0,486.0"/>
+    <polyline points="2838.0,486.0 3053.5,486.0 3053.5,254.0 3269.0,254.0"/>
+    <polyline points="3411.0,254.0 3434.0,254.0 3457.0,254.0"/>
+    <polyline points="3599.0,254.0 3622.0,254.0 3645.0,254.0"/>
+    <polyline points="3787.0,254.0 3810.0,254.0 3833.0,254.0"/>
+    <polyline points="3975.0,254.0 4002.5,254.0 4030.0,254.0"/>
+    <polyline points="4154.0,254.0 4181.5,254.0 4209.0,254.0"/>
+    <polyline points="4351.0,254.0 4374.0,254.0 4374.0,602.0 4397.0,602.0"/>
+    <polyline points="4539.0,602.0 4562.0,602.0 4585.0,602.0"/>
+    <polyline points="4727.0,602.0 4750.0,602.0 4750.0,254.0 4773.0,254.0"/>
+    <polyline points="4773.0,254.0 4118.0,254.0 4154.0,254.0"/>
+    <polyline points="4154.0,254.0 4557.5,254.0 4557.5,602.0 4961.0,602.0"/>
+    <polyline points="5103.0,602.0 5126.0,602.0 5149.0,602.0"/>
+    <polyline points="5291.0,602.0 5314.0,602.0 5337.0,602.0"/>
+    <polyline points="5479.0,602.0 5506.5,602.0 5534.0,602.0"/>
+    <polyline points="5658.0,602.0 5685.5,602.0 5713.0,602.0"/>
+    <polyline points="5713.0,602.0 5443.0,602.0 5479.0,602.0"/>
+    <polyline points="5658.0,602.0 5779.5,602.0 5779.5,254.0 5901.0,254.0"/>
+    <polyline points="6043.0,254.0 6070.5,254.0 6098.0,254.0"/>
+    <polyline points="6222.0,254.0 6249.5,254.0 6249.5,602.0 6277.0,602.0"/>
+    <polyline points="6277.0,602.0 6007.0,602.0 6007.0,254.0 6043.0,254.0"/>
+    <polyline points="6222.0,254.0 6343.5,254.0 6343.5,602.0 6465.0,602.0"/>
+    <polyline points="6607.0,602.0 6630.0,602.0 6653.0,602.0"/>
+    <polyline points="6795.0,602.0 6818.0,602.0 6818.0,254.0 6841.0,254.0"/>
+    <polyline points="6983.0,254.0 7034.0,254.0 7085.0,254.0"/>
+  </g>
+  <rect x="977.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="990.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="1165.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1178.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="2105.0" y="291.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2118.0" y="304.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="2199.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2212.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="2857.0" y="465.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2870.0" y="478.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="3045.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="3058.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="4173.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="4186.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="4549.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="4562.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="5677.0" y="581.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="5690.0" y="594.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="5771.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="5784.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="6241.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="6254.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="6335.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="6348.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <circle cx="144" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+  <rect x="261.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="332" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Formalizar brief</text>
+  <rect x="449.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="520" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar iniciativa</text>
+  <rect x="637.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="708" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
+  <polygon points="896,218.0 958.0,254.0 896,290.0 834.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="896" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
+  <rect x="1013.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1084" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
+  <rect x="1201.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1272" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
+  <rect x="1389.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1460" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar effort</text>
+  <rect x="1577.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1648" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
+  <rect x="1765.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1836" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Evaluar iniciativa</text>
+  <polygon points="2024,334.0 2086.0,370.0 2024,406.0 1962.0,370.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2024" y="367.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Iniciativa</text>
+  <text x="2024" y="380.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">aprobada</text>
+  <rect x="2141.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2212" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comunicar rechazo</text>
+  <rect x="2329.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2400" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar epica</text>
+  <rect x="2517.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2588" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar capacidad</text>
+  <polygon points="2776,450.0 2838.0,486.0 2776,522.0 2714.0,486.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2776" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Rango operativo</text>
+  <rect x="2893.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2964" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Congelar intake</text>
+  <rect x="3081.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3152" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar trabajo</text>
+  <text x="3152" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">activo</text>
+  <rect x="3269.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3340" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Definir features</text>
+  <rect x="3457.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3528" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar features</text>
+  <rect x="3645.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3716" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Asignar features</text>
+  <rect x="3833.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3904" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Verificar</text>
+  <text x="3904" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">dependencias</text>
+  <polygon points="4092,218.0 4154.0,254.0 4092,290.0 4030.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4092" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Dependencias</text>
+  <text x="4092" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">resueltas</text>
+  <rect x="4209.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4280" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Marcar bloqueada</text>
+  <rect x="4397.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4468" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Acordar contrato</text>
+  <rect x="4585.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4656" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comprometer</text>
+  <text x="4656" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">entrega</text>
+  <rect x="4773.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4844" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Reactivar epica</text>
+  <rect x="4961.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5032" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Refinar historias</text>
+  <rect x="5149.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5220" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Construir</text>
+  <text x="5220" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">historias</text>
+  <rect x="5337.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5408" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar features</text>
+  <polygon points="5596,566.0 5658.0,602.0 5596,638.0 5534.0,602.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5596" y="599.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Features</text>
+  <text x="5596" y="612.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">cerradas</text>
+  <rect x="5713.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5784" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir historias</text>
+  <rect x="5901.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5972" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar alcance</text>
+  <polygon points="6160,218.0 6222.0,254.0 6160,290.0 6098.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6160" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Validacion</text>
+  <text x="6160" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">correcta</text>
+  <rect x="6277.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6348" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir alcance</text>
+  <rect x="6465.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6536" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Desplegar</text>
+  <text x="6536" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">produccion</text>
+  <rect x="6653.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6724" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar features</text>
+  <rect x="6841.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6912" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar epica</text>
+  <circle cx="7100" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
+  <circle cx="7100" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
 </svg>

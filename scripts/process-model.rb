@@ -9,7 +9,7 @@ ALLOWED_NODE_TYPES = %w[start end activity decision subprocess event document no
 MAX_LABEL_LENGTH = 60
 
 def usage!
-  warn "Usage: #{$PROGRAM_NAME} validate|render-puml <process.yaml> [layout.yaml] [output.puml]"
+  warn "Usage: #{$PROGRAM_NAME} validate|render-svg <process.yaml> [layout.yaml] [output.svg]"
   exit 2
 end
 
@@ -145,112 +145,212 @@ def validate_model(model, path)
   raise "#{path} failed validation:\n- #{errors.join("\n- ")}"
 end
 
-def dot_id(id)
-  id.to_s.gsub(/[^A-Za-z0-9_]/, "_")
+def xml_escape(value)
+  value.to_s
+       .gsub("&", "&amp;")
+       .gsub("<", "&lt;")
+       .gsub(">", "&gt;")
+       .gsub("\"", "&quot;")
 end
 
-def dot_string(value)
-  "\"#{value.to_s.gsub("\\", "\\\\\\").gsub("\"", "\\\"").gsub("\n", "\\n")}\""
+def wrap_label(label, max_chars = 18)
+  words = label.to_s.split
+  return [""] if words.empty?
+
+  lines = []
+  current = +""
+  words.each do |word|
+    candidate = current.empty? ? word : "#{current} #{word}"
+    if candidate.length > max_chars && !current.empty?
+      lines << current
+      current = word
+    else
+      current = candidate
+    end
+  end
+  lines << current unless current.empty?
+  lines
 end
 
-def render_puml(model, layout)
+def render_svg(model, layout)
   process = model.fetch("process")
   actor_lookup = actors_by_id(model)
   nodes = Array(model["nodes"])
   flows = Array(model["flows"])
-  direction = layout.fetch("direction", "LR")
+  node_lookup = nodes_by_id(model)
   lane_order = Array(layout["lane-order"])
   ordered_actor_ids = (lane_order + actor_lookup.keys).uniq
-  graph_id = dot_id(process.fetch("id"))
 
-  node_shape = {
-    "start" => "circle",
-    "end" => "doublecircle",
-    "activity" => "rect",
-    "decision" => "diamond",
-    "subprocess" => "component",
-    "event" => "oval",
-    "document" => "note",
-    "note" => "note"
-  }
+  incoming = Hash.new { |hash, key| hash[key] = [] }
+  outgoing = Hash.new { |hash, key| hash[key] = [] }
+  flows.each do |flow|
+    outgoing[flow.fetch("from")] << flow
+    incoming[flow.fetch("to")] << flow
+  end
+
+  lane_for_node = lambda do |node|
+    actor = node["actor"]
+    return actor if actor_lookup.key?(actor)
+
+    if node["type"] == "start"
+      target = outgoing[node.fetch("id")].map { |flow| node_lookup[flow["to"]] }.compact.find { |candidate| candidate["actor"] }
+      return target["actor"] if target
+    end
+
+    source = incoming[node.fetch("id")].map { |flow| node_lookup[flow["from"]] }.compact.find { |candidate| candidate["actor"] }
+    source ? source["actor"] : ordered_actor_ids.first
+  end
+
+  lane_ids = ordered_actor_ids.select do |actor|
+    nodes.any? { |node| lane_for_node.call(node) == actor }
+  end
+
+  margin = 24
+  title_height = 56
+  actor_col_width = 76
+  lane_height = Integer(layout.fetch("lane-height", 116))
+  column_width = Integer(layout.fetch("column-width", 188))
+  node_area_padding = 44
+  activity_width = 142
+  activity_height = 52
+  decision_width = 124
+  decision_height = 72
+  terminal_size = 30
+
+  node_index = nodes.each_with_index.to_h
+  node_positions = {}
+  lane_index = lane_ids.each_with_index.to_h
+  nodes.each do |node|
+    lane = lane_for_node.call(node)
+    column = node_index.fetch(node)
+    x = margin + actor_col_width + node_area_padding + (column * column_width)
+    y = margin + title_height + (lane_index.fetch(lane) * lane_height) + (lane_height / 2.0)
+    node_positions[node.fetch("id")] = [x, y]
+  end
+
+  content_width = node_area_padding * 2 + ((nodes.length - 1) * column_width) + activity_width
+  width = margin * 2 + actor_col_width + content_width
+  height = margin * 2 + title_height + (lane_ids.length * lane_height)
+
+  shape_size = lambda do |node|
+    case node["type"]
+    when "start", "end"
+      [terminal_size, terminal_size]
+    when "decision"
+      [decision_width, decision_height]
+    else
+      [activity_width, activity_height]
+    end
+  end
+
+  edge_anchor = lambda do |node, side|
+    x, y = node_positions.fetch(node.fetch("id"))
+    w, h = shape_size.call(node)
+    case side
+    when :left then [x - (w / 2.0), y]
+    when :right then [x + (w / 2.0), y]
+    when :top then [x, y - (h / 2.0)]
+    when :bottom then [x, y + (h / 2.0)]
+    end
+  end
 
   lines = []
-  lines << "' Generated from process.yaml. Do not edit manually."
-  lines << "@startdot"
-  lines << "digraph #{graph_id} {"
-  lines << "  graph ["
-  lines << "    label=#{dot_string(process.fetch("name"))},"
-  lines << "    labelloc=t,"
-  lines << "    fontsize=18,"
-  lines << "    fontname=\"Arial\","
-  lines << "    rankdir=#{direction},"
-  lines << "    splines=polyline,"
-  lines << "    nodesep=0.55,"
-  lines << "    ranksep=0.9,"
-  lines << "    compound=true,"
-  lines << "    bgcolor=\"white\""
-  lines << "  ];"
-  lines << ""
-  lines << "  node [shape=rect, style=\"rounded,filled\", fillcolor=\"#f7f8fa\", color=\"#4f5b67\", fontcolor=\"#1f2933\", fontname=\"Arial\", fontsize=11, margin=\"0.12,0.08\"];"
-  lines << "  edge [color=\"#4f5b67\", fontname=\"Arial\", fontsize=10, arrowsize=0.7];"
-  lines << ""
+  lines << %(<?xml version="1.0" encoding="UTF-8"?>)
+  lines << %(<svg xmlns="http://www.w3.org/2000/svg" width="#{width}" height="#{height}" viewBox="0 0 #{width} #{height}" role="img" aria-labelledby="title desc">)
+  lines << %(  <title id="title">#{xml_escape(process.fetch("name"))}</title>)
+  lines << %(  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>)
+  lines << %(  <defs>)
+  lines << %(    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">)
+  lines << %(      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>)
+  lines << %(    </marker>)
+  lines << %(  </defs>)
+  lines << %(  <rect x="#{margin}" y="#{margin}" width="#{width - (margin * 2)}" height="#{height - (margin * 2)}" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>)
+  lines << %(  <text x="#{width / 2.0}" y="#{margin + 32}" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">#{xml_escape(process.fetch("name"))}</text>)
 
-  ordered_actor_ids.each do |actor|
-    actor_nodes = nodes.select { |node| node["actor"] == actor }
-    next if actor_nodes.empty?
-
-    lines << "  subgraph cluster_#{dot_id(actor)} {"
-    lines << "    label=#{dot_string(actor_lookup.fetch(actor))};"
-    lines << "    style=\"rounded,filled\";"
-    lines << "    color=\"#7a8da8\";"
-    lines << "    fillcolor=\"#eef4ff\";"
-    lines << "    fontname=\"Arial\";"
-    lines << "    fontsize=13;"
-    lines << ""
-    actor_nodes.each do |node|
-      attrs = {
-        "label" => node.fetch("label", node.fetch("id")),
-        "shape" => node_shape.fetch(node.fetch("type"))
-      }
-      attrs["width"] = "1.45" if node["type"] == "decision"
-      attrs["height"] = "0.55" if node["type"] == "decision"
-      rendered = attrs.map { |key, value| "#{key}=#{dot_string(value)}" }.join(", ")
-      lines << "    #{dot_id(node.fetch("id"))} [#{rendered}];"
-    end
-    lines << "  }"
-    lines << ""
+  lane_ids.each_with_index do |actor, index|
+    y = margin + title_height + (index * lane_height)
+    fill = index.even? ? "#f8fafc" : "#eef4ff"
+    lines << %(  <rect x="#{margin}" y="#{y}" width="#{width - (margin * 2)}" height="#{lane_height}" fill="#{fill}" stroke="#d5dce6" stroke-width="1"/>)
+    lines << %(  <rect x="#{margin}" y="#{y}" width="#{actor_col_width}" height="#{lane_height}" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>)
+    actor_x = margin + (actor_col_width / 2.0)
+    actor_y = y + (lane_height / 2.0)
+    lines << %(  <text x="#{actor_x}" y="#{actor_y}" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 #{actor_x} #{actor_y})" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">#{xml_escape(actor_lookup.fetch(actor))}</text>)
   end
 
-  system_nodes = nodes.reject { |node| actor_lookup.key?(node["actor"]) }
-  system_nodes.each do |node|
-    attrs = {
-      "label" => %w[start end].include?(node["type"]) ? "" : node.fetch("label", node.fetch("id")),
-      "shape" => node_shape.fetch(node.fetch("type"))
-    }
-    if node["type"] == "start"
-      attrs.merge!("width" => "0.18", "height" => "0.18", "fillcolor" => "#222222", "color" => "#222222")
-    elsif node["type"] == "end"
-      attrs.merge!("width" => "0.18", "height" => "0.18", "fillcolor" => "#222222", "color" => "#222222")
+  lines << %(  <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">)
+  flows.each do |flow|
+    from_node = node_lookup.fetch(flow.fetch("from"))
+    to_node = node_lookup.fetch(flow.fetch("to"))
+    from_x, from_y = node_positions.fetch(from_node.fetch("id"))
+    to_x, to_y = node_positions.fetch(to_node.fetch("id"))
+
+    if to_x >= from_x
+      start = edge_anchor.call(from_node, :right)
+      finish = edge_anchor.call(to_node, :left)
+      mid_x = ((start[0] + finish[0]) / 2.0).round(2)
+      points = [[start[0], start[1]], [mid_x, start[1]], [mid_x, finish[1]], [finish[0], finish[1]]]
+    else
+      start = edge_anchor.call(from_node, :left)
+      finish = edge_anchor.call(to_node, :right)
+      route_x = [start[0], finish[0]].min - 36
+      points = [[start[0], start[1]], [route_x, start[1]], [route_x, finish[1]], [finish[0], finish[1]]]
     end
-    rendered = attrs.map { |key, value| "#{key}=#{dot_string(value)}" }.join(", ")
-    lines << "  #{dot_id(node.fetch("id"))} [#{rendered}];"
+
+    compact_points = points.each_with_object([]) do |point, memo|
+      memo << point unless memo.last == point
+    end
+    lines << %(    <polyline points="#{compact_points.map { |x, y| "#{x.round(2)},#{y.round(2)}" }.join(" ")}"/>)
   end
-  lines << ""
+  lines << %(  </g>)
 
   flows.each do |flow|
     label = flow["label"].to_s.strip
-    attrs = label == "" ? "" : " [xlabel=#{dot_string(label)}]"
-    lines << "  #{dot_id(flow.fetch("from"))} -> #{dot_id(flow.fetch("to"))}#{attrs};"
+    next if label.empty?
+
+    from_x, from_y = node_positions.fetch(flow.fetch("from"))
+    to_x, to_y = node_positions.fetch(flow.fetch("to"))
+    label_x = ((from_x + to_x) / 2.0).round(2)
+    label_y = ((from_y + to_y) / 2.0).round(2) - 8
+    text_width = [label.length * 7 + 12, 26].max
+    lines << %(  <rect x="#{label_x - (text_width / 2.0)}" y="#{label_y - 13}" width="#{text_width}" height="18" fill="#ffffff" stroke="none"/>)
+    lines << %(  <text x="#{label_x}" y="#{label_y}" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">#{xml_escape(label)}</text>)
   end
 
-  lines << "}"
-  lines << "@enddot"
+  nodes.each do |node|
+    x, y = node_positions.fetch(node.fetch("id"))
+    w, h = shape_size.call(node)
+    label = node.fetch("label", node.fetch("id"))
+
+    case node["type"]
+    when "start"
+      lines << %(  <circle cx="#{x}" cy="#{y}" r="#{terminal_size / 2.0}" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>)
+    when "end"
+      lines << %(  <circle cx="#{x}" cy="#{y}" r="#{terminal_size / 2.0}" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>)
+      lines << %(  <circle cx="#{x}" cy="#{y}" r="#{(terminal_size / 2.0) - 5}" fill="#1f2933" stroke="none"/>)
+    when "decision"
+      points = [[x, y - (h / 2.0)], [x + (w / 2.0), y], [x, y + (h / 2.0)], [x - (w / 2.0), y]]
+      lines << %(  <polygon points="#{points.map { |px, py| "#{px},#{py}" }.join(" ")}" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>)
+      wrap_label(label, 15).each_with_index do |text, index|
+        offset = (index - ((wrap_label(label, 15).length - 1) / 2.0)) * 13
+        lines << %(  <text x="#{x}" y="#{y + offset + 4}" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">#{xml_escape(text)}</text>)
+      end
+    else
+      lines << %(  <rect x="#{x - (w / 2.0)}" y="#{y - (h / 2.0)}" width="#{w}" height="#{h}" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>)
+      label_lines = wrap_label(label)
+      label_lines.each_with_index do |text, index|
+        offset = (index - ((label_lines.length - 1) / 2.0)) * 14
+        lines << %(  <text x="#{x}" y="#{y + offset + 4}" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">#{xml_escape(text)}</text>)
+      end
+    end
+  end
+
+  lines << %(</svg>)
   lines << ""
   lines.join("\n")
 end
 
 command, process_path, layout_path, output_path = ARGV
-usage! unless %w[validate render-puml].include?(command) && process_path
+usage! unless %w[validate render-svg].include?(command) && process_path
 
 model = load_yaml(process_path)
 layout = layout_path && File.exist?(layout_path) ? load_yaml(layout_path) : {}
@@ -259,7 +359,7 @@ validate_model(model, process_path)
 case command
 when "validate"
   puts "#{process_path}: ok"
-when "render-puml"
+when "render-svg"
   usage! unless output_path
-  File.write(output_path, render_puml(model, layout))
+  File.write(output_path, render_svg(model, layout))
 end

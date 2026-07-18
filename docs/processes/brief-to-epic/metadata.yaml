@@ -5,5 +5,4 @@ status: draft
 diagram:
   model: process.yaml
   layout: layout.yaml
-  intermediate: process.puml
   output: process.svg

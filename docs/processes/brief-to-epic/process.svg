@@ -1,168 +1,63 @@
-<svg width="945pt" height="374pt"
- viewBox="0.00 0.00 945.18 373.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 369.6)">
-<title>brief_to_epic</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-369.6 941.18,-369.6 941.18,4 -4,4"/>
-<text text-anchor="middle" x="468.59" y="-344.5" font-family="Arial" font-size="18.00">Generacion de epica desde brief</text>
-<g id="clust1" class="cluster">
-<title>cluster_requester</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M81.96,-176C81.96,-176 322.52,-176 322.52,-176 328.52,-176 334.52,-182 334.52,-188 334.52,-188 334.52,-316 334.52,-316 334.52,-322 328.52,-328 322.52,-328 322.52,-328 81.96,-328 81.96,-328 75.96,-328 69.96,-322 69.96,-316 69.96,-316 69.96,-188 69.96,-188 69.96,-182 75.96,-176 81.96,-176"/>
-<text text-anchor="middle" x="202.24" y="-311.65" font-family="Arial" font-size="13.00">Solicitante</text>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_product_owner</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M247.24,-12C247.24,-12 746.9,-12 746.9,-12 752.9,-12 758.9,-18 758.9,-24 758.9,-24 758.9,-156 758.9,-156 758.9,-162 752.9,-168 746.9,-168 746.9,-168 247.24,-168 247.24,-168 241.24,-168 235.24,-162 235.24,-156 235.24,-156 235.24,-24 235.24,-24 235.24,-18 241.24,-12 247.24,-12"/>
-<text text-anchor="middle" x="497.07" y="-151.65" font-family="Arial" font-size="13.00">Product Owner</text>
-</g>
-<g id="clust3" class="cluster">
-<title>cluster_technical_team</title>
-<path fill="#eef4ff" stroke="#7a8da8" d="M819.9,-160C819.9,-160 917.18,-160 917.18,-160 923.18,-160 929.18,-166 929.18,-172 929.18,-172 929.18,-224 929.18,-224 929.18,-230 923.18,-236 917.18,-236 917.18,-236 819.9,-236 819.9,-236 813.9,-236 807.9,-230 807.9,-224 807.9,-224 807.9,-172 807.9,-172 807.9,-166 813.9,-160 819.9,-160"/>
-<text text-anchor="middle" x="868.54" y="-219.65" font-family="Arial" font-size="13.00">Equipo Tecnico</text>
-</g>
-<!-- create_brief -->
-<g id="node1" class="node">
-<title>create_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M153.74,-296C153.74,-296 102.46,-296 102.46,-296 96.46,-296 90.46,-290 90.46,-284 90.46,-284 90.46,-272 90.46,-272 90.46,-266 96.46,-260 102.46,-260 102.46,-260 153.74,-260 153.74,-260 159.74,-260 165.74,-266 165.74,-272 165.74,-272 165.74,-284 165.74,-284 165.74,-290 159.74,-296 153.74,-296"/>
-<text text-anchor="middle" x="128.1" y="-274.15" font-family="Arial" font-size="11.00" fill="#1f2933">Crear brief</text>
-</g>
-<!-- send_brief -->
-<g id="node2" class="node">
-<title>send_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M314.52,-258C314.52,-258 258.24,-258 258.24,-258 252.24,-258 246.24,-252 246.24,-246 246.24,-246 246.24,-234 246.24,-234 246.24,-228 252.24,-222 258.24,-222 258.24,-222 314.52,-222 314.52,-222 320.52,-222 326.52,-228 326.52,-234 326.52,-234 326.52,-246 326.52,-246 326.52,-252 320.52,-258 314.52,-258"/>
-<text text-anchor="middle" x="286.38" y="-236.15" font-family="Arial" font-size="11.00" fill="#1f2933">Enviar brief</text>
-</g>
-<!-- create_brief&#45;&gt;send_brief -->
-<g id="edge2" class="edge">
-<title>create_brief&#45;&gt;send_brief</title>
-<path fill="none" stroke="#4f5b67" d="M166.14,-268.99C187.52,-263.8 214.64,-257.2 237.62,-251.61"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="238.18,-254 244.41,-249.96 237.03,-249.24 238.18,-254"/>
-</g>
-<!-- review_brief -->
-<g id="node4" class="node">
-<title>review_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M317.52,-60C317.52,-60 255.24,-60 255.24,-60 249.24,-60 243.24,-54 243.24,-48 243.24,-48 243.24,-36 243.24,-36 243.24,-30 249.24,-24 255.24,-24 255.24,-24 317.52,-24 317.52,-24 323.52,-24 329.52,-30 329.52,-36 329.52,-36 329.52,-48 329.52,-48 329.52,-54 323.52,-60 317.52,-60"/>
-<text text-anchor="middle" x="286.38" y="-38.15" font-family="Arial" font-size="11.00" fill="#1f2933">Revisar brief</text>
-</g>
-<!-- send_brief&#45;&gt;review_brief -->
-<g id="edge3" class="edge">
-<title>send_brief&#45;&gt;review_brief</title>
-<path fill="none" stroke="#4f5b67" d="M268.71,-221.8C245.24,-197.64 206.74,-158 206.74,-158 206.74,-158 206.74,-100 206.74,-100 206.74,-100 232.29,-81.39 254.45,-65.26"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="255.74,-67.34 259.96,-61.24 252.86,-63.38 255.74,-67.34"/>
-</g>
-<!-- update_brief -->
-<g id="node3" class="node">
-<title>update_brief</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M166.24,-220C166.24,-220 89.96,-220 89.96,-220 83.96,-220 77.96,-214 77.96,-208 77.96,-208 77.96,-196 77.96,-196 77.96,-190 83.96,-184 89.96,-184 89.96,-184 166.24,-184 166.24,-184 172.24,-184 178.24,-190 178.24,-196 178.24,-196 178.24,-208 178.24,-208 178.24,-214 172.24,-220 166.24,-220"/>
-<text text-anchor="middle" x="128.1" y="-198.15" font-family="Arial" font-size="11.00" fill="#1f2933">Actualizar brief</text>
-</g>
-<!-- update_brief&#45;&gt;review_brief -->
-<g id="edge7" class="edge">
-<title>update_brief&#45;&gt;review_brief</title>
-<path fill="none" stroke="#4f5b67" d="M144.99,-183.74C174.6,-149.7 235.24,-80 235.24,-80 235.24,-80 244.24,-73.18 254.62,-65.31"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="255.89,-67.43 259.98,-61.25 252.93,-63.52 255.89,-67.43"/>
-</g>
-<!-- brief_complete -->
-<g id="node5" class="node">
-<title>brief_complete</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M470.86,-57.17C470.86,-57.17 406.23,-42.63 406.23,-42.63 400.37,-41.32 400.37,-38.68 406.23,-37.37 406.23,-37.37 470.86,-22.83 470.86,-22.83 476.72,-21.52 488.42,-21.52 494.28,-22.83 494.28,-22.83 558.91,-37.37 558.91,-37.37 564.77,-38.68 564.77,-41.32 558.91,-42.63 558.91,-42.63 494.28,-57.17 494.28,-57.17 488.42,-58.48 476.72,-58.48 470.86,-57.17"/>
-<text text-anchor="middle" x="482.57" y="-36.15" font-family="Arial" font-size="11.00" fill="#1f2933">Brief completo</text>
-</g>
-<!-- review_brief&#45;&gt;brief_complete -->
-<g id="edge4" class="edge">
-<title>review_brief&#45;&gt;brief_complete</title>
-<path fill="none" stroke="#4f5b67" d="M330,-41.56C347.17,-41.38 367.7,-41.17 388.03,-40.96"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="387.92,-43.41 394.89,-40.89 387.87,-38.52 387.92,-43.41"/>
-</g>
-<!-- request_updates -->
-<g id="node6" class="node">
-<title>request_updates</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M733.4,-57C733.4,-57 653.12,-57 653.12,-57 647.12,-57 641.12,-51 641.12,-45 641.12,-45 641.12,-33 641.12,-33 641.12,-27 647.12,-21 653.12,-21 653.12,-21 733.4,-21 733.4,-21 739.4,-21 745.4,-27 745.4,-33 745.4,-33 745.4,-45 745.4,-45 745.4,-51 739.4,-57 733.4,-57"/>
-<text text-anchor="middle" x="693.26" y="-35.15" font-family="Arial" font-size="11.00" fill="#1f2933">Solicitar ajustes</text>
-</g>
-<!-- brief_complete&#45;&gt;request_updates -->
-<g id="edge5" class="edge">
-<title>brief_complete&#45;&gt;request_updates</title>
-<path fill="none" stroke="#4f5b67" d="M570.86,-39.58C591.59,-39.48 613.23,-39.38 632.41,-39.29"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="632.25,-41.74 639.24,-39.25 632.23,-36.84 632.25,-41.74"/>
-<text text-anchor="middle" x="595.14" y="-29.93" font-family="Arial" font-size="10.00">No</text>
-</g>
-<!-- prioritize_initiative -->
-<g id="node7" class="node">
-<title>prioritize_initiative</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M738.9,-134C738.9,-134 647.62,-134 647.62,-134 641.62,-134 635.62,-128 635.62,-122 635.62,-122 635.62,-110 635.62,-110 635.62,-104 641.62,-98 647.62,-98 647.62,-98 738.9,-98 738.9,-98 744.9,-98 750.9,-104 750.9,-110 750.9,-110 750.9,-122 750.9,-122 750.9,-128 744.9,-134 738.9,-134"/>
-<text text-anchor="middle" x="693.26" y="-112.15" font-family="Arial" font-size="11.00" fill="#1f2933">Priorizar iniciativa</text>
-</g>
-<!-- brief_complete&#45;&gt;prioritize_initiative -->
-<g id="edge8" class="edge">
-<title>brief_complete&#45;&gt;prioritize_initiative</title>
-<path fill="none" stroke="#4f5b67" d="M517.56,-52.38C548.94,-63.81 596.21,-81.02 633.66,-94.66"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="632.66,-96.9 640.08,-97 634.34,-92.3 632.66,-96.9"/>
-<text text-anchor="middle" x="571.11" y="-64.02" font-family="Arial" font-size="10.00">Si</text>
-</g>
-<!-- request_updates&#45;&gt;update_brief -->
-<g id="edge6" class="edge">
-<title>request_updates&#45;&gt;update_brief</title>
-<path fill="none" stroke="#4f5b67" d="M640.67,-22.46C607.52,-11.83 570.62,0 570.62,0 570.62,0 394.52,0 394.52,0 394.52,0 235.24,-4 235.24,-4 235.24,-4 171.59,-122.74 142.87,-176.32"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="140.76,-175.07 139.61,-182.39 145.08,-177.38 140.76,-175.07"/>
-</g>
-<!-- estimate_scope -->
-<g id="node10" class="node">
-<title>estimate_scope</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M909.18,-204C909.18,-204 827.9,-204 827.9,-204 821.9,-204 815.9,-198 815.9,-192 815.9,-192 815.9,-180 815.9,-180 815.9,-174 821.9,-168 827.9,-168 827.9,-168 909.18,-168 909.18,-168 915.18,-168 921.18,-174 921.18,-180 921.18,-180 921.18,-192 921.18,-192 921.18,-198 915.18,-204 909.18,-204"/>
-<text text-anchor="middle" x="868.54" y="-182.15" font-family="Arial" font-size="11.00" fill="#1f2933">Estimar alcance</text>
-</g>
-<!-- prioritize_initiative&#45;&gt;estimate_scope -->
-<g id="edge9" class="edge">
-<title>prioritize_initiative&#45;&gt;estimate_scope</title>
-<path fill="none" stroke="#4f5b67" d="M739.79,-134.39C762.68,-143.64 790.56,-154.9 814.42,-164.54"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="813.2,-166.69 820.61,-167.04 815.04,-162.15 813.2,-166.69"/>
-</g>
-<!-- create_epic -->
-<g id="node8" class="node">
-<title>create_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M314.52,-136C314.52,-136 258.24,-136 258.24,-136 252.24,-136 246.24,-130 246.24,-124 246.24,-124 246.24,-112 246.24,-112 246.24,-106 252.24,-100 258.24,-100 258.24,-100 314.52,-100 314.52,-100 320.52,-100 326.52,-106 326.52,-112 326.52,-112 326.52,-124 326.52,-124 326.52,-130 320.52,-136 314.52,-136"/>
-<text text-anchor="middle" x="286.38" y="-114.15" font-family="Arial" font-size="11.00" fill="#1f2933">Crear epica</text>
-</g>
-<!-- publish_epic -->
-<g id="node9" class="node">
-<title>publish_epic</title>
-<path fill="#f7f8fa" stroke="#4f5b67" d="M517.71,-136C517.71,-136 447.43,-136 447.43,-136 441.43,-136 435.43,-130 435.43,-124 435.43,-124 435.43,-112 435.43,-112 435.43,-106 441.43,-100 447.43,-100 447.43,-100 517.71,-100 517.71,-100 523.71,-100 529.71,-106 529.71,-112 529.71,-112 529.71,-124 529.71,-124 529.71,-130 523.71,-136 517.71,-136"/>
-<text text-anchor="middle" x="482.57" y="-114.15" font-family="Arial" font-size="11.00" fill="#1f2933">Publicar epica</text>
-</g>
-<!-- create_epic&#45;&gt;publish_epic -->
-<g id="edge11" class="edge">
-<title>create_epic&#45;&gt;publish_epic</title>
-<path fill="none" stroke="#4f5b67" d="M326.68,-118C355.47,-118 394.92,-118 426.8,-118"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="426.64,-120.45 433.64,-118 426.64,-115.55 426.64,-120.45"/>
-</g>
-<!-- end -->
-<g id="node12" class="node">
-<title>end</title>
-<ellipse fill="#222222" stroke="#222222" cx="693.26" cy="-186" rx="6.48" ry="6.48"/>
-<ellipse fill="none" stroke="#222222" cx="693.26" cy="-186" rx="10.48" ry="10.48"/>
-</g>
-<!-- publish_epic&#45;&gt;end -->
-<g id="edge12" class="edge">
-<title>publish_epic&#45;&gt;end</title>
-<path fill="none" stroke="#4f5b67" d="M530.02,-134.5C574.73,-150.38 635.62,-172 635.62,-172 635.62,-172 658.01,-177.53 674.63,-181.64"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="673.8,-183.96 681.18,-183.26 674.97,-179.2 673.8,-183.96"/>
-</g>
-<!-- estimate_scope&#45;&gt;create_epic -->
-<g id="edge10" class="edge">
-<title>estimate_scope&#45;&gt;create_epic</title>
-<path fill="none" stroke="#4f5b67" d="M815.45,-200.38C787.57,-208.08 758.9,-216 758.9,-216 758.9,-216 635.62,-216 635.62,-216 635.62,-216 394.52,-156 394.52,-156 394.52,-156 363.58,-145.03 334.96,-134.87"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="335.81,-132.58 328.4,-132.55 334.18,-137.2 335.81,-132.58"/>
-</g>
-<!-- start -->
-<g id="node11" class="node">
-<title>start</title>
-<ellipse fill="#222222" stroke="#222222" cx="6.48" cy="-278" rx="6.48" ry="6.48"/>
-</g>
-<!-- start&#45;&gt;create_brief -->
-<g id="edge1" class="edge">
-<title>start&#45;&gt;create_brief</title>
-<path fill="none" stroke="#4f5b67" d="M13.25,-278C25.63,-278 55.75,-278 81.9,-278"/>
-<polygon fill="#4f5b67" stroke="#4f5b67" points="81.71,-280.45 88.71,-278 81.71,-275.55 81.71,-280.45"/>
-</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2422" height="452" viewBox="0 0 2422 452" role="img" aria-labelledby="title desc">
+  <title id="title">Generacion de epica desde brief</title>
+  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>
+    </marker>
+  </defs>
+  <rect x="24" y="24" width="2374" height="404" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1211.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Generacion de epica desde brief</text>
+  <rect x="24" y="80" width="2374" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="80" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="138.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 138.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Solicitante</text>
+  <rect x="24" y="196" width="2374" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="196" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="254.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 254.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Product Owner</text>
+  <rect x="24" y="312" width="2374" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="312" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="62.0" y="370.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 370.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Equipo Tecnico</text>
+  <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">
+    <polyline points="159.0,138.0 210.0,138.0 261.0,138.0"/>
+    <polyline points="403.0,138.0 426.0,138.0 449.0,138.0"/>
+    <polyline points="591.0,138.0 614.0,138.0 614.0,254.0 637.0,254.0"/>
+    <polyline points="779.0,254.0 806.5,254.0 834.0,254.0"/>
+    <polyline points="958.0,254.0 985.5,254.0 1013.0,254.0"/>
+    <polyline points="1155.0,254.0 1178.0,254.0 1178.0,138.0 1201.0,138.0"/>
+    <polyline points="1201.0,138.0 743.0,138.0 743.0,254.0 779.0,254.0"/>
+    <polyline points="958.0,254.0 1173.5,254.0 1389.0,254.0"/>
+    <polyline points="1531.0,254.0 1554.0,254.0 1554.0,370.0 1577.0,370.0"/>
+    <polyline points="1719.0,370.0 1742.0,370.0 1742.0,254.0 1765.0,254.0"/>
+    <polyline points="1907.0,254.0 1930.0,254.0 1953.0,254.0"/>
+    <polyline points="2095.0,254.0 2146.0,254.0 2197.0,254.0"/>
+  </g>
+  <rect x="977.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="990.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="1165.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1178.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <circle cx="144" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+  <rect x="261.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="332" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear brief</text>
+  <rect x="449.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="520" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar brief</text>
+  <rect x="637.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="708" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
+  <polygon points="896,218.0 958.0,254.0 896,290.0 834.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="896" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
+  <rect x="1013.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1084" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
+  <rect x="1201.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1272" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
+  <rect x="1389.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1460" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar</text>
+  <text x="1460" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">iniciativa</text>
+  <rect x="1577.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1648" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar alcance</text>
+  <rect x="1765.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1836" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
+  <rect x="1953.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2024" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Publicar epica</text>
+  <circle cx="2212" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
+  <circle cx="2212" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
 </svg>
