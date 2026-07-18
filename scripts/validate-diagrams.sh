@@ -61,8 +61,8 @@ for svg in "${svgs[@]}"; do
 done
 
 if [[ "$changed" -ne 0 ]]; then
-  echo "Run make diagrams and commit the updated SVG files."
+    echo "Run make diagrams and commit the updated diagram artifacts."
   exit 1
 fi
 
-echo "All process models are valid and SVG files are up to date."
+echo "All process models are valid and diagram artifacts are up to date."

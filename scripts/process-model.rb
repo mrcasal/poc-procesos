@@ -364,9 +364,248 @@ end
 def render_view_outputs(layout)
   return [] unless views_enabled?(layout)
 
-  outputs = ["process-overview.svg"]
+  outputs = ["process-viewer.html", "process-overview.svg"]
   outputs.concat(view_phases(layout).map { |phase| "process-#{phase.fetch("id")}.svg" })
   outputs
+end
+
+def render_viewer_html(model)
+  title = model.fetch("process").fetch("name")
+  <<~HTML
+    <!doctype html>
+    <html lang="es">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>#{xml_escape(title)} - visor de diagrama</title>
+      <style>
+        :root {
+          color-scheme: light;
+          --bg: #f5f7fb;
+          --panel: #ffffff;
+          --border: #cad3df;
+          --text: #1f2933;
+          --muted: #52606d;
+          --accent: #2563eb;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          overflow: hidden;
+          font-family: Arial, sans-serif;
+          color: var(--text);
+          background: var(--bg);
+        }
+
+        .app {
+          display: grid;
+          grid-template-rows: auto 1fr;
+          width: 100%;
+          height: 100%;
+        }
+
+        .toolbar {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          min-height: 56px;
+          padding: 10px 12px;
+          border-bottom: 1px solid var(--border);
+          background: var(--panel);
+        }
+
+        .title {
+          min-width: 0;
+          flex: 1;
+          overflow: hidden;
+          color: var(--muted);
+          font-size: 14px;
+          font-weight: 700;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        button {
+          width: 36px;
+          height: 36px;
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          color: var(--text);
+          background: #fff;
+          font-size: 18px;
+          line-height: 1;
+          cursor: pointer;
+        }
+
+        button:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+        }
+
+        .zoom-value {
+          width: 64px;
+          color: var(--muted);
+          font-size: 13px;
+          font-variant-numeric: tabular-nums;
+          text-align: center;
+        }
+
+        .viewport {
+          position: relative;
+          overflow: hidden;
+          cursor: grab;
+          background:
+            linear-gradient(90deg, rgba(31, 41, 51, 0.05) 1px, transparent 1px),
+            linear-gradient(rgba(31, 41, 51, 0.05) 1px, transparent 1px);
+          background-size: 24px 24px;
+        }
+
+        .viewport.dragging {
+          cursor: grabbing;
+        }
+
+        .canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform-origin: 0 0;
+          will-change: transform;
+        }
+
+        .diagram {
+          display: block;
+          max-width: none;
+          user-select: none;
+          -webkit-user-drag: none;
+          box-shadow: 0 10px 28px rgba(31, 41, 51, 0.16);
+          background: #fff;
+        }
+      </style>
+    </head>
+    <body>
+      <main class="app">
+        <div class="toolbar">
+          <div class="title">#{xml_escape(title)}</div>
+          <button type="button" data-action="zoom-out" aria-label="Reducir zoom" title="Reducir zoom">-</button>
+          <div class="zoom-value" aria-live="polite">100%</div>
+          <button type="button" data-action="zoom-in" aria-label="Aumentar zoom" title="Aumentar zoom">+</button>
+          <button type="button" data-action="fit" aria-label="Ajustar a pantalla" title="Ajustar a pantalla">[]</button>
+          <button type="button" data-action="reset" aria-label="Restablecer zoom" title="Restablecer zoom">1:1</button>
+        </div>
+        <div class="viewport">
+          <div class="canvas">
+            <img class="diagram" src="process.svg" alt="Diagrama completo de #{xml_escape(title)}">
+          </div>
+        </div>
+      </main>
+      <script>
+        const viewport = document.querySelector(".viewport");
+        const canvas = document.querySelector(".canvas");
+        const diagram = document.querySelector(".diagram");
+        const zoomValue = document.querySelector(".zoom-value");
+        const minScale = 0.1;
+        const maxScale = 4;
+        let scale = 1;
+        let offsetX = 24;
+        let offsetY = 24;
+        let dragging = false;
+        let dragStartX = 0;
+        let dragStartY = 0;
+        let dragOffsetX = 0;
+        let dragOffsetY = 0;
+
+        function clamp(value, min, max) {
+          return Math.min(max, Math.max(min, value));
+        }
+
+        function render() {
+          canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+          zoomValue.textContent = `${Math.round(scale * 100)}%`;
+        }
+
+        function zoomAt(nextScale, centerX, centerY) {
+          const bounded = clamp(nextScale, minScale, maxScale);
+          const diagramX = (centerX - offsetX) / scale;
+          const diagramY = (centerY - offsetY) / scale;
+          scale = bounded;
+          offsetX = centerX - diagramX * scale;
+          offsetY = centerY - diagramY * scale;
+          render();
+        }
+
+        function fitToViewport() {
+          const bounds = viewport.getBoundingClientRect();
+          const widthScale = (bounds.width - 48) / diagram.naturalWidth;
+          const heightScale = (bounds.height - 48) / diagram.naturalHeight;
+          scale = clamp(Math.min(widthScale, heightScale), minScale, maxScale);
+          offsetX = (bounds.width - diagram.naturalWidth * scale) / 2;
+          offsetY = (bounds.height - diagram.naturalHeight * scale) / 2;
+          render();
+        }
+
+        document.querySelector("[data-action='zoom-out']").addEventListener("click", () => {
+          const bounds = viewport.getBoundingClientRect();
+          zoomAt(scale / 1.2, bounds.width / 2, bounds.height / 2);
+        });
+
+        document.querySelector("[data-action='zoom-in']").addEventListener("click", () => {
+          const bounds = viewport.getBoundingClientRect();
+          zoomAt(scale * 1.2, bounds.width / 2, bounds.height / 2);
+        });
+
+        document.querySelector("[data-action='fit']").addEventListener("click", fitToViewport);
+
+        document.querySelector("[data-action='reset']").addEventListener("click", () => {
+          scale = 1;
+          offsetX = 24;
+          offsetY = 24;
+          render();
+        });
+
+        viewport.addEventListener("wheel", (event) => {
+          event.preventDefault();
+          const bounds = viewport.getBoundingClientRect();
+          const factor = event.deltaY < 0 ? 1.1 : 1 / 1.1;
+          zoomAt(scale * factor, event.clientX - bounds.left, event.clientY - bounds.top);
+        }, { passive: false });
+
+        viewport.addEventListener("pointerdown", (event) => {
+          dragging = true;
+          dragStartX = event.clientX;
+          dragStartY = event.clientY;
+          dragOffsetX = offsetX;
+          dragOffsetY = offsetY;
+          viewport.classList.add("dragging");
+          viewport.setPointerCapture(event.pointerId);
+        });
+
+        viewport.addEventListener("pointermove", (event) => {
+          if (!dragging) return;
+          offsetX = dragOffsetX + event.clientX - dragStartX;
+          offsetY = dragOffsetY + event.clientY - dragStartY;
+          render();
+        });
+
+        viewport.addEventListener("pointerup", (event) => {
+          dragging = false;
+          viewport.classList.remove("dragging");
+          viewport.releasePointerCapture(event.pointerId);
+        });
+
+        diagram.addEventListener("load", fitToViewport);
+        window.addEventListener("resize", fitToViewport);
+        render();
+      </script>
+    </body>
+    </html>
+  HTML
 end
 
 def overview_model(model, layout)
@@ -441,6 +680,8 @@ end
 
 def render_document_views(model, layout, output_dir)
   return unless views_enabled?(layout)
+
+  File.write(render_output_path(output_dir, "process-viewer.html"), render_viewer_html(model))
 
   overview_layout = layout.merge(
     "lane-order" => ["process"],

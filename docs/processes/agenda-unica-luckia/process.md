@@ -122,6 +122,8 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 
 [Abrir diagrama completo](process.svg)
 
+[Abrir visor interactivo](process-viewer.html)
+
 ## Artefactos del modelo
 
 - Modelo fuente: `process.yaml`
@@ -129,6 +131,7 @@ El proceso garantiza trazabilidad, control de capacidad y visibilidad transversa
 - SVG renderizado: `process.svg`
 - SVG de vista general: `process-overview.svg`
 - SVG por fase: `process-fase-*.svg`
+- Visor interactivo: `process-viewer.html`
 
 ## Caminos alternativos
 

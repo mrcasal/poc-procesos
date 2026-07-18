@@ -19,12 +19,14 @@ documento:
 ```text
 process-overview.svg
 process-<fase>.svg
+process-viewer.html
 ```
 
 La fuente de verdad del proceso es siempre `process.yaml`. El fichero `layout.yaml`
 contiene solo preferencias de presentacion. Tambien puede declarar fases visuales
 para producir una vista general y diagramas parciales sin dividir el modelo fuente.
-`process.svg` y las vistas derivadas son artefactos generados y se regeneran con:
+`process.svg`, las vistas derivadas y el visor HTML son artefactos generados y se
+regeneran con:
 
 ```bash
 make diagrams
