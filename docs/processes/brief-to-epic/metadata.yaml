@@ -1,0 +1,7 @@
+id: brief-to-epic
+name: Generacion de epica desde brief
+owner: Product Owner
+status: draft
+diagram:
+  source: process.puml
+  output: process.svg

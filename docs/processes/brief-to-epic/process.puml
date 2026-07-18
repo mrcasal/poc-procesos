@@ -1,0 +1,42 @@
+@startuml
+title Generacion de epica desde brief
+
+skinparam backgroundColor #ffffff
+skinparam activity {
+  BackgroundColor #f7f8fa
+  BorderColor #4f5b67
+  FontColor #1f2933
+}
+skinparam partition {
+  BackgroundColor #eef4ff
+  BorderColor #7a8da8
+  FontColor #1f2933
+}
+skinparam ArrowColor #4f5b67
+
+|Solicitante|
+start
+:Crear brief;
+:Enviar brief;
+
+|Product Owner|
+:Revisar brief;
+
+while (¿Brief completo?) is (No)
+  :Solicitar ajustes;
+  |Solicitante|
+  :Actualizar brief;
+  |Product Owner|
+  :Revisar brief;
+endwhile (Sí)
+
+:Priorizar iniciativa;
+
+|Equipo Tecnico|
+:Estimar alcance;
+
+|Product Owner|
+:Crear epica;
+:Publicar epica;
+stop
+@enduml

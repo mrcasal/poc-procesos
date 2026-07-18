@@ -1,0 +1,168 @@
+@startdot
+digraph agenda_unica_luckia {
+  graph [
+    label="Gestion de la Agenda Unica Luckia",
+    labelloc=t,
+    fontsize=18,
+    fontname="Arial",
+    rankdir=LR,
+    splines=ortho,
+    nodesep=0.55,
+    ranksep=0.9,
+    compound=true,
+    bgcolor="white"
+  ];
+
+  node [
+    shape=rect,
+    style="rounded,filled",
+    fillcolor="#f7f8fa",
+    color="#4f5b67",
+    fontcolor="#1f2933",
+    fontname="Arial",
+    fontsize=11,
+    margin="0.12,0.08"
+  ];
+
+  edge [
+    color="#4f5b67",
+    fontname="Arial",
+    fontsize=10,
+    arrowsize=0.7
+  ];
+
+  start [label="", shape=circle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
+  end_reject [label="", shape=doublecircle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
+  end_close [label="", shape=doublecircle, width=0.18, height=0.18, fillcolor="#222222", color="#222222"];
+
+  brief_ok [label="¿Brief completo?", shape=diamond, width=1.35, height=0.55];
+  approved [label="¿Iniciativa aprobada?", shape=diamond, width=1.65, height=0.55];
+  capacity_ok [label="¿Rango operativo?", shape=diamond, width=1.45, height=0.55];
+  deps_ok [label="¿Dependencias resueltas?", shape=diamond, width=1.85, height=0.55];
+  features_ok [label="¿Features cerradas?", shape=diamond, width=1.55, height=0.55];
+  validation_ok [label="¿Validacion correcta?", shape=diamond, width=1.65, height=0.55];
+
+  subgraph cluster_promotor {
+    label="Promotor";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    start;
+    formalize_brief [label="Formalizar brief"];
+    send_initiative [label="Enviar iniciativa"];
+    update_brief [label="Actualizar brief"];
+  }
+
+  subgraph cluster_product_owner {
+    label="Product Owner";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    review_brief [label="Revisar brief"];
+    brief_ok;
+    request_updates [label="Solicitar ajustes"];
+    estimate_effort [label="Estimar effort"];
+    create_epic [label="Crear epica"];
+    reject_epic [label="Comunicar rechazo"];
+    close_active [label="Cerrar trabajo activo"];
+    define_features [label="Definir features"];
+    estimate_features [label="Estimar features"];
+    assign_features [label="Asignar features"];
+    verify_deps [label="Verificar dependencias"];
+    deps_ok;
+    block_epic [label="Marcar bloqueada"];
+    reactivate_epic [label="Reactivar epica"];
+    validate_scope [label="Validar alcance"];
+    validation_ok;
+    validate_scope_again [label="Validar alcance"];
+    close_epic [label="Cerrar epica"];
+    end_reject;
+    end_close;
+  }
+
+  subgraph cluster_committee {
+    label="Comite Transformacion";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    evaluate_initiative [label="Evaluar iniciativa"];
+    approved;
+    prioritize_epic [label="Priorizar epica"];
+  }
+
+  subgraph cluster_pmo {
+    label="PMO";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    review_capacity [label="Revisar capacidad"];
+    capacity_ok;
+    freeze_intake [label="Congelar intake"];
+    review_capacity_again [label="Revisar capacidad"];
+  }
+
+  subgraph cluster_tech_team {
+    label="Equipo Tecnico";
+    style="rounded,filled";
+    color="#7a8da8";
+    fillcolor="#eef4ff";
+    fontname="Arial";
+    fontsize=13;
+
+    agree_contract [label="Acordar contrato"];
+    commit_delivery [label="Comprometer entrega"];
+    refine_stories [label="Refinar historias"];
+    build_stories [label="Construir historias"];
+    validate_features [label="Validar features"];
+    features_ok;
+    fix_stories [label="Corregir historias"];
+    validate_features_again [label="Validar features"];
+    fix_scope [label="Corregir alcance"];
+    deploy_prod [label="Desplegar produccion"];
+    close_features [label="Cerrar features"];
+  }
+
+  start -> formalize_brief -> send_initiative -> review_brief -> brief_ok;
+  brief_ok -> request_updates [label="No"];
+  request_updates -> update_brief -> review_brief;
+  brief_ok -> estimate_effort [label="Si"];
+  estimate_effort -> create_epic -> evaluate_initiative -> approved;
+
+  approved -> reject_epic [label="No"];
+  reject_epic -> end_reject;
+  approved -> prioritize_epic [label="Si"];
+  prioritize_epic -> review_capacity -> capacity_ok;
+
+  capacity_ok -> freeze_intake [label="No"];
+  freeze_intake -> close_active -> review_capacity_again -> capacity_ok;
+  capacity_ok -> define_features [label="Si"];
+  define_features -> estimate_features -> assign_features -> verify_deps -> deps_ok;
+
+  deps_ok -> block_epic [label="No"];
+  block_epic -> agree_contract -> commit_delivery -> reactivate_epic -> deps_ok;
+  deps_ok -> refine_stories [label="Si"];
+  refine_stories -> build_stories -> validate_features -> features_ok;
+
+  features_ok -> fix_stories [label="No"];
+  fix_stories -> validate_features_again -> features_ok;
+  features_ok -> validate_scope [label="Si"];
+  validate_scope -> validation_ok;
+
+  validation_ok -> fix_scope [label="No"];
+  fix_scope -> validate_scope_again -> validation_ok;
+  validation_ok -> deploy_prod [label="Si"];
+  deploy_prod -> close_features -> close_epic -> end_close;
+}
+@enddot
