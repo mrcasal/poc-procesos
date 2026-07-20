@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2422" height="452" viewBox="0 0 2422 452" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="2466" height="504" viewBox="0 0 2466 504" role="img" aria-labelledby="title desc">
   <title id="title">Generacion de epica desde brief</title>
-  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>
+  <desc id="desc">Diagrama generado desde process.yaml con swimlanes horizontales, etiquetas de actor en varias lineas y conectores octolineales sin cruces deliberados.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>
     </marker>
   </defs>
-  <rect x="24" y="24" width="2374" height="404" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1211.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Generacion de epica desde brief</text>
-  <rect x="24" y="80" width="2374" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="80" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="138.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 138.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Solicitante</text>
-  <rect x="24" y="196" width="2374" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="196" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="254.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 254.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Product Owner</text>
-  <rect x="24" y="312" width="2374" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="312" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="370.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 370.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Equipo Tecnico</text>
+  <rect x="24" y="24" width="2418" height="456" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1233.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Generacion de epica desde brief</text>
+  <rect x="24" y="80" width="2418" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="80" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="138.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Solicitante</tspan></text>
+  <rect x="24" y="196" width="2418" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="196" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="254.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Product Owner</tspan></text>
+  <rect x="24" y="312" width="2418" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="312" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="370.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Equipo Tecnico</tspan></text>
   <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">
-    <polyline points="159.0,138.0 210.0,138.0 261.0,138.0"/>
-    <polyline points="403.0,138.0 426.0,138.0 449.0,138.0"/>
-    <polyline points="591.0,138.0 614.0,138.0 614.0,254.0 637.0,254.0"/>
-    <polyline points="779.0,254.0 806.5,254.0 834.0,254.0"/>
-    <polyline points="958.0,254.0 985.5,254.0 1013.0,254.0"/>
-    <polyline points="1155.0,254.0 1178.0,254.0 1178.0,138.0 1201.0,138.0"/>
-    <polyline points="1201.0,138.0 743.0,138.0 743.0,254.0 779.0,254.0"/>
-    <polyline points="958.0,254.0 1173.5,254.0 1389.0,254.0"/>
-    <polyline points="1531.0,254.0 1554.0,254.0 1554.0,370.0 1577.0,370.0"/>
-    <polyline points="1719.0,370.0 1742.0,370.0 1742.0,254.0 1765.0,254.0"/>
-    <polyline points="1907.0,254.0 1930.0,254.0 1953.0,254.0"/>
-    <polyline points="2095.0,254.0 2146.0,254.0 2197.0,254.0"/>
+    <polyline points="203.0,138.0 254.0,138.0 305.0,138.0"/>
+    <polyline points="447.0,138.0 470.0,138.0 493.0,138.0"/>
+    <polyline points="635.0,138.0 658.0,138.0 658.0,254.0 681.0,254.0"/>
+    <polyline points="823.0,254.0 850.5,254.0 878.0,254.0"/>
+    <polyline points="940,290.0 940,304.0 988,304.0 988,254.0 1057.0,254.0"/>
+    <polyline points="1199.0,254.0 1222.0,254.0 1222.0,138.0 1245.0,138.0"/>
+    <polyline points="1245.0,138.0 1227.0,138.0 1227.0,430 1209.0,448 859.0,448 841.0,430 841.0,254.0 823.0,254.0"/>
+    <polyline points="1002.0,254.0 1217.5,254.0 1433.0,254.0"/>
+    <polyline points="1575.0,254.0 1598.0,254.0 1598.0,370.0 1621.0,370.0"/>
+    <polyline points="1763.0,370.0 1786.0,370.0 1786.0,254.0 1809.0,254.0"/>
+    <polyline points="1951.0,254.0 1974.0,254.0 1997.0,254.0"/>
+    <polyline points="2139.0,254.0 2190.0,254.0 2241.0,254.0"/>
   </g>
-  <rect x="977.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="990.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="1165.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="1178.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <circle cx="144" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
-  <rect x="261.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="332" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear brief</text>
-  <rect x="449.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="520" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar brief</text>
-  <rect x="637.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="708" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
-  <polygon points="896,218.0 958.0,254.0 896,290.0 834.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="896" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
-  <rect x="1013.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1084" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
-  <rect x="1201.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1272" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
-  <rect x="1389.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1460" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar</text>
-  <text x="1460" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">iniciativa</text>
-  <rect x="1577.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1648" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar alcance</text>
-  <rect x="1765.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1836" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
-  <rect x="1953.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2024" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Publicar epica</text>
-  <circle cx="2212" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
-  <circle cx="2212" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
+  <rect x="1021.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1034.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="1209.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1222.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <circle cx="188" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+  <rect x="305.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="376" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear brief</text>
+  <rect x="493.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="564" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar brief</text>
+  <rect x="681.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="752" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
+  <polygon points="940,218.0 1002.0,254.0 940,290.0 878.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="940" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
+  <rect x="1057.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1128" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
+  <rect x="1245.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1316" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
+  <rect x="1433.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1504" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar</text>
+  <text x="1504" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">iniciativa</text>
+  <rect x="1621.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1692" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar alcance</text>
+  <rect x="1809.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1880" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
+  <rect x="1997.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2068" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Publicar epica</text>
+  <circle cx="2256" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
+  <circle cx="2256" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
 </svg>

@@ -1,180 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="7310" height="684" viewBox="0 0 7310 684" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="7354" height="832" viewBox="0 0 7354 832" role="img" aria-labelledby="title desc">
   <title id="title">Gestion de Demanda Tecnologica</title>
-  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>
+  <desc id="desc">Diagrama generado desde process.yaml con swimlanes horizontales, etiquetas de actor en varias lineas y conectores octolineales sin cruces deliberados.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>
     </marker>
   </defs>
-  <rect x="24" y="24" width="7262" height="636" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3655.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Gestion de Demanda Tecnologica</text>
-  <rect x="24" y="80" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="80" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="138.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 138.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Promotor</text>
-  <rect x="24" y="196" width="7262" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="196" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="254.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 254.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Product Owner</text>
-  <rect x="24" y="312" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="312" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="370.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 370.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Comite Transformacion</text>
-  <rect x="24" y="428" width="7262" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="428" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="486.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 486.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">PMO</text>
-  <rect x="24" y="544" width="7262" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
-  <rect x="24" y="544" width="76" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
-  <text x="62.0" y="602.0" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 62.0 602.0)" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">Equipo Tecnico</text>
+  <rect x="24" y="24" width="7306" height="784" rx="0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3677.0" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1f2933">Gestion de Demanda Tecnologica</text>
+  <rect x="24" y="80" width="7306" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="80" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="138.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Promotor</tspan></text>
+  <rect x="24" y="196" width="7306" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="196" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="254.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Product Owner</tspan></text>
+  <rect x="24" y="312" width="7306" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="312" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="370.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-7.5">Comite</tspan><tspan x="84.0" dy="15">Transformacion</tspan></text>
+  <rect x="24" y="428" width="7306" height="116" fill="#eef4ff" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="428" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="486.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">PMO</tspan></text>
+  <rect x="24" y="544" width="7306" height="116" fill="#f8fafc" stroke="#d5dce6" stroke-width="1"/>
+  <rect x="24" y="544" width="120" height="116" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>
+  <text x="84.0" y="602.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933"><tspan x="84.0" dy="-0.0">Equipo Tecnico</tspan></text>
   <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">
-    <polyline points="159.0,138.0 210.0,138.0 261.0,138.0"/>
-    <polyline points="403.0,138.0 426.0,138.0 449.0,138.0"/>
-    <polyline points="591.0,138.0 614.0,138.0 614.0,254.0 637.0,254.0"/>
-    <polyline points="779.0,254.0 806.5,254.0 834.0,254.0"/>
-    <polyline points="958.0,254.0 985.5,254.0 1013.0,254.0"/>
-    <polyline points="1155.0,254.0 1178.0,254.0 1178.0,138.0 1201.0,138.0"/>
-    <polyline points="1201.0,138.0 743.0,138.0 743.0,254.0 779.0,254.0"/>
-    <polyline points="958.0,254.0 1173.5,254.0 1389.0,254.0"/>
-    <polyline points="1531.0,254.0 1554.0,254.0 1577.0,254.0"/>
-    <polyline points="1719.0,254.0 1742.0,254.0 1742.0,370.0 1765.0,370.0"/>
-    <polyline points="1907.0,370.0 1934.5,370.0 1962.0,370.0"/>
-    <polyline points="2086.0,370.0 2113.5,370.0 2113.5,254.0 2141.0,254.0"/>
-    <polyline points="2283.0,254.0 4684.0,254.0 7085.0,254.0"/>
-    <polyline points="2086.0,370.0 2207.5,370.0 2329.0,370.0"/>
-    <polyline points="2471.0,370.0 2494.0,370.0 2494.0,486.0 2517.0,486.0"/>
-    <polyline points="2659.0,486.0 2686.5,486.0 2714.0,486.0"/>
-    <polyline points="2838.0,486.0 2865.5,486.0 2893.0,486.0"/>
-    <polyline points="3035.0,486.0 3058.0,486.0 3058.0,254.0 3081.0,254.0"/>
-    <polyline points="3081.0,254.0 2623.0,254.0 2623.0,486.0 2659.0,486.0"/>
-    <polyline points="2838.0,486.0 3053.5,486.0 3053.5,254.0 3269.0,254.0"/>
-    <polyline points="3411.0,254.0 3434.0,254.0 3457.0,254.0"/>
-    <polyline points="3599.0,254.0 3622.0,254.0 3645.0,254.0"/>
-    <polyline points="3787.0,254.0 3810.0,254.0 3833.0,254.0"/>
-    <polyline points="3975.0,254.0 4002.5,254.0 4030.0,254.0"/>
-    <polyline points="4154.0,254.0 4181.5,254.0 4209.0,254.0"/>
-    <polyline points="4351.0,254.0 4374.0,254.0 4374.0,602.0 4397.0,602.0"/>
-    <polyline points="4539.0,602.0 4562.0,602.0 4585.0,602.0"/>
-    <polyline points="4727.0,602.0 4750.0,602.0 4750.0,254.0 4773.0,254.0"/>
-    <polyline points="4773.0,254.0 4118.0,254.0 4154.0,254.0"/>
-    <polyline points="4154.0,254.0 4557.5,254.0 4557.5,602.0 4961.0,602.0"/>
-    <polyline points="5103.0,602.0 5126.0,602.0 5149.0,602.0"/>
-    <polyline points="5291.0,602.0 5314.0,602.0 5337.0,602.0"/>
-    <polyline points="5479.0,602.0 5506.5,602.0 5534.0,602.0"/>
-    <polyline points="5658.0,602.0 5685.5,602.0 5713.0,602.0"/>
-    <polyline points="5713.0,602.0 5443.0,602.0 5479.0,602.0"/>
-    <polyline points="5658.0,602.0 5779.5,602.0 5779.5,254.0 5901.0,254.0"/>
-    <polyline points="6043.0,254.0 6070.5,254.0 6098.0,254.0"/>
-    <polyline points="6222.0,254.0 6249.5,254.0 6249.5,602.0 6277.0,602.0"/>
-    <polyline points="6277.0,602.0 6007.0,602.0 6007.0,254.0 6043.0,254.0"/>
-    <polyline points="6222.0,254.0 6343.5,254.0 6343.5,602.0 6465.0,602.0"/>
-    <polyline points="6607.0,602.0 6630.0,602.0 6653.0,602.0"/>
-    <polyline points="6795.0,602.0 6818.0,602.0 6818.0,254.0 6841.0,254.0"/>
-    <polyline points="6983.0,254.0 7034.0,254.0 7085.0,254.0"/>
+    <polyline points="203.0,138.0 254.0,138.0 305.0,138.0"/>
+    <polyline points="447.0,138.0 470.0,138.0 493.0,138.0"/>
+    <polyline points="635.0,138.0 658.0,138.0 658.0,254.0 681.0,254.0"/>
+    <polyline points="823.0,254.0 850.5,254.0 878.0,254.0"/>
+    <polyline points="940,290.0 940,304.0 988,304.0 988,254.0 1057.0,254.0"/>
+    <polyline points="1199.0,254.0 1222.0,254.0 1222.0,138.0 1245.0,138.0"/>
+    <polyline points="1245.0,138.0 1227.0,138.0 1227.0,662 1209.0,680 859.0,680 841.0,662 841.0,254.0 823.0,254.0"/>
+    <polyline points="1002.0,254.0 1217.5,254.0 1433.0,254.0"/>
+    <polyline points="1575.0,254.0 1598.0,254.0 1621.0,254.0"/>
+    <polyline points="1763.0,254.0 1786.0,254.0 1786.0,370.0 1809.0,370.0"/>
+    <polyline points="1951.0,370.0 1978.5,370.0 2006.0,370.0"/>
+    <polyline points="2068,334.0 2068,320.0 2116,320.0 2116,254.0 2185.0,254.0"/>
+    <polyline points="2327.0,254.0 4728.0,254.0 7129.0,254.0"/>
+    <polyline points="2130.0,370.0 2251.5,370.0 2373.0,370.0"/>
+    <polyline points="2515.0,370.0 2538.0,370.0 2538.0,486.0 2561.0,486.0"/>
+    <polyline points="2703.0,486.0 2730.5,486.0 2758.0,486.0"/>
+    <polyline points="2820,522.0 2820,536.0 2868,536.0 2868,486.0 2937.0,486.0"/>
+    <polyline points="3079.0,486.0 3102.0,486.0 3102.0,254.0 3125.0,254.0"/>
+    <polyline points="3125.0,254.0 3107.0,254.0 3107.0,686 3089.0,704 2739.0,704 2721.0,686 2721.0,486.0 2703.0,486.0"/>
+    <polyline points="2882.0,486.0 3097.5,486.0 3097.5,254.0 3313.0,254.0"/>
+    <polyline points="3455.0,254.0 3478.0,254.0 3501.0,254.0"/>
+    <polyline points="3643.0,254.0 3666.0,254.0 3689.0,254.0"/>
+    <polyline points="3831.0,254.0 3854.0,254.0 3877.0,254.0"/>
+    <polyline points="4019.0,254.0 4046.5,254.0 4074.0,254.0"/>
+    <polyline points="4136,290.0 4136,304.0 4184,304.0 4184,254.0 4253.0,254.0"/>
+    <polyline points="4395.0,254.0 4418.0,254.0 4418.0,602.0 4441.0,602.0"/>
+    <polyline points="4583.0,602.0 4606.0,602.0 4629.0,602.0"/>
+    <polyline points="4771.0,602.0 4794.0,602.0 4794.0,254.0 4817.0,254.0"/>
+    <polyline points="4817.0,254.0 4799.0,254.0 4799.0,710 4781.0,728 4234.0,728 4216.0,710 4216.0,254.0 4198.0,254.0"/>
+    <polyline points="4198.0,254.0 4601.5,254.0 4601.5,602.0 5005.0,602.0"/>
+    <polyline points="5147.0,602.0 5170.0,602.0 5193.0,602.0"/>
+    <polyline points="5335.0,602.0 5358.0,602.0 5381.0,602.0"/>
+    <polyline points="5523.0,602.0 5550.5,602.0 5578.0,602.0"/>
+    <polyline points="5640,638.0 5640,652.0 5688,652.0 5688,602.0 5757.0,602.0"/>
+    <polyline points="5757.0,602.0 5739.0,602.0 5739.0,734 5721.0,752 5559.0,752 5541.0,734 5541.0,602.0 5523.0,602.0"/>
+    <polyline points="5702.0,602.0 5823.5,602.0 5823.5,254.0 5945.0,254.0"/>
+    <polyline points="6087.0,254.0 6114.5,254.0 6142.0,254.0"/>
+    <polyline points="6204,290.0 6204,304.0 6252,304.0 6252,602.0 6321.0,602.0"/>
+    <polyline points="6321.0,602.0 6303.0,602.0 6303.0,758 6285.0,776 6123.0,776 6105.0,758 6105.0,254.0 6087.0,254.0"/>
+    <polyline points="6266.0,254.0 6387.5,254.0 6387.5,602.0 6509.0,602.0"/>
+    <polyline points="6651.0,602.0 6674.0,602.0 6697.0,602.0"/>
+    <polyline points="6839.0,602.0 6862.0,602.0 6862.0,254.0 6885.0,254.0"/>
+    <polyline points="7027.0,254.0 7078.0,254.0 7129.0,254.0"/>
   </g>
-  <rect x="977.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="990.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="1165.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="1178.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <rect x="2105.0" y="291.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="2118.0" y="304.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="2199.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="2212.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <rect x="2857.0" y="465.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="2870.0" y="478.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="3045.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="3058.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <rect x="4173.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="4186.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="4549.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="4562.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <rect x="5677.0" y="581.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="5690.0" y="594.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="5771.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="5784.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <rect x="6241.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="6254.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
-  <rect x="6335.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
-  <text x="6348.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
-  <circle cx="144" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
-  <rect x="261.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="332" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Formalizar brief</text>
-  <rect x="449.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="520" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar iniciativa</text>
-  <rect x="637.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="708" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
-  <polygon points="896,218.0 958.0,254.0 896,290.0 834.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="896" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
-  <rect x="1013.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1084" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
-  <rect x="1201.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1272" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
-  <rect x="1389.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1460" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar effort</text>
-  <rect x="1577.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1648" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
-  <rect x="1765.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="1836" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Evaluar iniciativa</text>
-  <polygon points="2024,334.0 2086.0,370.0 2024,406.0 1962.0,370.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2024" y="367.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Iniciativa</text>
-  <text x="2024" y="380.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">aprobada</text>
-  <rect x="2141.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2212" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comunicar rechazo</text>
-  <rect x="2329.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2400" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar epica</text>
-  <rect x="2517.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2588" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar capacidad</text>
-  <polygon points="2776,450.0 2838.0,486.0 2776,522.0 2714.0,486.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2776" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Rango operativo</text>
-  <rect x="2893.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="2964" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Congelar intake</text>
-  <rect x="3081.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3152" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar trabajo</text>
-  <text x="3152" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">activo</text>
-  <rect x="3269.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3340" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Definir features</text>
-  <rect x="3457.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3528" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar features</text>
-  <rect x="3645.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3716" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Asignar features</text>
-  <rect x="3833.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="3904" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Verificar</text>
-  <text x="3904" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">dependencias</text>
-  <polygon points="4092,218.0 4154.0,254.0 4092,290.0 4030.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="4092" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Dependencias</text>
-  <text x="4092" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">resueltas</text>
-  <rect x="4209.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="4280" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Marcar bloqueada</text>
-  <rect x="4397.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="4468" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Acordar contrato</text>
-  <rect x="4585.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="4656" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comprometer</text>
-  <text x="4656" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">entrega</text>
-  <rect x="4773.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="4844" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Reactivar epica</text>
-  <rect x="4961.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5032" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Refinar historias</text>
-  <rect x="5149.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5220" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Construir</text>
-  <text x="5220" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">historias</text>
-  <rect x="5337.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5408" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar features</text>
-  <polygon points="5596,566.0 5658.0,602.0 5596,638.0 5534.0,602.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5596" y="599.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Features</text>
-  <text x="5596" y="612.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">cerradas</text>
-  <rect x="5713.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5784" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir historias</text>
-  <rect x="5901.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="5972" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar alcance</text>
-  <polygon points="6160,218.0 6222.0,254.0 6160,290.0 6098.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="6160" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Validacion</text>
-  <text x="6160" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">correcta</text>
-  <rect x="6277.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="6348" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir alcance</text>
-  <rect x="6465.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="6536" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Desplegar</text>
-  <text x="6536" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">produccion</text>
-  <rect x="6653.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="6724" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar features</text>
-  <rect x="6841.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
-  <text x="6912" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar epica</text>
-  <circle cx="7100" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
-  <circle cx="7100" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
+  <rect x="1021.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1034.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="1209.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="1222.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="2149.0" y="291.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2162.0" y="304.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="2243.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2256.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="2901.0" y="465.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="2914.0" y="478.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="3089.0" y="349.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="3102.0" y="362.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="4217.0" y="233.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="4230.0" y="246.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="4593.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="4606.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="5721.0" y="581.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="5734.0" y="594.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="5815.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="5828.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <rect x="6285.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="6298.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">No</text>
+  <rect x="6379.0" y="407.0" width="26" height="18" fill="#ffffff" stroke="none"/>
+  <text x="6392.0" y="420.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Si</text>
+  <circle cx="188" cy="138.0" r="15.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+  <rect x="305.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="376" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Formalizar brief</text>
+  <rect x="493.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="564" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Enviar iniciativa</text>
+  <rect x="681.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="752" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar brief</text>
+  <polygon points="940,218.0 1002.0,254.0 940,290.0 878.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="940" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Brief completo</text>
+  <rect x="1057.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1128" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Solicitar ajustes</text>
+  <rect x="1245.0" y="112.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1316" y="142.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Actualizar brief</text>
+  <rect x="1433.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1504" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar effort</text>
+  <rect x="1621.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1692" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Crear epica</text>
+  <rect x="1809.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="1880" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Evaluar iniciativa</text>
+  <polygon points="2068,334.0 2130.0,370.0 2068,406.0 2006.0,370.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2068" y="367.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Iniciativa</text>
+  <text x="2068" y="380.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">aprobada</text>
+  <rect x="2185.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2256" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comunicar rechazo</text>
+  <rect x="2373.0" y="344.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2444" y="374.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Priorizar epica</text>
+  <rect x="2561.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2632" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Revisar capacidad</text>
+  <polygon points="2820,450.0 2882.0,486.0 2820,522.0 2758.0,486.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="2820" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Rango operativo</text>
+  <rect x="2937.0" y="460.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3008" y="490.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Congelar intake</text>
+  <rect x="3125.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3196" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar trabajo</text>
+  <text x="3196" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">activo</text>
+  <rect x="3313.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3384" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Definir features</text>
+  <rect x="3501.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3572" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Estimar features</text>
+  <rect x="3689.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3760" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Asignar features</text>
+  <rect x="3877.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="3948" y="251.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Verificar</text>
+  <text x="3948" y="265.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">dependencias</text>
+  <polygon points="4136,218.0 4198.0,254.0 4136,290.0 4074.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4136" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Dependencias</text>
+  <text x="4136" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">resueltas</text>
+  <rect x="4253.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4324" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Marcar bloqueada</text>
+  <rect x="4441.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4512" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Acordar contrato</text>
+  <rect x="4629.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4700" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Comprometer</text>
+  <text x="4700" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">entrega</text>
+  <rect x="4817.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="4888" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Reactivar epica</text>
+  <rect x="5005.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5076" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Refinar historias</text>
+  <rect x="5193.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5264" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Construir</text>
+  <text x="5264" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">historias</text>
+  <rect x="5381.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5452" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar features</text>
+  <polygon points="5640,566.0 5702.0,602.0 5640,638.0 5578.0,602.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5640" y="599.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Features</text>
+  <text x="5640" y="612.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">cerradas</text>
+  <rect x="5757.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="5828" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir historias</text>
+  <rect x="5945.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6016" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Validar alcance</text>
+  <polygon points="6204,218.0 6266.0,254.0 6204,290.0 6142.0,254.0" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6204" y="251.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">Validacion</text>
+  <text x="6204" y="264.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">correcta</text>
+  <rect x="6321.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6392" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Corregir alcance</text>
+  <rect x="6509.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6580" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Desplegar</text>
+  <text x="6580" y="613.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">produccion</text>
+  <rect x="6697.0" y="576.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6768" y="606.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar features</text>
+  <rect x="6885.0" y="228.0" width="142" height="52" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>
+  <text x="6956" y="258.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1f2933">Cerrar epica</text>
+  <circle cx="7144" cy="254.0" r="15.0" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
+  <circle cx="7144" cy="254.0" r="10.0" fill="#1f2933" stroke="none"/>
 </svg>
