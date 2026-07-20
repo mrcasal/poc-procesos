@@ -172,6 +172,42 @@ def wrap_label(label, max_chars = 18)
   lines
 end
 
+def svg_multiline_text(lines, x:, y:, line_height:, **attributes)
+  attributes_text = attributes.map { |name, value| %(#{name}="#{value}") }.join(" ")
+  first_offset = -((lines.length - 1) * line_height / 2.0)
+  tspans = lines.each_with_index.map do |line, index|
+    dy = index.zero? ? first_offset : line_height
+    %(<tspan x="#{x}" dy="#{dy}">#{xml_escape(line)}</tspan>)
+  end
+  %(<text x="#{x}" y="#{y}" #{attributes_text}>#{tspans.join}</text>)
+end
+
+def layout_nodes(nodes, flows)
+  # Conserva el orden declarado siempre que sea posible, pero sitúa cualquier
+  # destino de "Sí" después de su decisión. Así esta salida nunca retrocede.
+  ordered = nodes.dup
+  yes_flows = flows.select do |flow|
+    %w[si sí].include?(flow["label"].to_s.strip.downcase)
+  end
+
+  nodes.length.times do
+    changed = false
+    yes_flows.each do |flow|
+      from_index = ordered.index { |node| node.fetch("id") == flow.fetch("from") }
+      to_index = ordered.index { |node| node.fetch("id") == flow.fetch("to") }
+      next unless from_index && to_index && to_index <= from_index
+
+      target = ordered.delete_at(to_index)
+      from_index -= 1 if to_index < from_index
+      ordered.insert(from_index + 1, target)
+      changed = true
+    end
+    break unless changed
+  end
+
+  ordered
+end
+
 def render_svg(model, layout)
   process = model.fetch("process")
   actor_lookup = actors_by_id(model)
@@ -207,7 +243,7 @@ def render_svg(model, layout)
 
   margin = 24
   title_height = 56
-  actor_col_width = 76
+  actor_col_width = 120
   lane_height = Integer(layout.fetch("lane-height", 116))
   column_width = Integer(layout.fetch("column-width", 188))
   node_area_padding = 44
@@ -217,7 +253,8 @@ def render_svg(model, layout)
   decision_height = 72
   terminal_size = 30
 
-  node_index = nodes.each_with_index.to_h
+  positioned_nodes = layout_nodes(nodes, flows)
+  node_index = positioned_nodes.each_with_index.to_h
   node_positions = {}
   lane_index = lane_ids.each_with_index.to_h
   nodes.each do |node|
@@ -230,7 +267,16 @@ def render_svg(model, layout)
 
   content_width = node_area_padding * 2 + ((nodes.length - 1) * column_width) + activity_width
   width = margin * 2 + actor_col_width + content_width
-  height = margin * 2 + title_height + (lane_ids.length * lane_height)
+  # Los retornos se trazan por debajo de las swimlanes para que no atraviesen
+  # actividades ni interfieran con el avance principal de izquierda a derecha.
+  feedback_flows = flows.select do |flow|
+    from_index = node_index.fetch(node_lookup.fetch(flow.fetch("from")))
+    to_index = node_index.fetch(node_lookup.fetch(flow.fetch("to")))
+    to_index < from_index
+  end
+  feedback_area_height = feedback_flows.length * 24 + (feedback_flows.empty? ? 0 : 28)
+  lane_bottom = margin + title_height + (lane_ids.length * lane_height)
+  height = margin * 2 + title_height + (lane_ids.length * lane_height) + feedback_area_height
 
   shape_size = lambda do |node|
     case node["type"]
@@ -258,7 +304,7 @@ def render_svg(model, layout)
   lines << %(<?xml version="1.0" encoding="UTF-8"?>)
   lines << %(<svg xmlns="http://www.w3.org/2000/svg" width="#{width}" height="#{height}" viewBox="0 0 #{width} #{height}" role="img" aria-labelledby="title desc">)
   lines << %(  <title id="title">#{xml_escape(process.fetch("name"))}</title>)
-  lines << %(  <desc id="desc">Diagrama generado desde process.yaml con lanes horizontales, actores a la izquierda, tamanos fijos y conectores ortogonales.</desc>)
+  lines << %(  <desc id="desc">Diagrama generado desde process.yaml con swimlanes horizontales, etiquetas de actor en varias lineas y conectores octolineales sin cruces deliberados.</desc>)
   lines << %(  <defs>)
   lines << %(    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">)
   lines << %(      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>)
@@ -274,17 +320,37 @@ def render_svg(model, layout)
     lines << %(  <rect x="#{margin}" y="#{y}" width="#{actor_col_width}" height="#{lane_height}" fill="#e6edf7" stroke="#d5dce6" stroke-width="1"/>)
     actor_x = margin + (actor_col_width / 2.0)
     actor_y = y + (lane_height / 2.0)
-    lines << %(  <text x="#{actor_x}" y="#{actor_y}" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 #{actor_x} #{actor_y})" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2933">#{xml_escape(actor_lookup.fetch(actor))}</text>)
+    actor_text = svg_multiline_text(
+      wrap_label(actor_lookup.fetch(actor), 16), x: actor_x, y: actor_y, line_height: 15,
+      "text-anchor": "middle", "dominant-baseline": "middle", "font-family": "Arial, sans-serif",
+      "font-size": "13", "font-weight": "700", "fill": "#1f2933"
+    )
+    lines << "  #{actor_text}"
   end
 
   lines << %(  <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">)
+  feedback_index = 0
   flows.each do |flow|
     from_node = node_lookup.fetch(flow.fetch("from"))
     to_node = node_lookup.fetch(flow.fetch("to"))
     from_x, from_y = node_positions.fetch(from_node.fetch("id"))
     to_x, to_y = node_positions.fetch(to_node.fetch("id"))
 
-    if to_x >= from_x
+    label = flow["label"].to_s.strip.downcase
+    is_yes = from_node["type"] == "decision" && %w[si sí].include?(label)
+    is_no = from_node["type"] == "decision" && label == "no"
+
+    if is_no
+      # La salida "No" abandona la decisión en vertical; después puede
+      # continuar hacia su actividad sin competir con la salida "Sí" a la derecha.
+      direction = to_y < from_y ? -1 : 1
+      start = edge_anchor.call(from_node, direction.negative? ? :top : :bottom)
+      finish = edge_anchor.call(to_node, :left)
+      bend_x = start[0] + 28
+      bend_y = start[1] + (direction * 14)
+      approach_x = [bend_x + 20, finish[0] - 24].min
+      points = [[start[0], start[1]], [start[0], bend_y], [approach_x, bend_y], [approach_x, finish[1]], [finish[0], finish[1]]]
+    elsif is_yes || to_x >= from_x
       start = edge_anchor.call(from_node, :right)
       finish = edge_anchor.call(to_node, :left)
       mid_x = ((start[0] + finish[0]) / 2.0).round(2)
@@ -292,8 +358,13 @@ def render_svg(model, layout)
     else
       start = edge_anchor.call(from_node, :left)
       finish = edge_anchor.call(to_node, :right)
-      route_x = [start[0], finish[0]].min - 36
-      points = [[start[0], start[1]], [route_x, start[1]], [route_x, finish[1]], [finish[0], finish[1]]]
+      route_y = lane_bottom + 20 + (feedback_index * 24)
+      feedback_index += 1
+      # Los retornos usan una pista exclusiva bajo el proceso. Es una ruta
+      # octolineal: vertical, horizontal y diagonal de 45 grados en los accesos.
+      exit_x = start[0] - 18
+      entry_x = finish[0] + 18
+      points = [[start[0], start[1]], [exit_x, start[1]], [exit_x, route_y - 18], [exit_x - 18, route_y], [entry_x + 18, route_y], [entry_x, route_y - 18], [entry_x, finish[1]], [finish[0], finish[1]]]
     end
 
     compact_points = points.each_with_object([]) do |point, memo|

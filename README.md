@@ -108,10 +108,12 @@ misma plantilla visual:
 - una caja exterior recoge todo el proceso
 - el proceso se divide en lanes horizontales, una por actor
 - el nombre del actor aparece en la parte izquierda de su lane
-- el nombre del actor se rota en vertical, de abajo hacia arriba, para ahorrar ancho
-- el proceso comienza a la izquierda y avanza hacia la derecha
+- el nombre del actor se muestra horizontalmente y se parte en varias líneas cuando sea necesario; nunca se recorta
+- el proceso comienza a la izquierda y avanza hacia la derecha; los cambios de lane se resuelven de arriba hacia abajo
 - inicio, fin, actividades y decisiones mantienen tamanos fijos
-- las flechas usan conectores ortogonales con tramos rectos y giros de 90 grados
+- la salida `Sí` de una decisión continúa siempre hacia adelante y a la derecha
+- la salida `No` de una decisión sale en vertical, hacia arriba o abajo según la posición de su destino
+- las flechas usan conectores octolineales: tramos rectos horizontales, verticales y diagonales de 45 grados; los retornos se enrutan por pistas separadas para evitar cruces
 
 La validacion comprueba, entre otras reglas:
 
