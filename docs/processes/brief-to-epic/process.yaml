@@ -32,7 +32,7 @@ nodes:
   - id: brief_complete
     actor: product_owner
     type: decision
-    label: Brief completo
+    label: "¿El brief está completo?"
 
   - id: request_updates
     actor: product_owner

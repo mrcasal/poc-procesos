@@ -5,7 +5,7 @@ require "set"
 require "yaml"
 require "date"
 
-ALLOWED_NODE_TYPES = %w[start end activity decision subprocess event document note].freeze
+ALLOWED_NODE_TYPES = %w[start end activity decision merge subprocess event document note].freeze
 MAX_LABEL_LENGTH = 60
 
 def usage!
@@ -73,7 +73,7 @@ def validate_model(model, path)
     errors << "node #{id}: unsupported type #{type.inspect}" unless ALLOWED_NODE_TYPES.include?(type)
     errors << "node #{id}: label is too long (max #{MAX_LABEL_LENGTH})" if label.length > MAX_LABEL_LENGTH
 
-    if %w[activity decision subprocess event document].include?(type)
+    if %w[activity decision merge subprocess event document].include?(type)
       actor = node["actor"].to_s
       errors << "node #{id}: actor is required for #{type}" if actor.strip == ""
       errors << "node #{id}: unknown actor #{actor}" if actor.strip != "" && !actor_lookup.key?(actor)
@@ -104,9 +104,14 @@ def validate_model(model, path)
     id = node["id"]
     decision_flows = outgoing[id]
     errors << "decision #{id}: at least two outgoing flows are required" if decision_flows.length < 2
+    errors << "decision #{id}: at most four outgoing flows are allowed" if decision_flows.length > 4
+    errors << "decision #{id}: a decision label must be a clear question" unless node.fetch("label", "").to_s.strip.end_with?("?")
+    errors << "decision #{id}: a split must have exactly one incoming flow" unless incoming[id].length == 1
     decision_flows.each do |flow|
       errors << "decision #{id}: outgoing flow to #{flow["to"]} needs a label" if flow["label"].to_s.strip == ""
     end
+    labels = decision_flows.map { |flow| flow["label"].to_s.strip.downcase }
+    errors << "decision #{id}: outgoing labels must be unique" unless labels.uniq.length == labels.length
   end
 
   actors_with_work = nodes.map { |node| node["actor"] }.compact.to_set
@@ -183,8 +188,9 @@ def svg_multiline_text(lines, x:, y:, line_height:, **attributes)
 end
 
 def layout_nodes(nodes, flows)
-  # Conserva el orden declarado siempre que sea posible, pero sitúa cualquier
-  # destino de "Sí" después de su decisión. Así esta salida nunca retrocede.
+  # Conserva el orden declarado siempre que sea posible, pero sitúa cada
+  # destino de "Sí" inmediatamente después de su decisión. Así la conexión
+  # sale por la derecha y no atraviesa nodos intermedios.
   ordered = nodes.dup
   yes_flows = flows.select do |flow|
     %w[si sí].include?(flow["label"].to_s.strip.downcase)
@@ -195,7 +201,7 @@ def layout_nodes(nodes, flows)
     yes_flows.each do |flow|
       from_index = ordered.index { |node| node.fetch("id") == flow.fetch("from") }
       to_index = ordered.index { |node| node.fetch("id") == flow.fetch("to") }
-      next unless from_index && to_index && to_index <= from_index
+      next unless from_index && to_index && to_index != from_index + 1
 
       target = ordered.delete_at(to_index)
       from_index -= 1 if to_index < from_index
@@ -241,10 +247,23 @@ def render_svg(model, layout)
     nodes.any? { |node| lane_for_node.call(node) == actor }
   end
 
+  same_lane_no_targets = flows.filter_map do |flow|
+    next unless flow["label"].to_s.strip.casecmp?("no")
+
+    from_node = node_lookup.fetch(flow.fetch("from"))
+    to_node = node_lookup.fetch(flow.fetch("to"))
+    next unless from_node["type"] == "decision" && lane_for_node.call(from_node) == lane_for_node.call(to_node)
+
+    to_node.fetch("id")
+  end.to_set
+
   margin = 24
   title_height = 56
   actor_col_width = 120
-  lane_height = Integer(layout.fetch("lane-height", 116))
+  base_lane_height = Integer(layout.fetch("lane-height", 116))
+  # Una rama "No" en el mismo actor necesita una fila paralela para que el
+  # conector pueda salir verticalmente sin pasar por encima de otro nodo.
+  lane_height = same_lane_no_targets.empty? ? base_lane_height : [base_lane_height, 220].max
   column_width = Integer(layout.fetch("column-width", 188))
   node_area_padding = 44
   activity_width = 142
@@ -262,6 +281,7 @@ def render_svg(model, layout)
     column = node_index.fetch(node)
     x = margin + actor_col_width + node_area_padding + (column * column_width)
     y = margin + title_height + (lane_index.fetch(lane) * lane_height) + (lane_height / 2.0)
+    y += 72 if same_lane_no_targets.include?(node.fetch("id"))
     node_positions[node.fetch("id")] = [x, y]
   end
 
@@ -274,7 +294,15 @@ def render_svg(model, layout)
     to_index = node_index.fetch(node_lookup.fetch(flow.fetch("to")))
     to_index < from_index
   end
-  feedback_area_height = feedback_flows.length * 24 + (feedback_flows.empty? ? 0 : 28)
+  forward_bypass_flows = flows.select do |flow|
+    from_node = node_lookup.fetch(flow.fetch("from"))
+    from_index = node_index.fetch(from_node)
+    to_index = node_index.fetch(node_lookup.fetch(flow.fetch("to")))
+    is_no = from_node["type"] == "decision" && flow["label"].to_s.strip.casecmp?("no")
+    to_index > from_index + 1 && !is_no
+  end
+  external_route_count = feedback_flows.length + forward_bypass_flows.length
+  feedback_area_height = external_route_count * 24 + (external_route_count.zero? ? 0 : 28)
   lane_bottom = margin + title_height + (lane_ids.length * lane_height)
   height = margin * 2 + title_height + (lane_ids.length * lane_height) + feedback_area_height
 
@@ -284,6 +312,8 @@ def render_svg(model, layout)
       [terminal_size, terminal_size]
     when "decision"
       [decision_width, decision_height]
+    when "merge"
+      [48, 48]
     else
       [activity_width, activity_height]
     end
@@ -304,7 +334,7 @@ def render_svg(model, layout)
   lines << %(<?xml version="1.0" encoding="UTF-8"?>)
   lines << %(<svg xmlns="http://www.w3.org/2000/svg" width="#{width}" height="#{height}" viewBox="0 0 #{width} #{height}" role="img" aria-labelledby="title desc">)
   lines << %(  <title id="title">#{xml_escape(process.fetch("name"))}</title>)
-  lines << %(  <desc id="desc">Diagrama generado desde process.yaml con swimlanes horizontales, etiquetas de actor en varias lineas y conectores octolineales sin cruces deliberados.</desc>)
+  lines << %(  <desc id="desc">Diagrama generado desde process.yaml con swimlanes horizontales, etiquetas de actor en varias lineas y conectores ortogonales sin cruces sobre nodos.</desc>)
   lines << %(  <defs>)
   lines << %(    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">)
   lines << %(      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4f5b67"/>)
@@ -329,7 +359,8 @@ def render_svg(model, layout)
   end
 
   lines << %(  <g fill="none" stroke="#4f5b67" stroke-width="1.4" marker-end="url(#arrow)">)
-  feedback_index = 0
+  external_route_index = 0
+  edge_routes = {}
   flows.each do |flow|
     from_node = node_lookup.fetch(flow.fetch("from"))
     to_node = node_lookup.fetch(flow.fetch("to"))
@@ -339,37 +370,52 @@ def render_svg(model, layout)
     label = flow["label"].to_s.strip.downcase
     is_yes = from_node["type"] == "decision" && %w[si sí].include?(label)
     is_no = from_node["type"] == "decision" && label == "no"
+    requires_bypass = forward_bypass_flows.include?(flow)
 
     if is_no
-      # La salida "No" abandona la decisión en vertical; después puede
-      # continuar hacia su actividad sin competir con la salida "Sí" a la derecha.
+      # La salida "No" siempre abandona la decisión por arriba o por abajo.
+      # Si comparte lane con su destino, este queda en una fila paralela y se
+      # entra por su borde vertical, sin cruzar ni superponer ningún nodo.
       direction = to_y < from_y ? -1 : 1
       start = edge_anchor.call(from_node, direction.negative? ? :top : :bottom)
-      finish = edge_anchor.call(to_node, :left)
-      bend_x = start[0] + 28
-      bend_y = start[1] + (direction * 14)
-      approach_x = [bend_x + 20, finish[0] - 24].min
-      points = [[start[0], start[1]], [start[0], bend_y], [approach_x, bend_y], [approach_x, finish[1]], [finish[0], finish[1]]]
-    elsif is_yes || to_x >= from_x
+      if lane_for_node.call(from_node) == lane_for_node.call(to_node)
+        finish = edge_anchor.call(to_node, direction.negative? ? :bottom : :top)
+        route_y = ((start[1] + finish[1]) / 2.0).round(2)
+        points = [[start[0], start[1]], [start[0], route_y], [finish[0], route_y], [finish[0], finish[1]]]
+      else
+        finish = edge_anchor.call(to_node, :left)
+        route_x = ((start[0] + finish[0]) / 2.0).round(2)
+        points = [[start[0], start[1]], [route_x, start[1]], [route_x, finish[1]], [finish[0], finish[1]]]
+      end
+    elsif (is_yes || to_x >= from_x) && !requires_bypass
       start = edge_anchor.call(from_node, :right)
       finish = edge_anchor.call(to_node, :left)
       mid_x = ((start[0] + finish[0]) / 2.0).round(2)
       points = [[start[0], start[1]], [mid_x, start[1]], [mid_x, finish[1]], [finish[0], finish[1]]]
     else
-      start = edge_anchor.call(from_node, :left)
-      finish = edge_anchor.call(to_node, :right)
-      route_y = lane_bottom + 20 + (feedback_index * 24)
-      feedback_index += 1
-      # Los retornos usan una pista exclusiva bajo el proceso. Es una ruta
-      # octolineal: vertical, horizontal y diagonal de 45 grados en los accesos.
-      exit_x = start[0] - 18
-      entry_x = finish[0] + 18
-      points = [[start[0], start[1]], [exit_x, start[1]], [exit_x, route_y - 18], [exit_x - 18, route_y], [entry_x + 18, route_y], [entry_x, route_y - 18], [entry_x, finish[1]], [finish[0], finish[1]]]
+      route_y = lane_bottom + 20 + (external_route_index * 24)
+      external_route_index += 1
+      if requires_bypass
+        # Un flujo que salta columnas usa una pista exterior para que sus
+        # tramos horizontales no puedan atravesar nodos intermedios.
+        start = edge_anchor.call(from_node, :right)
+        finish = edge_anchor.call(to_node, :left)
+        exit_x = start[0] + 18
+        entry_x = finish[0] - 18
+      else
+        start = edge_anchor.call(from_node, :left)
+        finish = edge_anchor.call(to_node, :right)
+        exit_x = start[0] - 18
+        entry_x = finish[0] + 18
+      end
+      # Las pistas externas son exclusivamente ortogonales.
+      points = [[start[0], start[1]], [exit_x, start[1]], [exit_x, route_y], [entry_x, route_y], [entry_x, finish[1]], [finish[0], finish[1]]]
     end
 
     compact_points = points.each_with_object([]) do |point, memo|
       memo << point unless memo.last == point
     end
+    edge_routes[flow] = compact_points
     lines << %(    <polyline points="#{compact_points.map { |x, y| "#{x.round(2)},#{y.round(2)}" }.join(" ")}"/>)
   end
   lines << %(  </g>)
@@ -378,10 +424,23 @@ def render_svg(model, layout)
     label = flow["label"].to_s.strip
     next if label.empty?
 
+    from_node = node_lookup.fetch(flow.fetch("from"))
     from_x, from_y = node_positions.fetch(flow.fetch("from"))
     to_x, to_y = node_positions.fetch(flow.fetch("to"))
-    label_x = ((from_x + to_x) / 2.0).round(2)
-    label_y = ((from_y + to_y) / 2.0).round(2) - 8
+    if from_node["type"] == "decision"
+      first, second = edge_routes.fetch(flow).first(2)
+      label_x = ((first[0] + second[0]) / 2.0).round(2)
+      label_y = ((first[1] + second[1]) / 2.0).round(2)
+      if first[0] == second[0]
+        label_x += second[1] > first[1] ? 18 : -18
+        label_y += 4
+      else
+        label_y -= 8
+      end
+    else
+      label_x = ((from_x + to_x) / 2.0).round(2)
+      label_y = ((from_y + to_y) / 2.0).round(2) - 8
+    end
     text_width = [label.length * 7 + 12, 26].max
     lines << %(  <rect x="#{label_x - (text_width / 2.0)}" y="#{label_y - 13}" width="#{text_width}" height="18" fill="#ffffff" stroke="none"/>)
     lines << %(  <text x="#{label_x}" y="#{label_y}" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">#{xml_escape(label)}</text>)
@@ -398,12 +457,14 @@ def render_svg(model, layout)
     when "end"
       lines << %(  <circle cx="#{x}" cy="#{y}" r="#{terminal_size / 2.0}" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>)
       lines << %(  <circle cx="#{x}" cy="#{y}" r="#{(terminal_size / 2.0) - 5}" fill="#1f2933" stroke="none"/>)
-    when "decision"
+    when "decision", "merge"
       points = [[x, y - (h / 2.0)], [x + (w / 2.0), y], [x, y + (h / 2.0)], [x - (w / 2.0), y]]
       lines << %(  <polygon points="#{points.map { |px, py| "#{px},#{py}" }.join(" ")}" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>)
-      wrap_label(label, 15).each_with_index do |text, index|
-        offset = (index - ((wrap_label(label, 15).length - 1) / 2.0)) * 13
-        lines << %(  <text x="#{x}" y="#{y + offset + 4}" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">#{xml_escape(text)}</text>)
+      if node["type"] == "decision"
+        wrap_label(label, 15).each_with_index do |text, index|
+          offset = (index - ((wrap_label(label, 15).length - 1) / 2.0)) * 13
+          lines << %(  <text x="#{x}" y="#{y + offset + 4}" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1f2933">#{xml_escape(text)}</text>)
+        end
       end
     else
       lines << %(  <rect x="#{x - (w / 2.0)}" y="#{y - (h / 2.0)}" width="#{w}" height="#{h}" rx="4" fill="#ffffff" stroke="#4f5b67" stroke-width="1.5"/>)

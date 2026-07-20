@@ -37,6 +37,7 @@ views:
     - id: fase-2-construccion-validacion
       label: "Fase 2: Construccion y validacion funcional"
       nodes:
+        - dependencies_merge
         - dependencies_ok
         - block_epic
         - agree_contract
