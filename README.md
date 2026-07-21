@@ -1,47 +1,48 @@
-# POC de modelos de procesos
+# POC de documentación de procesos
 
-Este repositorio prueba un flujo Docs as Code para mantener procesos a partir de un
-modelo declarativo propio en YAML.
+Esta POC mantiene los procesos como documentación versionable en el repositorio,
+sin publicación ni dependencia de GitHub Pages.
 
-Cada proceso se documenta con estos artefactos:
-
-```text
-process.md
-process.yaml
-layout.yaml
-process.svg
-metadata.yaml
-```
-
-Los procesos largos pueden generar tambien vistas derivadas para lectura en
-documento:
+Cada proceso se compone de:
 
 ```text
-process-overview.svg
-process-<fase>.svg
-process-viewer.html
+process.md    Documento de lectura del proceso
+process.yaml  Fuente de verdad: lógica y preferencias de renderizado
+process.svg   Diagrama completo renderizado desde el YAML
 ```
 
-La fuente de verdad del proceso es siempre `process.yaml`. El fichero `layout.yaml`
-contiene solo preferencias de presentacion. Tambien puede declarar fases visuales
-para producir una vista general y diagramas parciales sin dividir el modelo fuente.
-`process.svg`, las vistas derivadas y el visor HTML son artefactos generados y se
-regeneran con:
+## Lectura e impresión
+
+`process.md` es el documento de proceso que se consulta en el repositorio o en
+cualquier visor Markdown compatible. Los diagramas SVG se muestran incrustados
+en ese documento.
+
+Cada documento incluye un enlace al SVG completo. Al abrirlo directamente se
+puede ampliar y usar la impresión del navegador o del sistema, conservando la
+calidad vectorial a un tamaño mayor que el mostrado en el Markdown.
+
+## Actualización
+
+La lógica del proceso y sus preferencias de presentación viven juntas en
+`process.yaml`; el SVG no se edita manualmente.
+
+La POC usa Python 3 y la dependencia declarada en `requirements.txt`:
+
+```bash
+python -m pip install -r requirements.txt
+```
 
 ```bash
 make diagrams
-```
-
-Para comprobar que el modelo es valido y que los artefactos derivados estan
-actualizados:
-
-```bash
 make validate-diagrams
 ```
 
+`make diagrams` regenera el SVG completo. `make validate-diagrams` valida el
+modelo y confirma que el SVG no está desactualizado.
+
 ## Modelo fuente
 
-El DSL del proceso es deliberadamente pequeno:
+El DSL es deliberadamente pequeño:
 
 ```yaml
 process:
@@ -55,116 +56,52 @@ actors:
 nodes:
   - id: start
     type: start
-
   - id: create_brief
     actor: requester
     type: activity
     label: Preparar brief
-
   - id: end
     type: end
 
 flows:
   - from: start
     to: create_brief
-
   - from: create_brief
     to: end
+
+layout:
+  direction: LR
+  lane-order:
+    - requester
 ```
 
 Tipos de nodo soportados:
 
 ```text
-start
-end
-activity
-decision
-merge
-subprocess
-event
-document
-note
+start, end, activity, decision, merge, subprocess, event, document, note
 ```
 
-Las swimlanes se deducen a partir de `actor`. El layout queda separado:
-
-```yaml
-direction: LR
-lane-order:
-  - requester
-spacing: normal
-views:
-  phases:
-    - id: fase-0-recepcion
-      label: "Fase 0: Recepcion"
-      nodes:
-        - create_brief
-```
-
-## Normas de diagramado
-
-El SVG oficial se genera directamente desde `process.yaml` y aplica siempre la
-misma plantilla visual:
-
-- una caja exterior recoge todo el proceso
-- el proceso se divide en lanes horizontales, una por actor
-- el nombre del actor aparece en la parte izquierda de su lane
-- el nombre del actor se muestra horizontalmente y se parte en varias líneas cuando sea necesario; nunca se recorta
-- el proceso comienza a la izquierda y avanza hacia la derecha; los cambios de lane se resuelven de arriba hacia abajo
-- inicio, fin, actividades y decisiones mantienen tamanos fijos
-- la salida `Sí` de una decisión continúa siempre hacia adelante y a la derecha
-- la salida `Sí` se coloca inmediatamente a la derecha de la decisión y sale por su lado derecho
-- la salida `No` sale siempre por el borde superior o inferior de la decisión, según la posición de su destino
-- cada decisión se formula como una pregunta clara y sus salidas llevan etiquetas de resultado únicas y visibles
-- las etiquetas de resultado se sitúan sobre el primer tramo del conector, junto a la decisión, y no junto al destino
-- ambos conectores de una decisión llegan directamente a su nodo destino y no atraviesan, tocan ni se superponen sobre otros nodos, etiquetas o títulos de swimlane
-- las flechas usan conectores ortogonales: sólo tramos horizontales y verticales, con giros de 90 grados; los retornos se enrutan por pistas separadas para evitar cruces
-- cada conector usa el centro de un puerto definido (izquierdo, derecho, superior o inferior) del nodo origen y destino
-- las ramas de una decisión se asignan a corredores visuales distintos y su zona inmediata queda protegida de conectores ajenos
-- cuando una rama necesita espacio vertical dentro de una misma swimlane, esta se amplía y el nodo destino se sitúa en una fila paralela
-- una decisión de división tiene entre dos y cuatro salidas; la ruta normal continúa en la dirección principal y las excepciones se separan de ella
-- los retornos representan únicamente bucles o retrabajo reales; las alternativas largas deben extraerse a una vista o subproceso
-
-La validacion comprueba, entre otras reglas:
-
-- actores y nodos referenciados por los flujos
-- ids duplicados
-- un unico inicio y un unico fin
-- actividades y decisiones con actor
-- decisiones con al menos dos salidas etiquetadas
-- preguntas claras, etiquetas únicas y un máximo de cuatro salidas por decisión
-- una única entrada para cada decisión de división
-- actores sin actividad
-- nodos no alcanzables desde el inicio
-- nodos sin camino hasta el fin
-- longitud maxima de etiquetas
+Las swimlanes se deducen del actor del nodo.
 
 ## Estructura
 
 ```text
 docs/processes/
-  brief-to-epic/
-    metadata.yaml
+  nombre-del-proceso/
     process.md
     process.yaml
-    layout.yaml
     process.svg
 scripts/
-  process-model.rb
+  process_model.py
   render-diagrams.sh
   validate-diagrams.sh
 ```
 
 ## Reglas de trabajo
 
-- Modificar `process.yaml` cuando cambie la logica del proceso.
-- Modificar `layout.yaml` solo cuando cambie la presentacion.
-- Ejecutar `make diagrams` despues de cada cambio.
-- Incluir en el commit `process.yaml`, `layout.yaml` y el SVG actualizado.
-- No editar manualmente ficheros SVG.
-
-## Renderizado
-
-El script oficial genera `process.svg` directamente desde YAML usando
-`scripts/process-model.rb`. No usa renderizadores externos ni formatos
-intermedios.
+- Modificar `process.md` cuando cambie la explicación, reglas o contexto.
+- Modificar `process.yaml` cuando cambie la lógica o la presentación del diagrama.
+- Ejecutar `make diagrams` después de cambiar el YAML.
+- Ejecutar `make validate-diagrams` antes de integrar los cambios.
+- Incluir el Markdown, el YAML y el SVG generado en el commit.
+- No editar manualmente los SVG.

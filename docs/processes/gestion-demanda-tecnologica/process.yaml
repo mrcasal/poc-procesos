@@ -349,3 +349,15 @@ flows:
 
   - from: close_epic
     to: end
+
+layout:
+  direction: LR
+  lane-order:
+    - promoter
+    - product_owner
+    - committee
+    - pmo
+    - technical_team
+  spacing: normal
+          - close_features
+          - close_epic

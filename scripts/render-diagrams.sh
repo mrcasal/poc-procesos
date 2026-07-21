@@ -2,6 +2,12 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+
+if ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
+  echo "Python no está disponible. Instálalo o define PYTHON_BIN con la ruta al ejecutable."
+  exit 1
+fi
 
 cd "$ROOT_DIR"
 
@@ -17,8 +23,6 @@ fi
 
 for model in "${models[@]}"; do
   process_dir="$(dirname "$model")"
-  layout="$process_dir/layout.yaml"
   svg="$process_dir/process.svg"
-  ruby scripts/process-model.rb render-svg "$model" "$layout" "$svg"
-  ruby scripts/process-model.rb render-document-views "$model" "$layout" "$process_dir"
+  "$PYTHON_BIN" scripts/process_model.py render-svg "$model" "$svg"
 done

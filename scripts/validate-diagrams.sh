@@ -2,8 +2,14 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-TMP_DIR="$(mktemp -d)"
+TMP_DIR="$(mktemp -d ".validate-diagrams.XXXXXX")"
 trap 'rm -rf "$TMP_DIR"' EXIT
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+
+if ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
+  echo "Python no está disponible. Instálalo o define PYTHON_BIN con la ruta al ejecutable."
+  exit 1
+fi
 
 cd "$ROOT_DIR"
 
@@ -17,28 +23,14 @@ if [[ ${#models[@]} -eq 0 ]]; then
   exit 0
 fi
 
-svgs=()
 for model in "${models[@]}"; do
   process_dir="$(dirname "$model")"
-  layout="$process_dir/layout.yaml"
   svg="$process_dir/process.svg"
-  ruby scripts/process-model.rb validate "$model" "$layout"
-  svgs+=("$svg")
-  while IFS= read -r view_svg; do
-    [[ -z "$view_svg" ]] && continue
-    svgs+=("$process_dir/$view_svg")
-  done < <(ruby scripts/process-model.rb list-document-views "$model" "$layout")
+  "$PYTHON_BIN" scripts/process_model.py validate "$model"
   if [[ ! -f "$svg" ]]; then
     echo "Missing SVG for $model: $svg"
     exit 1
   fi
-  while IFS= read -r view_svg; do
-    [[ -z "$view_svg" ]] && continue
-    if [[ ! -f "$process_dir/$view_svg" ]]; then
-      echo "Missing SVG for $model: $process_dir/$view_svg"
-      exit 1
-    fi
-  done < <(ruby scripts/process-model.rb list-document-views "$model" "$layout")
 done
 
 mkdir -p "$TMP_DIR"
@@ -46,14 +38,13 @@ cp -R docs "$TMP_DIR/docs"
 
 while IFS= read -r model; do
   process_dir="$(dirname "$model")"
-  layout="$process_dir/layout.yaml"
   svg="$process_dir/process.svg"
-  ruby scripts/process-model.rb render-svg "$model" "$layout" "$svg"
-  ruby scripts/process-model.rb render-document-views "$model" "$layout" "$process_dir"
+  "$PYTHON_BIN" scripts/process_model.py render-svg "$model" "$svg"
 done < <(find "$TMP_DIR/docs/processes" -name process.yaml -type f | sort)
 
 changed=0
-for svg in "${svgs[@]}"; do
+for model in "${models[@]}"; do
+  svg="$(dirname "$model")/process.svg"
   if ! cmp --silent "$svg" "$TMP_DIR/$svg"; then
     echo "Outdated SVG: $svg"
     changed=1

@@ -1,8 +1,0 @@
-id: brief-to-epic
-name: Generacion de epica desde brief
-owner: Product Owner
-status: draft
-diagram:
-  model: process.yaml
-  layout: layout.yaml
-  output: process.svg

@@ -5,14 +5,17 @@ Este proceso ilustra la conversion de un brief inicial en una epica lista para p
 ## Artefactos
 
 - Modelo fuente: `process.yaml`
-- Preferencias de layout: `layout.yaml`
 - SVG renderizado: `process.svg`
-- Metadatos: `metadata.yaml`
+
+## Diagrama de proceso
+
+![Diagrama del proceso de generacion de epica desde brief](process.svg)
+
+[Abrir o imprimir el diagrama a mayor tamaño](process.svg)
 
 ## Actualizacion
 
 1. Modificar `process.yaml` si cambia la logica del proceso.
-2. Modificar `layout.yaml` si cambia solo la presentacion.
-3. Ejecutar `make diagrams`.
-4. Verificar con `make validate-diagrams`.
-5. Incluir modelo, layout y SVG en el commit.
+2. Ejecutar `make diagrams`.
+3. Verificar con `make validate-diagrams`.
+4. Incluir el modelo y el SVG en el commit.
